@@ -1,4 +1,4 @@
-import renderScreen1 from "./screens/screen1.js";
+import renderScreen1 from "./screens/welcome.js";
 
 const socket = io("/", { path: "/real-time" });
 

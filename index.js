@@ -13,8 +13,8 @@ const httpServer = createServer(app);
 
 // Middlewares
 app.use(express.json());
-app.use("/app1", express.static(path.join(__dirname, "app1")));
-app.use("/app2", express.static(path.join(__dirname, "app2")));
+app.use("/mupi-client", express.static(path.join(__dirname, "mupi-client")));
+app.use("/telefono-client", express.static(path.join(__dirname, "telefono-client")));
 
 // Routes
 app.use("/", usersRouter);

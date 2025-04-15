@@ -1,5 +1,5 @@
-import renderScreen1 from "./screens/screen1.js";
-import renderScreen2 from "./screens/screen2.js";
+import renderScreen1 from "./screens/register.js";
+import renderScreen2 from "./screens/start.js";
 
 const socket = io("/", { path: "/real-time" });
 

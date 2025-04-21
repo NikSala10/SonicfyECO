@@ -1,9 +1,4 @@
-let users = [
-  {
-    id: 1,
-    name: "John Doe",
-  },
-];
+let users = [];
 
 const getAllUsers = async () => {
   return users;

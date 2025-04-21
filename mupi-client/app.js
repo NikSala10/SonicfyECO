@@ -23,7 +23,7 @@ function navigateTo(path, data) {
 }
 
 async function makeRequest(url, method, body) {
-  const BASE_URL = "http://localhost:5050";
+  const BASE_URL = "http://localhost:5058";
   let response = await fetch(`${BASE_URL}${url}`, {
     method: method,
     headers: {

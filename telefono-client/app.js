@@ -26,9 +26,24 @@ function renderRoute(currentRoute) {
   }
 }
 
+async function makeRequest2(url, method, body) {
+  const BASE_URL = "http://localhost:5058";
+  let response = await fetch(`${BASE_URL}${url}`, {
+    method: method,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+
+  response = await response.json();
+
+  return response;
+}
+
 function navigateTo(path, data) {
   route = { path, data };
   renderRoute(route);
 }
 
-export { navigateTo, socket };
+export { navigateTo, socket, makeRequest2};

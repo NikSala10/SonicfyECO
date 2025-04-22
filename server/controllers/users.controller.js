@@ -21,7 +21,7 @@ const registerPlayer = async (req, res) => {
 
   await createUser(newUser);
 
-  emitEvent("notificar-pantalla-instructions", {message: "Usuario ingresado"})
+  emitEvent("notificar-pantalla-instructions", {message: "Usuario ingresado", name})
   res.send({ success: true, user: newUser });
 };
 

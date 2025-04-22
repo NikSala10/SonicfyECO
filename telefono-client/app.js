@@ -1,5 +1,5 @@
 import renderScreenRegister from "./screens/register.js";
-import renderScreen2 from "./screens/start.js";
+import renderScreenStart from "./screens/start.js";
 
 const socket = io("/", { path: "/real-time" });
 
@@ -16,9 +16,9 @@ function renderRoute(currentRoute) {
       clearScripts();
       renderScreenRegister(currentRoute?.data);
       break;
-    case "/screen2":
+    case "/screenStart":
       clearScripts();
-      renderScreen2(currentRoute?.data);
+      renderScreenStart(currentRoute?.data);
       break;
     default:
       const app = document.getElementById("app");
@@ -41,9 +41,9 @@ async function makeRequest2(url, method, body) {
   return response;
 }
 
-function navigateTo(path, data) {
+function navigateToTelefono(path, data) {
   route = { path, data };
   renderRoute(route);
 }
 
-export { navigateTo, socket, makeRequest2};
+export { navigateToTelefono, socket, makeRequest2};

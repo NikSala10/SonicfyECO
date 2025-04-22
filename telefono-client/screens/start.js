@@ -1,18 +1,19 @@
-import { navigateTo } from "../app.js";
+import { navigateToTelefono } from "../app.js";
 
-export default function renderScreen1(data) {
+
+export default function renderScreenStart(data) {
   const app = document.getElementById("app");
   app.innerHTML = `
-        <div id="screen2">
-            <h2>Screen 2</h2>
-            <p>Hello from screen 2</p>
-            <button id="go-screen-back">Go to previous screen</button>
+        <div id="screenStart">
+            <h2>Welcome to the musical challenge</h2>
+            <p>You are about to experience something unique!!1</p>
+            <button id="start">Start</button>
         </div>
         `;
 
-  const goBackButton = document.getElementById("go-screen-back");
+  const start = document.getElementById("start");
 
-  goBackButton.addEventListener("click", () => {
-    navigateTo("/");
+  start.addEventListener("click", () => {
+    navigateToTelefono("/");
   });
 }

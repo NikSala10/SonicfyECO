@@ -1,4 +1,5 @@
-import { makeRequest2 } from "../app.js";
+import { makeRequest2, navigateToTelefono } from "../app.js";
+
 
 export default function renderScreenRegister() {
   const app = document.getElementById("app");
@@ -21,7 +22,7 @@ export default function renderScreenRegister() {
   
   const btnRegister = document.getElementById("register").addEventListener("click", registerUser);
 
-  function showModal(message) {
+  function showModal(message, shouldRedirect = false, redirectPath = "/screen2", redirectData = {}) {
     const modal = document.createElement("div");
     modal.style.position = "fixed";
     modal.style.top = "0";
@@ -60,6 +61,9 @@ export default function renderScreenRegister() {
     // Evento para cerrar
     document.getElementById("modal-ok-btn").onclick = () => {
       modal.remove();
+      if (shouldRedirect) {
+        navigateToTelefono(redirectPath, redirectData);
+      }
     };
   }
 
@@ -83,7 +87,7 @@ export default function renderScreenRegister() {
     const response = await makeRequest2("/register", "POST", body);
 
     if (response.success) {
-      showModal(`Your registration has been successful.<br>Welcome ${nameInput.value}!`);
+      showModal(`Your registration has been successful.<br>Welcome ${nameInput.value}!`, true, "/screenStart",);
     } else {
       showModal("Your registration has been rejected, someone else is already participating, please try again in a few more minutes.");
     }

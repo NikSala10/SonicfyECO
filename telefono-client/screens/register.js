@@ -1,6 +1,6 @@
 import { makeRequest2 } from "../app.js";
 
-export default function renderScreen1() {
+export default function renderScreenRegister() {
   const app = document.getElementById("app");
   app.innerHTML = `
       <div id="screen1">
@@ -12,16 +12,66 @@ export default function renderScreen1() {
         <button id="register">Create Account</button>
         <p>By continuing, you agree to the use of your data to enhance your experience on Sonicfy.</p>
         <div id="messageBox" style="margin-top: 10px; color: green;"></div>
-    </div>
+
       `;
 
   const nameInput = document.getElementById("name")
   const emailInput = document.getElementById("email")
+  
+  
   const btnRegister = document.getElementById("register").addEventListener("click", registerUser);
+
+  function showModal(message) {
+    const modal = document.createElement("div");
+    modal.style.position = "fixed";
+    modal.style.top = "0";
+    modal.style.left = "0";
+    modal.style.width = "100vw";
+    modal.style.height = "100vh";
+    modal.style.background = "rgba(0, 0, 0, 0.6)";
+    modal.style.display = "flex";
+    modal.style.alignItems = "center";
+    modal.style.justifyContent = "center";
+    modal.style.zIndex = "9999";
+  
+    // Contenido interno (solo <p> y botón)
+    modal.innerHTML = `
+      <div style="
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        max-width: 90%;
+        text-align: center;
+      ">
+        <p style="margin-bottom: 20px;">${message}</p>
+        <button id="modal-ok-btn" style="
+          padding: 10px 20px;
+          background: #000;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          font-size: 16px;
+        ">OK</button>
+      </div>
+    `;
+  
+    document.body.appendChild(modal);
+  
+    // Evento para cerrar
+    document.getElementById("modal-ok-btn").onclick = () => {
+      modal.remove();
+    };
+  }
 
   async function registerUser() {
     const messageBox = document.getElementById("messageBox");
     messageBox.textContent = "";
+
+    if (!nameInput.value || !emailInput.value) {
+      messageBox.style.color = "red";
+      messageBox.textContent = "Please fill in all fields.";
+      return;
+    }
 
     try {
 
@@ -33,11 +83,9 @@ export default function renderScreen1() {
     const response = await makeRequest2("/register", "POST", body);
 
     if (response.success) {
-      messageBox.style.color = "green";
-      messageBox.textContent = "¡Registro exitoso!";
+      showModal(`Your registration has been successful.<br>Welcome ${nameInput.value}!`);
     } else {
-      messageBox.style.color = "red";
-      messageBox.textContent = "Error: " + (response.message || "Intenta de nuevo.");
+      showModal("Your registration has been rejected, someone else is already participating, please try again in a few more minutes.");
     }
 
     console.log("response", response);

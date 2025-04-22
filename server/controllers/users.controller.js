@@ -9,7 +9,7 @@ const registerPlayer = async (req, res) => {
     // Si ya existe un usuario registrado, enviamos un mensaje de error
     return res.status(400).send({
       success: false,
-      message: "Ya existe un jugador registrado. Solo puede haber un jugador registrado en el juego."
+      message: "Your registration has been rejected, someone else is already participating, please try again in a few more minutes."
     });
   }
 

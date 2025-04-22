@@ -1,4 +1,4 @@
-import renderScreen1 from "./screens/register.js";
+import renderScreenRegister from "./screens/register.js";
 import renderScreen2 from "./screens/start.js";
 
 const socket = io("/", { path: "/real-time" });
@@ -14,7 +14,7 @@ function renderRoute(currentRoute) {
   switch (currentRoute?.path) {
     case "/":
       clearScripts();
-      renderScreen1(currentRoute?.data);
+      renderScreenRegister(currentRoute?.data);
       break;
     case "/screen2":
       clearScripts();

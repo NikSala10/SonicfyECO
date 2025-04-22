@@ -1,11 +1,11 @@
-import { makeRequest2, navigateToTelefono } from "../app.js";
+import { navigateToTelefono } from "../app.js";
 
 
-export default function renderScreenStart(data) {
+export default function renderScreenQuestion1T(data) {
   const app = document.getElementById("app");
   app.innerHTML = `
-        <div id="screenStart">
-            <h2>Welcome to the musical challenge</h2>
+        <div id="screenQuestion1">
+            <h2>Question1</h2>
             <p>You are about to experience something unique!!1</p>
             <button id="start">Start</button>
         </div>
@@ -15,11 +15,11 @@ export default function renderScreenStart(data) {
 
   start.addEventListener("click", () => {
     async function startGame() {
-      const response = await makeRequest2("/start-game", "POST", {
+      const response = await makeRequest("/start-game", "POST", {
         message: "Juego iniciado"
       });
     }
     startGame();
-    navigateToTelefono("/screenQuestion1T", data);
+    navigateToTelefono("/");
   });
 }

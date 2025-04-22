@@ -1,10 +1,11 @@
 const { emitEvent } = require("../services/socket.service");
 
-const handleChangeScreenEvent = (req, res) => {
-  emitEvent("next-screen");
+const startGame = (req, res) => {
+  const { message } = req.body;
+  emitEvent("startGame", { message });
   res.send({ message: "Cambio de pantalla exitoso" });
 };
 
 module.exports = {
-  handleChangeScreenEvent,
+  startGame,
 };

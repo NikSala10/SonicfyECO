@@ -1,3 +1,4 @@
+import renderScreenQuestion1T from "./screens/question1T.js";
 import renderScreenRegister from "./screens/register.js";
 import renderScreenStart from "./screens/start.js";
 
@@ -19,6 +20,10 @@ function renderRoute(currentRoute) {
     case "/screenStart":
       clearScripts();
       renderScreenStart(currentRoute?.data);
+      break;
+    case "/screenQuestion1T":
+      clearScripts();
+      renderScreenQuestion1T(currentRoute?.data);
       break;
     default:
       const app = document.getElementById("app");

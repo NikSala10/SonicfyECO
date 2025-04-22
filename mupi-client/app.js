@@ -1,5 +1,6 @@
 import renderScreen1 from "./screens/welcome.js";
 import renderScreenInstructions from "./screens/instructions.js";
+import renderScreenQuestion1M from "./screens/question1M.js";
 
 const socket = io("/", { path: "/real-time" });
 
@@ -11,14 +12,18 @@ let route = { path: "/", data: {} };
 renderRoute(route);
 
 function renderRoute(currentRoute) {
-switch (route.path) {
+switch (currentRoute.path) {
   case "/":
     clearScripts();
-    renderScreen1(route.data);
+    renderScreen1(currentRoute.data);
     break;
   case "/screenInstructions":
     clearScripts();
-    renderScreenInstructions(route.data);
+    renderScreenInstructions(currentRoute.data);
+    break;
+  case "/screenQuestion1M":
+    clearScripts();
+    renderScreenQuestion1M(currentRoute.data);
     break;
   default:
     const app = document.getElementById("app");

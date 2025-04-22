@@ -3,7 +3,7 @@ const path = require("path");
 const { createServer } = require("http");
 
 const usersRouter = require("./server/routes/users.router");
-const screen1EventsRouter = require("./server/routes/screen1Events.router");
+const startGameRouter = require("./server/routes/startGame.router");
 const { initSocketInstance } = require("./server/services/socket.service");
 
 const PORT = 5058;
@@ -18,7 +18,7 @@ app.use("/telefono-client", express.static(path.join(__dirname, "telefono-client
 
 // Routes
 app.use("/", usersRouter);
-app.use("/", screen1EventsRouter);
+app.use("/", startGameRouter);
 
 // Services
 initSocketInstance(httpServer);

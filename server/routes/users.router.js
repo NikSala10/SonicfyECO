@@ -6,4 +6,5 @@ const router = express.Router();
 
 router.post("/register", registerPlayer);
 
+
 module.exports = router;

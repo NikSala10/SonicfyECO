@@ -1,4 +1,4 @@
-import { socket } from "../app.js";
+import { navigateToMupi, socket } from "../app.js";
 
 export default function renderScreenInstructions() {
   const app = document.getElementById("app");
@@ -9,4 +9,8 @@ export default function renderScreenInstructions() {
           <button id="change-screen-btn">Change screen on app 2</button>
       </div>
       `;
+    socket.on("startGame", (data) => {
+        console.log("Evento startGame recibido", data);
+    navigateToMupi("/screenQuestion1M");
+    });
 }

@@ -10,21 +10,28 @@ export default function renderScreenQuestion1M() {
         <p>Sabrina Carpenter</p>
         <h4>Your percentage on this test is:</h4>
         <h4>15%</h4>
-        <h6>Congratulations, you got the maximum percentage for this challenge which  </h6>
+        <h5>Congratulations, you got the maximum percentage for this challenge which  </h5>
         <h4>was 15%!</h4>
         </div>
         <div id="ladylevel-1">
         <p>Lady Gaga</p>
         <h4>Your percentage on this test is:</h4>
         <h4>15%</h4>
-        <h6>Congratulations, you got the maximum percentage for this challenge which  </h6>
+        <h5>Congratulations, you got the maximum percentage for this challenge which  </h5>
         <h4>was 15%!</h4>
         </div>
-        <div id="ladylevel-1">
-        <p>Lady Gaga</p>
+        <div id="shakiralevel-1">
+        <p>Shakira</p>
         <h4>Your percentage on this test is:</h4>
         <h4>15%</h4>
-        <h6>Congratulations, you got the maximum percentage for this challenge which  </h6>
+        <h5>Congratulations, you got the maximum percentage for this challenge which  </h5>
+        <h4>was 15%!</h4>
+        </div>
+        <div id="Articlevel-1">
+        <p>Artic Monkeys</p>
+        <h4>Your percentage on this test is:</h4>
+        <h4>15%</h4>
+        <h5>Congratulations, you got the maximum percentage for this challenge which  </h5>
         <h4>was 15%!</h4>
         </div>
 

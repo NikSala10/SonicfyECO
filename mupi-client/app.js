@@ -1,7 +1,7 @@
 import renderScreen1 from "./screens/welcome.js";
 import renderScreenInstructions from "./screens/instructions.js";
 import renderScreenQuestion1M from "./screens/question1M.js";
-import counterM from "./screens/counterM.js"
+import counterM from "./screens/fan1M.js"
 
 const socket = io("/", { path: "/real-time" });
 
@@ -52,10 +52,10 @@ async function makeRequest(url, method, body) {
   return response;
 }
 
-function counterM (path, data) {
+function fan1M (path, data) {
   route = { path, data };
   renderRoute(route);
 }
 
 export { navigateToMupi, socket, makeRequest };
-export { counterM, socket, makeRequest };
+export { fan1M, socket, makeRequest };

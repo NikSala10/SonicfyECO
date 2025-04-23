@@ -3,7 +3,7 @@ import { navigateToMupi, socket } from "../app.js";
 export default function navigateToMupi() {
     const app = document.getElementById("app");
     app.innerHTML = `
-          <div id="screenCounter">
+          <div id="select-artista">
             <h1>Prove that you're the fan!</h1>
         
         <p>Pick your favorite artist!</p>

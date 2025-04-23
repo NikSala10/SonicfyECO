@@ -19,18 +19,18 @@ export default function renderScreenQuestion1M() {
       <p>C  Shallow</p>
       </div>
       <div id="shakira">
-      <h5>What was Shakira's first album in English?</h5>
+      <h5>Which Shakira song became the official anthem of the 2010 World Cup?</h5>
 
-      <p>A  Laundry Service</p>
-      <p>B  Oral Fixation Vol. 2</p>
-      <p>C  Pies Descalzos</p>
+      <p>A  Hips Don't Lie</p>
+      <p>B  Waka Waka</p>
+      <p>C  La La La</p>
       </div>
       <div id="artics">
-      <h5>What is the name of Arctic Monkeys' debut album released in 2006?</h5>
+      <h5Which of these songs was the first to reach #1 in the UK?</h5>
     
-      <p>A  Favourite Worst Nightmare</p>
-      <p>B  Humbug</p>
-      <p>C  Whatever People Say I Am, That's What I'm Not</p>
+      <p>A  I Bet You Look Good on the Dancefloor</p>
+      <p>B   Do I Wanna Know?</p>
+      <p>C R U Mine?</p>
       </div>
       <p>On your cell phone screen, select the correct answer.</p>
       </div>`;

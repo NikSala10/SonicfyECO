@@ -1,4 +1,5 @@
 const { getAllArtists } = require("../db/artist.db");
+const { emitEvent } = require("../services/socket.service");
 
 let artistSelected = null;
 
@@ -19,6 +20,7 @@ const checkSelectArtist = (req, res) => {
     } else {
         res.json({ artistSelected: null });
     }
+    emitEvent("artistSelected", artistSelected)
 };
 
 

@@ -70,6 +70,6 @@ export default function renderScreenSelectArtistT(data) {
         }
     }
 
-getArtists();
+    getArtists();
 
 }

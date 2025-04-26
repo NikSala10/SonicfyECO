@@ -17,32 +17,26 @@ export default function renderScreenFan1M() {
         const timerElement = document.getElementById("timer");
         const selectedArtistDiv = document.getElementById("select-artista");
     
+        socket.on("artistSelected", (artist) => {
+            if (artist) {
+                clearInterval(interval);
+                selectedArtistDiv.innerHTML = `
+                <div>
+                    <h1>Artist selected</h1>
+                    <p>The artist you selected is:</p>
+                    <p>${artist}</p>
+                </div>
+                `;
+                setTimeout(() => {
+                navigateToMupi("/screenQuestion1M", { selectedArtist: artist});
+                }, 2000);
+
+            }
+        }) 
+
         const interval = setInterval(async () => {
             secondsRemaining--;
             timerElement.textContent = secondsRemaining;
-            try {
-                const response = await makeRequest("/check-select-artist", "GET");
-                
-                if (response.artistSelected) {
-                    clearInterval(interval);
-                    selectedArtistDiv.innerHTML = `
-                    <div>
-                        <h1>Artist selected</h1>
-                        <p>The artist you selected is:</p>
-                        <p>${response.artistSelected}</p>
-                    </div>
-                    `;
-                    setTimeout(() => {
-                    navigateToMupi("/screenQuestion1M", { selectedArtist: response.artistSelected });
-                    }, 2000);
-                   
-                    return;
-                    
-                }
-            } catch (error) {
-                console.error("Error checking artist:", error);
-            }
-
             if (secondsRemaining <= 0) {
                 clearInterval(interval);
                 navigateToMupi("/noSelectedArtist")

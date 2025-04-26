@@ -1,16 +1,15 @@
-export default function renderScreenQuestion1M() {
+export default function renderScreenQuestion2M() {
     const app = document.getElementById("app");
     app.innerHTML = `
         <div id="screen2">
           <h2>Challenge 2</h2>
           Your time for this 6 seconds to respond if you do not respond in the given time you will lose
           <div id="sabrina-2">
-          <h5>Which of these songs is NOT on the album "Emails I Can't Send"?</h5>
-      
-          <p>A 2014</p>
-          <p>B 2015</p>
-          <p>C 2016</p>
-      </div>
+            <h5>Which of these songs is NOT on the album "Emails I Can't Send"?</h5>
+            <p>A 2014</p>
+            <p>B 2015</p>
+            <p>C 2016</p>
+        </div>
       <div id="lady">
       <h5>What is the name of the Lady Gaga song that won the Oscar for Best Original Song?</h5>
     

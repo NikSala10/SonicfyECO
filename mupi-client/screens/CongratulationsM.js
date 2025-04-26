@@ -1,6 +1,6 @@
 import { navigateToMupi, socket } from "../app.js";
 
-export default function navigateToMupi() {
+export default function renderScreenCongratulationsM() {
     const app = document.getElementById("app");
     app.innerHTML = `
           <div id="Congratulations!">
@@ -29,8 +29,8 @@ export default function navigateToMupi() {
       
         </div>
         `;
-      socket.on("startGame", (data) => {
-          console.log("Evento startGame recibido", data);
-      navigateToMupi("/screenQuestion1M");
-      });
+    //   socket.on("startGame", (data) => {
+    //       console.log("Evento startGame recibido", data);
+    //   navigateToMupi("/screenQuestion1M");
+    //   });
   }

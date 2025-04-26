@@ -20,6 +20,6 @@ export default function renderScreenStart(data) {
       });
     }
     startGame();
-    navigateToTelefono("/screenQuestion1T", data);
+    navigateToTelefono("/screenSelectArtist", data);
   });
 }

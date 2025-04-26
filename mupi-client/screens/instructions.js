@@ -11,6 +11,6 @@ export default function renderScreenInstructions() {
       `;
     socket.on("startGame", (data) => {
         console.log("Evento startGame recibido", data);
-    navigateToMupi("/screenQuestion1M");
+    navigateToMupi("/screenFan1M");
     });
 }

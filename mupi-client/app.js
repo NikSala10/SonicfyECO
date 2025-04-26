@@ -2,6 +2,7 @@ import renderScreen1 from "./screens/welcome.js";
 import renderScreenInstructions from "./screens/instructions.js";
 import renderScreenQuestion1M from "./screens/question1M.js";
 import counterM from "./screens/fan1M.js"
+import renderScreenFan1M from "./screens/fan1M.js";
 
 const socket = io("/", { path: "/real-time" });
 
@@ -21,6 +22,10 @@ switch (currentRoute.path) {
   case "/screenInstructions":
     clearScripts();
     renderScreenInstructions(currentRoute.data);
+    break;
+  case "/screenFan1M":
+    clearScripts();
+    renderScreenFan1M(currentRoute.data);
     break;
   case "/screenQuestion1M":
     clearScripts();
@@ -52,10 +57,4 @@ async function makeRequest(url, method, body) {
   return response;
 }
 
-function fan1M (path, data) {
-  route = { path, data };
-  renderRoute(route);
-}
-
 export { navigateToMupi, socket, makeRequest };
-export { fan1M, socket, makeRequest };

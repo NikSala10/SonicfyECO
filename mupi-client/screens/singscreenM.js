@@ -27,14 +27,13 @@ export default function renderScreenNoSingM() {
              <h4>con mi tigre</h4>
           </div>
           <div id="lady-sing">
-             <h4>Ella se hace la bruta pa' cotizarse </h4>
+             <h4>Pay the toll to the angels </h4>
               <h4>(sing)</h4>
-             <h4>con mi tigre</h4>
+             <h4>In the magic</h4>
           </div>
           
             <p>You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!</p>
             <p>Press the button on your phone to start!</p>
         </div>
         `;
-   
   }

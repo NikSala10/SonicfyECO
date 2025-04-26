@@ -1,6 +1,6 @@
 import { navigateToMupi, socket } from "../app.js";
 
-export default function navigateToMupi() {
+export default function renderScreenNoSelectM() {
     const app = document.getElementById("app");
     app.innerHTML = `
           <div id="noselectartista">

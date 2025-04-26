@@ -29,8 +29,4 @@ export default function renderScreenCongratulationsM() {
       
         </div>
         `;
-    //   socket.on("startGame", (data) => {
-    //       console.log("Evento startGame recibido", data);
-    //   navigateToMupi("/screenQuestion1M");
-    //   });
   }

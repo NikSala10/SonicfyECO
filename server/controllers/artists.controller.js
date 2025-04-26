@@ -5,6 +5,13 @@ const getArtists = async (req, res) => {
     res.send(artists);
 };
 
+const startQuestionGame = (req, res) => {
+    const { message, artist } = req.body;
+    emitEvent("startGame", { message, artist });
+    res.send({ message: "Cambio de pantalla exitoso" });
+  };
+
 module.exports = {
     getArtists,
+    startQuestionGame,
 };

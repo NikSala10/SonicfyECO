@@ -37,9 +37,6 @@ export default function renderScreenQuestion1M() {
       <p>On your cell phone screen, select the correct answer.</p>
       </div>
       `;
-    // socket.on("notificar-pantalla-instructions", (data) => {
-    //   console.log("Usuario registrado:", data.name);
-    //   navigateToMupi("/screenInstructions", { name: data.name });
-    // });
+
 
 }

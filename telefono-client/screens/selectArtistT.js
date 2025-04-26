@@ -38,8 +38,13 @@ export default function renderScreenSelectArtistT(data) {
                         <p>${artist.name}</p>
                     </div>
                  `
-                console.log("Artista seleccionado:", artist.name);
                 setTimeout(() => {
+                    async function startQuestions() {
+                        const response = await makeRequest2("/select-artist", "POST", {
+                          message: "Artista seleccionado", artistSelected: artist.name
+                        });
+                      }
+                    startQuestions();
                     navigateToTelefono("/screenQuestion1T", { selectedArtist: artist.name });
                 }, 2000);
             });

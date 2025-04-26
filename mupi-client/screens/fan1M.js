@@ -11,8 +11,4 @@ export default function renderScreenFan1M() {
             <p>Good luck!</p>
         </div>
         `;
-    // socket.on("startGame", (data) => {
-    //     console.log("Evento startGame recibido", data);
-    //     navigateToMupi("/screenQuestion1M");
-    // });
   }

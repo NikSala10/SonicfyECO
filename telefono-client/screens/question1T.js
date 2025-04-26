@@ -1,6 +1,5 @@
 import { navigateToTelefono } from "../app.js";
 
-
 export default function renderScreenQuestion1T(data) {
   const app = document.getElementById("app");
   app.innerHTML = `
@@ -22,15 +21,15 @@ export default function renderScreenQuestion1T(data) {
         </div>
         `;
 
-  const start = document.getElementById("start");
+  // const start = document.getElementById("start");
 
-  start.addEventListener("click", () => {
-    async function startGame() {
-      const response = await makeRequest("/start-game", "POST", {
-        message: "Juego iniciado"
-      });
-    }
-    startGame();
-    navigateToTelefono("/");
-  });
+  // start.addEventListener("click", () => {
+  //   async function startGame() {
+  //     const response = await makeRequest("/start-game", "POST", {
+  //       message: "Juego iniciado"
+  //     });
+  //   }
+  //   startGame();
+  //   navigateToTelefono("/");
+  // });
 }

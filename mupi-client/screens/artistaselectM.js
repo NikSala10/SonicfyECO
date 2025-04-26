@@ -1,6 +1,6 @@
 import { navigateToMupi, socket } from "../app.js";
 
-export default function renderScreenFan1M() {
+export default function renderScreenartistaselectM() {
     const app = document.getElementById("app");
     app.innerHTML = `
           <div id="select-artista">
@@ -19,9 +19,8 @@ export default function renderScreenFan1M() {
                 <h3>Arctic Monkeys</h3>
                </div> 
             
-            
         </div>
         `;
      
-        
+
   }

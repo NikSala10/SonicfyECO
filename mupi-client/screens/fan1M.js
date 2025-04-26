@@ -9,6 +9,13 @@ export default function renderScreenFan1M() {
             <p>If you get them right... the ticket could be yours!</p>
             <p>Ready for the challenge?</p>
             <p>Good luck!</p>
+          <div id="select-artista">
+                <h1>Prove that you're the fan!</h1>
+                <p>Pick your favorite artist!</p>
+                <p>If you get them right... the ticket could be yours!</p>
+                <p>Ready for the challenge?</p>
+                <p>Good luck!</p>
+            
         </div>
         `;
   }

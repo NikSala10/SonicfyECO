@@ -1,4 +1,4 @@
-export default function renderScreenQuestion1M() {
+export default function renderScreenQuestion2M() {
     const app = document.getElementById("app");
     app.innerHTML = `
         <div id="screen2">

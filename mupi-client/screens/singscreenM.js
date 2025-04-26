@@ -16,8 +16,24 @@ export default function renderScreenNoSingM() {
                 <h4>(sing)</h4>
                 <h4>drop coloured tongue</h4>
           </div>
-            <p>But no worries — you'll get<br>another chance soon.</p>
-            <p>Respond quickly and confidently - you can do it!</p>
+          <div id="sabrina-sing">
+                <h4>I'm working late, 'cause I'm a singer</h4>
+                <h4>(sing)</h4>
+                <h4>Too bad your ex don't do it for ya</h4>
+          </div>
+          <div id="shakira-sing">
+             <h4>Ella se hace la bruta pa' cotizarse </h4>
+             <h4>(sing)</h4>
+             <h4>con mi tigre</h4>
+          </div>
+          <div id="lady-sing">
+             <h4>Ella se hace la bruta pa' cotizarse </h4>
+              <h4>(sing)</h4>
+             <h4>con mi tigre</h4>
+          </div>
+          
+            <p>You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!</p>
+            <p>Press the button on your phone to start!</p>
         </div>
         `;
    

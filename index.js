@@ -4,6 +4,7 @@ const { createServer } = require("http");
 
 const usersRouter = require("./server/routes/users.router");
 const startGameRouter = require("./server/routes/startGame.router");
+const artistsRouter = require("./server/routes/artists.router");
 const { initSocketInstance } = require("./server/services/socket.service");
 
 const PORT = 5058;
@@ -19,6 +20,7 @@ app.use("/telefono-client", express.static(path.join(__dirname, "telefono-client
 // Routes
 app.use("/", usersRouter);
 app.use("/", startGameRouter);
+app.use("/", artistsRouter);
 
 // Services
 initSocketInstance(httpServer);

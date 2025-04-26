@@ -12,7 +12,7 @@ export default function renderscreenwelcome() {
         <p>Win a ticket to your favorite</p>
         <p>Artist's Concert</p>
 
-    </div>
+      </div>
       `;
     socket.on("notificar-pantalla-instructions", (data) => {
       console.log("Usuario registrado:", data.name);

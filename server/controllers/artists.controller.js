@@ -1,17 +1,29 @@
 const { getAllArtists } = require("../db/artist.db");
 
+let artistSelected = null;
+
 const getArtists = async (req, res) => {
     const artists = await getAllArtists();
     res.send(artists);
 };
 
-const startQuestionGame = (req, res) => {
+const selectArtist = (req, res) => {
     const { message, artist } = req.body;
-    emitEvent("startGame", { message, artist });
-    res.send({ message: "Cambio de pantalla exitoso" });
+    artistSelected = artist;
+    res.send({ message: "Artista recibido correctamente" });
   };
+
+const checkSelectArtist = (req, res) => {
+    if (artistSelected) {
+        res.json({ artistSelected });
+    } else {
+        res.json({ artistSelected: null });
+    }
+};
+
 
 module.exports = {
     getArtists,
-    startQuestionGame,
+    selectArtist,
+    checkSelectArtist,
 };

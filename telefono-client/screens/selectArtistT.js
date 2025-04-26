@@ -21,39 +21,55 @@ export default function renderScreenSelectArtistT(data) {
 
     async function getArtists() {
         try {
-          const response = await makeRequest2("/artists", "GET");    
-          response.forEach(artist => {
-            const artistCard = document.createElement("div");
-            artistCard.classList.add("artist-card");
-            artistCard.innerHTML = `
-              <img src="${artist.img}" alt="${artist.name}">
-              <h3>${artist.name}</h3>
-            `;
-            artistCard.addEventListener("click", () => {
-                 selectedArtistDiv.innerHTML = `
-                    <div>
-                        <h1>Selected artist </h1>
-                        <p>the artist you selected is:</p>
-                        <img src="${artist.img}" alt="${artist.name}">
-                        <p>${artist.name}</p>
-                    </div>
-                 `
-                setTimeout(() => {
-                    async function startQuestions() {
-                        const response = await makeRequest2("/select-artist", "POST", {
-                          message: "Artista seleccionado", artistSelected: artist.name
+            const response = await makeRequest2("/artists", "GET");
+            response.forEach(artist => {
+                const artistCard = document.createElement("div");
+                artistCard.classList.add("artist-card");
+                artistCard.innerHTML = `
+                    <img src="${artist.img}" alt="${artist.name}">
+                    <h3>${artist.name}</h3>
+                `;
+                artistsContainer.appendChild(artistCard);
+
+                artistCard.addEventListener("click", async () => {
+                    try {
+                        const selectResponse = await makeRequest2("/select-artist", "POST", {
+                            message: "Artista seleccionado", 
+                            artist: artist.name
                         });
-                      }
-                    startQuestions();
-                    navigateToTelefono("/screenQuestion1T", { selectedArtist: artist.name });
-                }, 2000);
+
+                        const checkResponse = await makeRequest2("/check-select-artist", "GET");
+                        
+                        if (checkResponse.artistSelected) {
+                           
+                                selectedArtistDiv.innerHTML = `
+                                    <div>
+                                        <h1>Selected artist</h1>
+                                        <p>The artist you selected is:</p>
+                                        <img src="${artist.img}" alt="${artist.name}">
+                                        <p>${artist.name}</p>
+                                    </div>
+                                `;
+                            
+
+                            setTimeout(async () => {
+                            navigateToTelefono("/screenQuestion1T", { selectedArtist: artist.name });
+                        }, 2500);
+                           
+                        } else {
+                            navigateToTelefono("/timeUp", { selectedArtist: artist.name });
+                        }
+                    } catch (error) {
+                        console.error("Error checking artist or selecting:", error);
+                    }
+                });
             });
-            artistsContainer.appendChild(artistCard);
-          });
-    
+
         } catch (error) {
-          console.error("Error fetching artists", error);
+            console.error("Error fetching artists", error);
         }
     }
+
 getArtists();
+
 }

@@ -27,6 +27,10 @@ switch (currentRoute.path) {
     clearScripts();
     renderScreenFan1M(currentRoute.data);
     break;
+  case "/noSelectedArtist":
+    clearScripts();
+    renderScreenFan1M(currentRoute.data);
+    break;
   case "/screenQuestion1M":
     clearScripts();
     renderScreenQuestion1M(currentRoute.data);

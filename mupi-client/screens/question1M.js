@@ -3,7 +3,7 @@
 export default function renderScreenQuestion1M() {
   const app = document.getElementById("app");
   app.innerHTML = `
-      <div id="screen1">
+      <div id="question1M">
       <h1>Challenge 1</h1>
       <p><strong>Your time for this 6 seconds to respond if you do not respond in the given time you will lose</p>
       <div id="sabrina">

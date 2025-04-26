@@ -13,8 +13,5 @@ export default function navigateToMupi() {
       
         </div>
         `;
-      socket.on("startGame", (data) => {
-          console.log("Evento startGame recibido", data);
-      navigateToMupi("/screenQuestion1M");
-      });
+     
   }

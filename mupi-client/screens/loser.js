@@ -16,8 +16,5 @@ export default function navigateToMupi() {
         <p>If there are any irregularities, please contact us at spotify@gmail.com</p>
         </div>
         `;
-      socket.on("startGame", (data) => {
-          console.log("Evento startGame recibido", data);
-      navigateToMupi("/screenQuestion1M");
-      });
+     
   }

@@ -16,8 +16,5 @@ export default function navigateToMupi() {
             <p>Respond quickly and confidently - you can do it!</p>
         </div>
         `;
-      socket.on("no-selección-artista", (data) => {
-          console.log("Evento startGame recibido", data);
-      navigateToMupi("/screenQuestion1M");
-      });
+   
   }

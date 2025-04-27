@@ -3,6 +3,8 @@ import renderScreenInstructions from "./screens/instructions.js";
 import renderScreenQuestion1M from "./screens/question1M.js";
 import renderScreenFan1M from "./screens/fan1M.js";
 import renderScreenNoSelectM from "./screens/noselec.js";
+import renderScreenQuestion2M from "./screens/question2M.js";
+import renderScreenNoSingM from "./screens/singscreenM.js";
 
 const socket = io("/", { path: "/real-time" });
 
@@ -34,6 +36,14 @@ switch (currentRoute.path) {
   case "/screenQuestion1M":
     clearScripts();
     renderScreenQuestion1M(currentRoute.data);
+    break;
+  case "/screenQuestion2M":
+    clearScripts();
+    renderScreenQuestion2M(currentRoute.data);
+    break;
+   case "/screenSingingM":
+    clearScripts();
+    renderScreenNoSingM(currentRoute.data);
     break;
   default:
     const app = document.getElementById("app");

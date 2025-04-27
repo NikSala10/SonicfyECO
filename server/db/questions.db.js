@@ -20,7 +20,7 @@ const questions = [
         },
         {
           
-          question3: "You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!",
+          question3: "I'm working late, 'cause I'm a singer\n(Sign)\ncome and get this pollen",
           correctAnswer: "I'm working late, 'cause I'm a singer\nOh, he looks so cute wrapped 'round my finger\nMy twisted humor makes him laugh so often\nMy honey bee, come and get this pollen"
         }
       ]
@@ -46,7 +46,7 @@ const questions = [
         },
         {
           
-          question3: "You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!",
+          question3: "Ella se hace la bruta pa' cotizarse\ncon mi tigre",
           correctAnswer: "Ella se hace la bruta pa' cotizarse conmigo en frente\nElla se hace la gata en celo contigo\nTe cotorrea al oído pa' tenerte en alta\nElla muere por ti, tú por mí es que matas\nYo sigo tranquila, como una paloma de esquina\nMientras ella se pasa en su BM al lado mío\nYo, de aquí, no me voy\nLo que está pa' mí, ninguna va a poder quitármelo de un tirón\nYo soy loca con mi tigre"
         }
       ]
@@ -72,7 +72,7 @@ const questions = [
         },
         {
         
-          question3: "You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!",
+          question3: "Pay the toll to the angels\n(Sign)\nIn the magic",
           correctAnswer: "Pay the toll to the angels\nDrawin' circles in the clouds\nKeep your mind on the distance\nWhen the devil turns around\nHold me in your heart tonight\nIn the magic"
         }
       ]
@@ -98,7 +98,7 @@ const questions = [
         },
         {
         
-          question3: "You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!",
+          question3: "You got the lights\n(Sing)\ndrop coloured tongue",
           correctAnswer: "You got the lights on in the afternoon\nAnd the nights are drawn out long\nAnd you're kissin' to cut through the gloom\nWith a cough drop coloured tongue"
         }
       ]

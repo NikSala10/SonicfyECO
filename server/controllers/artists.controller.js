@@ -1,4 +1,5 @@
 const { getAllArtists } = require("../db/artist.db");
+const { getAllQuestions } = require("../db/questions.db");
 const { emitEvent } = require("../services/socket.service");
 
 let artistSelected = null;
@@ -14,17 +15,16 @@ const selectArtist = (req, res) => {
     res.send({ message: "Artista recibido correctamente" });
   };
 
-const checkSelectArtist = (req, res) => {
+const checkSelectArtist =  (req, res) => {
     if (artistSelected && artistSelected.name && artistSelected.img) {
         emitEvent("artist-Selected", artistSelected);
         res.send({ message: "Artista seleccionado correctamente", artistSelected });
     } 
     else {
         artistSelected = null;
-        emitEvent("artist-Selected", null);
+        emitEvent("artist-Selected", { message: "No hay artista seleccionado" })
         return res.send({ message: "No hay artista seleccionado" });
     }
-    
 };
 
 

@@ -1,4 +1,4 @@
-const ante = [
+const questions = [
     {
       artist: "Sabrina Carpenter",
       questions: [
@@ -104,3 +104,11 @@ const ante = [
       ]
     }
   ];
+
+  const getAllQuestions = async () => {
+    return questions;
+  };
+  
+  module.exports = {
+    getAllQuestions,
+  };

@@ -18,7 +18,6 @@ export default function renderScreenSelectArtistT(data) {
     const artistsContainer = document.getElementById("artists");
     const selectedArtistDiv = document.getElementById("screenSelectArtistT");
 
-    // Function to fetch and display artists
     async function getArtists() {
         try {
             const response = await makeRequest2("/artists", "GET");
@@ -68,6 +67,5 @@ export default function renderScreenSelectArtistT(data) {
         }
     }
 
-    // Get artists when screen is loaded
     getArtists();
 }

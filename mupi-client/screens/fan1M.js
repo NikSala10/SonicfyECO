@@ -17,14 +17,18 @@ export default function renderScreenFan1M() {
         const timerElement = document.getElementById("timer");
         const selectedArtistDiv = document.getElementById("select-artista");
     
-        socket.on("artistSelected", (artist) => {
+        let artistSelectedReceived = false;
+
+        socket.on("artist-Selected", (artist) => {
+            artistSelectedReceived = true;
             if (artist) {
                 clearInterval(interval);
                 selectedArtistDiv.innerHTML = `
                 <div>
                     <h1>Artist selected</h1>
                     <p>The artist you selected is:</p>
-                    <p>${artist}</p>
+                    <img src="${artist.img}" alt="${artist.name}">
+                    <p>${artist.name}</p>
                 </div>
                 `;
                 setTimeout(() => {
@@ -39,7 +43,9 @@ export default function renderScreenFan1M() {
             timerElement.textContent = secondsRemaining;
             if (secondsRemaining <= 0) {
                 clearInterval(interval);
-                navigateToMupi("/noSelectedArtist")
+                if (!artistSelectedReceived) { 
+                    navigateToMupi("/noSelectedArtist"); 
+                }
             }
         }, 1000);
   }

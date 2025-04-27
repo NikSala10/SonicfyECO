@@ -9,18 +9,22 @@ const getArtists = async (req, res) => {
 };
 
 const selectArtist = (req, res) => {
-    const { message, artist } = req.body;
-    artistSelected = artist;
+    const { name, img } = req.body;
+    artistSelected = { name, img };
     res.send({ message: "Artista recibido correctamente" });
   };
 
 const checkSelectArtist = (req, res) => {
-    if (artistSelected) {
-        res.json({ artistSelected });
-    } else {
-        res.json({ artistSelected: null });
+    if (artistSelected && artistSelected.name && artistSelected.img) {
+        emitEvent("artist-Selected", artistSelected);
+        res.send({ message: "Artista seleccionado correctamente", artistSelected });
+    } 
+    else {
+        artistSelected = null;
+        emitEvent("artist-Selected", null);
+        return res.send({ message: "No hay artista seleccionado" });
     }
-    emitEvent("artistSelected", artistSelected)
+    
 };
 
 

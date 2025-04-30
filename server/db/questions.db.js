@@ -12,11 +12,11 @@ const ante = [
         },
         {
           
-          question2: "Which song by Sabrina Carpenter was featured in the Disney Channel movie 'Adventures in Babysitting'?",
-          option1: "Smoke and Fire",
-          option2: "On Purpose",
-          option3: "Wildside",
-          correctAnswer: "Wildside"
+          question2: "Which of these songs is NOT on the album Emails I Can't Send?",
+          option1:  "because i liked a boy",
+          option2:  "Feather"  ,
+          option3: "Vicious",
+          correctAnswer: "Feather"
         },
         {
           
@@ -30,19 +30,19 @@ const ante = [
       questions: [
         {
          
-          question1: "Which song by Shakira was featured in the 2010 FIFA World Cup?",
-          option1: "Hips Don't Lie",
-          option2: "Waka Waka (This Time for Africa)",
-          option3: "La La La",
-          correctAnswer: "Waka Waka (This Time for Africa)"
+          question1: "What was Shakira's first album in English?",
+          option1: "Laundry Service",
+          option2: "Oral Fixation Vol. 2",
+          option3: "Pies Descalzos",
+          correctAnswer: "Laundry Service"
         },
         {
           
-          question2: "Shakira’s album 'Laundry Service' was released in which year?",
-          option1: "2001",
-          option2: "2002",
-          option3: "2003",
-          correctAnswer: "2001"
+          question2: "Which Shakira song became the official anthem of the 2010 World Cup?",
+          option1: "Hips Don't Lie",
+          option2: "Waka Waka",
+          option3: "La La La",
+          correctAnswer: "Waka Waka"
         },
         {
           
@@ -56,18 +56,18 @@ const ante = [
       questions: [
         {
          
-          question1: "Which Lady Gaga album features the hit song 'Poker Face'?",
-          option1: "The Fame",
-          option2: "Born This Way",
-          option3: "ARTPOP",
-          correctAnswer: "The Fame"
+          question1: "What was Lady Gaga's first single to reach #1 on the Billboard Hot 100?",
+          option1: "Poker Face",
+          option2: "Just Dance ",
+          option3: "Bad Romance",
+          correctAnswer: "Just Dance"
         },
         {
          
-          question2: "What year did Lady Gaga release her debut album 'The Fame'?",
-          option1: "2007",
-          option2: "2008",
-          option3: "2009",
+          question2: "What is the name of the Lady Gaga song that won the Oscar for Best Original Song?",
+          option1: "Always Remember Us This Way",
+          option2: "Til It Happens to You",
+          option3: "Shallow",
           correctAnswer: "2008"
         },
         {
@@ -82,19 +82,19 @@ const ante = [
       questions: [
         {
           
-          question1: "Which Arctic Monkeys song has the line 'Do I wanna know?'",
-          option1: "Do I Wanna Know?",
-          option2: "R U Mine?",
-          option3: "Why'd You Only Call Me When You're High?",
-          correctAnswer: "Do I Wanna Know?"
+          question1: "What is the name of Arctic Monkeys' debut album released in 2006?",
+          option1: "Favourite Worst Nightmare",
+          option2: "Humbug",
+          option3: "Whatever People Say I Am, That's What I'm Not",
+          correctAnswer: "Whatever People Say I Am, That's What I'm Not"
         },
         {
           
-          question2: "In which year did Arctic Monkeys release their debut album?",
-          option1: "2004",
-          option2: "2005",
-          option3: "2006",
-          correctAnswer: "2006"
+          question2: "Which of these songs was the first to reach #1 in the UK?",
+          option1: "I Bet You Look Good on the Dancefloor",
+          option2: " Do I Wanna Know?",
+          option3: "R U Mine?",
+          correctAnswer: "I Bet You Look Good on the Dancefloor"
         },
         {
         

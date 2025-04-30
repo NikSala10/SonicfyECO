@@ -15,15 +15,42 @@ export default function renderScreenStart(data) {
         </div>
         `;
 
-  const start = document.getElementById("start");
-
-  start.addEventListener("click", () => {
-    async function startGame() {
-      const response = await makeRequest2("/start-game", "POST", {
-        message: "Juego iniciado"
-      });
-    }
-    startGame();
-    navigateToTelefono("/screenSelectArtist", data);
-  });
+        let secondsRemaining = 6;
+        let buttonClicked = false; // Controla si el botón fue presionado
+      
+        // Función para verificar si el juego ha comenzado
+        const checkGameStarted = async () => {
+          const response = await makeRequest2("/check-game-start", "GET");
+          if (response.gameStarted) {
+            clearInterval(interval);
+            navigateToTelefono("/screenSelectArtist", data); // Navegar a la pantalla cuando el juego se haya iniciado
+          }
+        };
+      
+        // Intervalo que se ejecuta cada segundo
+        const interval = setInterval(() => {
+          secondsRemaining--;
+      
+          if (secondsRemaining <= 0) {
+            clearInterval(interval);
+            if (!buttonClicked) {
+              navigateToTelefono("/TimeUpT", data); // Navegar a la pantalla de tiempo agotado si no se presionó el botón
+            }
+          } else {
+            checkGameStarted();
+          }
+        }, 1000);
+      
+        const start = document.getElementById("start");
+        start.addEventListener("click", () => {
+          // Si el usuario hace clic en "Start"
+          buttonClicked = true; // Marca que el botón fue presionado
+          async function startGame() {
+            const response = await makeRequest2("/start-game", "POST", {
+              message: "Juego iniciado"
+            });
+          }
+          startGame();
+          navigateToTelefono("/screenSelectArtist", data); // Navega a la pantalla de selección de artista inmediatamente
+        });
 }

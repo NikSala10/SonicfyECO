@@ -13,8 +13,15 @@ const checkGameStart = (req, res) => {
   res.send({ gameStarted });
 };
 
+const updateGameStatus = (req, res) => {
+  const { secondsRemaining, gameStarted } = req.body;
+  console.log(`Estado actual - Segundos: ${secondsRemaining}, Iniciado: ${gameStarted}`);
+  res.json({ status: "OK" });
+};
+
 module.exports = {
   startGame,
   checkGameStart,
+  updateGameStatus,
 };
 

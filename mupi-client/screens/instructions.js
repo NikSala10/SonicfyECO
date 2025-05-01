@@ -29,7 +29,30 @@ export default function renderScreenInstructions() {
       </div>
       `;
       
-    socket.on("startGame", (data) => {
-    navigateToMupi("/screenFan1M", { name: data.name });
+  let secondsRemaining = 10;
+  let gameStarted = false;
+
+  const interval = setInterval(async () => {
+    document.getElementById("countdown").textContent = `Tiempo restante: ${secondsRemaining}s`;
+
+    const response = await makeRequest2("/check-game-start", "GET");
+    if (response && response.gameStarted) {
+      clearInterval(interval);
+      gameStarted = true;
+      navigateToMupi("/screenFan1M", { name: "Usuario" });
+      return;
+    }
+
+    secondsRemaining--;
+    await makeRequest2("/update-game-status", "POST", {
+      secondsRemaining,
+      gameStarted: false
     });
+
+    if (secondsRemaining < 0 && !gameStarted) {
+      clearInterval(interval);
+      navigateToMupi("/noSelectedArtist");
+    }
+  }, 1000);
+  
 }

@@ -30,7 +30,7 @@ export default function renderScreenStart(data) {
       if (secondsRemaining <= 0) {
         clearInterval(interval);
         if (!buttonClicked) {
-          navigateToTelefono("/TimeUpT", data);
+          navigateToTelefono("/timeUp", data);
         }
       } else {
         secondsRemaining--;

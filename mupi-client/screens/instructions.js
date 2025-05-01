@@ -1,3 +1,4 @@
+import { makeRequest2 } from "../../telefono-client/app.js";
 import { navigateToMupi, socket } from "../app.js";
 
 export default function renderScreenInstructions() {
@@ -33,8 +34,7 @@ export default function renderScreenInstructions() {
   let gameStarted = false;
 
   const interval = setInterval(async () => {
-    document.getElementById("countdown").textContent = `Tiempo restante: ${secondsRemaining}s`;
-
+    
     const response = await makeRequest2("/check-game-start", "GET");
     if (response && response.gameStarted) {
       clearInterval(interval);

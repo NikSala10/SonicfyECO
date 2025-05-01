@@ -1,4 +1,4 @@
-import { makeRequest, navigateToMupi, socket } from "../app.js";
+import {navigateToMupi, socket } from "../app.js";
 
 export default function renderScreenInstructions() {
   const app = document.getElementById("app");

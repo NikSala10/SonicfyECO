@@ -12,6 +12,7 @@ const getArtists = async (req, res) => {
 const selectArtist = (req, res) => {
     const { name, img } = req.body;
     artistSelected = { name, img };
+    emitEvent("artist-Selected", artistSelected);
     res.send({ message: "Artista recibido correctamente" });
   };
 

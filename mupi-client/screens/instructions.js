@@ -28,6 +28,7 @@ export default function renderScreenInstructions() {
           Tap "Start" to begin the challenge</h3>
       </div>
       `;
+      
     socket.on("startGame", (data) => {
     navigateToMupi("/screenFan1M", { name: data.name });
     });

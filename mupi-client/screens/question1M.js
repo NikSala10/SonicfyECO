@@ -12,7 +12,6 @@ export default function renderScreenQuestion1M(selectedArtist) {
     }
 
     const artistName = selectedArtist.selectedArtist.name;
-    console.log("Response:", response);
     const artistData = response.find(artist => artist.artist.toLowerCase() === artistName.toLowerCase());
     if (artistData) {
       const question = artistData.questions[0];  

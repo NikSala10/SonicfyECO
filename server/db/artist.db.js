@@ -12,7 +12,7 @@ const artists = [
       img: "https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2Flady.png?alt=media&token=5fa20f34-84ab-465a-9d5c-3c5c4f68f501"
     },
     {
-      name: "Artic Monkeys",
+      name: "Arctic Monkeys",
       img: "https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2Fartics.png?alt=media&token=80d291db-fafb-4c07-a421-6574efa95bf9"
     }
   ];

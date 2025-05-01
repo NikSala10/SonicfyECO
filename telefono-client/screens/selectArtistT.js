@@ -16,54 +16,61 @@ export default function renderScreenSelectArtistT(data) {
     `;
 
     const artistsContainer = document.getElementById("artists");
-    const selectedArtistDiv = document.getElementById("screenSelectArtistT");
+    let artistSelected = false;
+
+
+    const TimeOutMs = 6000;
+    const timeout = setTimeout(() => {
+        if (!artistSelected) {
+        navigateToTelefono("/timeUp", data);
+        }
+    }, TimeOutMs);
 
     async function getArtists() {
         try {
-            const response = await makeRequest2("/artists", "GET");
-            response.forEach(artist => {
-                const artistCard = document.createElement("div");
-                artistCard.classList.add("artist-card");
-                artistCard.innerHTML = `
+        const response = await makeRequest2("/artists", "GET");
+        response.forEach((artist) => {
+            const artistCard = document.createElement("div");
+            artistCard.classList.add("artist-card");
+            artistCard.innerHTML = `
+            <img src="${artist.img}" alt="${artist.name}">
+            <h3>${artist.name}</h3>
+            `;
+            artistsContainer.appendChild(artistCard);
+
+            artistCard.addEventListener("click", async () => {
+            if (artistSelected) return;
+            artistSelected = true;
+            clearTimeout(timeout); 
+
+            try {
+                const body = {
+                name: artist.name,
+                img: artist.img,
+                };
+
+                await makeRequest2("/select-artist", "POST", body);
+
+                const selectedDiv = document.getElementById("screenSelectArtistT");
+                selectedDiv.innerHTML = `
+                <div>
+                    <h1>Selected artist</h1>
+                    <p>The artist you selected is:</p>
                     <img src="${artist.img}" alt="${artist.name}">
-                    <h3>${artist.name}</h3>
+                    <p>${artist.name}</p>
+                </div>
                 `;
-                artistsContainer.appendChild(artistCard);
 
-                artistCard.addEventListener("click", async () => {
-                    try {
-                        const body = {
-                            name: artist.name,
-                            img: artist.img,
-                        };
-
-                        const selectResponse = await makeRequest2("/select-artist", "POST", body);
-                        const checkResponse = await makeRequest2("/check-select-artist", "GET");
-                        
-                        if (checkResponse.artistSelected) {
-                            selectedArtistDiv.innerHTML = `
-                                <div>
-                                    <h1>Selected artist</h1>
-                                    <p>The artist you selected is:</p>
-                                    <img src="${checkResponse.artistSelected.img}" alt="${checkResponse.artistSelected.name}">
-                                    <p>${checkResponse.artistSelected.name}</p>
-                                </div>
-                            `;
-
-                            setTimeout(() => {
-                                navigateToTelefono("/screenQuestion1T", { selectedArtist: artist.name });
-                            }, 2500);
-                        } else {
-                            console.log("No artist selected, redirecting to timeUp.");
-                            navigateToTelefono("/timeUp");
-                        }
-                    } catch (error) {
-                        console.error("Error during artist selection:", error);
-                    }
-                });
+                setTimeout(() => {
+                navigateToTelefono("/screenQuestion1T", { selectedArtist: artist.name });
+                }, 2500);
+            } catch (error) {
+                console.error("Error selecting artist:", error);
+            }
             });
+        });
         } catch (error) {
-            console.error("Error fetching artists:", error);
+        console.error("Error fetching artists:", error);
         }
     }
 

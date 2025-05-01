@@ -1,4 +1,4 @@
-import { makeRequest2, navigateToTelefono } from "../app.js";
+import { makeRequest2, navigateToTelefono, socket } from "../app.js";
 
 
 export default function renderScreenStart(data) {
@@ -18,23 +18,24 @@ export default function renderScreenStart(data) {
     let secondsRemaining = 10;
     let buttonClicked = false;
   
-    const checkGameStarted = async () => {
-      const response = await makeRequest2("/check-game-start", "GET");
-      if (response && response.gameStarted) {
+    socket.on("game-status", ({ gameStarted }) => {
+      if (gameStarted && !buttonClicked) {
         clearInterval(interval);
         navigateToTelefono("/screenSelectArtist", data);
       }
-    };
+    });
   
-    const interval = setInterval(() => {
+    const interval = setInterval(async () => {
       if (secondsRemaining <= 0) {
         clearInterval(interval);
         if (!buttonClicked) {
+          await makeRequest2("/update-game-status", "POST", {
+            gameStarted: false,
+          });
           navigateToTelefono("/timeUp", data);
         }
       } else {
         secondsRemaining--;
-        checkGameStarted();
       }
     }, 1000);
   

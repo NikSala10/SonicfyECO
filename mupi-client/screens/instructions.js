@@ -1,5 +1,4 @@
-import { makeRequest2 } from "../../telefono-client/app.js";
-import { navigateToMupi, socket } from "../app.js";
+import { makeRequest, navigateToMupi, socket } from "../app.js";
 
 export default function renderScreenInstructions() {
   const app = document.getElementById("app");
@@ -29,30 +28,13 @@ export default function renderScreenInstructions() {
           Tap "Start" to begin the challenge</h3>
       </div>
       `;
-      
-  let secondsRemaining = 10;
-  let gameStarted = false;
 
-  const interval = setInterval(async () => {
-    
-    const response = await makeRequest2("/check-game-start", "GET");
-    if (response && response.gameStarted) {
-      clearInterval(interval);
-      gameStarted = true;
+  socket.on("game-status", ({ gameStarted}) => {
+    if (gameStarted) {
       navigateToMupi("/screenFan1M", { name: "Usuario" });
-      return;
-    }
-
-    secondsRemaining--;
-    await makeRequest2("/update-game-status", "POST", {
-      secondsRemaining,
-      gameStarted: false
-    });
-
-    if (secondsRemaining < 0 && !gameStarted) {
-      clearInterval(interval);
+    } else {
       navigateToMupi("/noSelectedArtist");
     }
-  }, 1000);
+  });
   
 }

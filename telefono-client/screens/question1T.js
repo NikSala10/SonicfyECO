@@ -60,17 +60,14 @@ export default function renderScreenQuestion1T(selectedArtistData) {
 
       async function handleAnswer(selectedOption) {
         if (hasAnswered) return;
-        hasAnswered = true;
-        clearTimeout(timeout);
-        
-        console.log("Enviando respuesta:", selectedOption);
-
+        clearTimeout(timeout); 
+          
         try {
           const body = {
             answer: selectedOption.trim(),
             artist: artistName,
           };
-
+      
           await makeRequest2("/select-answer-question1", "POST", body);
         } catch (err) {
           console.error("Error enviando al servidor:", err);
@@ -78,15 +75,14 @@ export default function renderScreenQuestion1T(selectedArtistData) {
       }
 
       socket.on("notify-answer", (data) => {
-        if (hasAnswered) return;
-
+        if (hasAnswered) return; 
         hasAnswered = true;
         clearTimeout(timeout);
-
+      
         const isCorrect = data.correct;
-
+      
         navigateToTelefono(
-          isCorrect ? "/screenLevelQuestion1T" : "/screenLevelQuestion1T",
+          isCorrect ? "/screenLevelQuestion1T" : "/screenWasWrongT",
           { correct: isCorrect }
         );
       });

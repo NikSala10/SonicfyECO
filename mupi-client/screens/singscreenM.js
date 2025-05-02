@@ -1,4 +1,4 @@
-import { navigateToMupi, socket } from "../app.js";
+import { socket } from "../app.js";
 
 export default function renderScreenNoSingM(selectedArtist) {
     const app = document.getElementById("app");

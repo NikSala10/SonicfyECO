@@ -62,7 +62,7 @@ export default function renderScreenSelectArtistT(data) {
                 `;
 
                 setTimeout(() => {
-                navigateToTelefono("/screenQuestion1T", { selectedArtist: artist.name });
+                navigateToTelefono("/screenQuestion1T", { selectedArtist: artist});
                 }, 2500);
             } catch (error) {
                 console.error("Error selecting artist:", error);

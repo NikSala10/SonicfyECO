@@ -10,7 +10,7 @@ export default function renderScreenRegister() {
         <p>Fill in your details to continue. If you win, you'll receive your ticket in your registered email.</p>
         <input type="text" id="name" placeholder="Name" required>
         <input type="text" id="email" placeholder="Email" required>
-        <button id="register">Create Account</button>
+        <button id="register">Start</button>
         <p>By continuing, you agree to the use of your data to enhance your experience on Sonicfy.</p>
         <div id="messageBox" style="margin-top: 10px; color: green;"></div>
 

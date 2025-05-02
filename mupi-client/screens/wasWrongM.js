@@ -1,6 +1,6 @@
-import { makeRequest2, navigateToTelefono } from "../app.js";
+import { makeRequest, navigateToMupi} from "../app.js";
 
-export default function renderScreenWasWrongT(data) {
+export default function renderScreenWasWrongM(data) {
   const app = document.getElementById("app");
   
   const questionNumber = data.questionNumber 
@@ -38,11 +38,12 @@ export default function renderScreenWasWrongT(data) {
             </svg>
         </div>
         `;
+        
 
         setTimeout(async () => {
             try {
-              await makeRequest2("/reset-game", "POST");
-              navigateToTelefono("/");
+              await makeRequest("/reset-game", "POST");
+              navigateToMupi("/");
             } catch (error) {
               console.error("Error al resetear el juego:", error);
             }

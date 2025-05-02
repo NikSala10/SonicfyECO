@@ -1,4 +1,7 @@
+const { clearAnswers } = require("../db/answersByUser.db");
+const { clearUsers } = require("../db/users.db");
 const { emitEvent } = require("../services/socket.service");
+const { clearSelectedArtist } = require("./artists.controller");
 
 let gameStarted = false;
 
@@ -23,9 +26,26 @@ const updateGameStatus = (req, res) => {
   res.json({ status: "OK" });
 };
 
+const resetGame = async (req, res) => {
+  try {
+    await clearUsers();
+    await clearSelectedArtist();
+    await clearAnswers();
+
+    emitEvent("game-reset", { success: true });
+
+    res.status(200).json({ message: "Juego reiniciado correctamente." });
+  } catch (error) {
+    console.error("Error al reiniciar el juego:", error);
+    res.status(500).json({ message: "Error al reiniciar el juego." });
+  }
+};
+
+
 module.exports = {
   startGame,
   checkGameStart,
   updateGameStatus,
+  resetGame,
 };
 

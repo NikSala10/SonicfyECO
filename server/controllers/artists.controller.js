@@ -28,9 +28,14 @@ const checkSelectArtist =  (req, res) => {
     }
 };
 
+const clearSelectedArtist = async () => {
+    artistSelected = null;
+  };
+
 
 module.exports = {
     getArtists,
     selectArtist,
     checkSelectArtist,
+    clearSelectedArtist,
 };

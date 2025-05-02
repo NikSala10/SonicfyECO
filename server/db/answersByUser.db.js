@@ -10,7 +10,12 @@ const getAllAnswers = async () => {
   return answers;
 };
 
+const clearAnswers = async () => {
+    answers = [];
+  };
+
 module.exports = {
   saveAnswer,
   getAllAnswers,
+  clearAnswers,
 };

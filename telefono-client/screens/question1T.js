@@ -83,7 +83,7 @@ export default function renderScreenQuestion1T(selectedArtistData) {
       
         navigateToTelefono(
           isCorrect ? "/screenLevelQuestion1T" : "/screenWasWrongT",
-          { correct: isCorrect }
+          { correct: isCorrect, questionNumber:0}
         );
       });
 

@@ -2,6 +2,22 @@ import { navigateToTelefono } from "../app.js";
 
 export default function renderScreenLevelQuestion1T(data) {
   const app = document.getElementById("app");
+
+  const questionNumber = data.questionNumber 
+  let porcentaje;
+
+  switch (questionNumber) {
+    case 0:
+      porcentaje = 15;
+      break;
+    case 1:
+      porcentaje = 25;
+      break;
+    case 2:
+      porcentaje =60 ;
+      break;
+  }
+
   app.innerHTML = `
         <div id="screenLevel1T">
             <svg width="382" height="382" viewBox="0 0 382 382" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,8 +28,8 @@ export default function renderScreenLevelQuestion1T(data) {
                 <path d="M217.625 178.281C217.625 185.582 213.652 191.5 208.75 191.5C203.848 191.5 199.875 185.582 199.875 178.281C199.875 170.981 203.848 165.062 208.75 165.062C213.652 165.062 217.625 170.981 217.625 178.281Z" fill="white"/>
             </svg>
             <h1>You've gained</h1>
-            <p>15% of your score</p>
-            <p>Select the correct answer.This question has a percentage of 15%.</p>
+            <p>${porcentaje}% of your score</p>
+            <p>Select the correct answer.This question has a percentage of ${porcentaje}%.</p>
             <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M50 93.75C25.8375 93.75 6.25 74.1625 6.25 50C6.25 25.8375 25.8375 6.25 50 6.25C74.1625 6.25 93.75 25.8375 93.75 50C93.75 74.1625 74.1625 93.75 50 93.75ZM50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100Z" fill="white"/>
                 <path d="M26.78 59.795C28.2739 58.9308 30.1855 59.4413 31.0497 60.9352C34.8368 67.4818 41.9073 71.875 50.0002 71.875C58.0931 71.875 65.1636 67.4818 68.9506 60.9352C69.8148 59.4413 71.7264 58.9308 73.2204 59.795C74.7143 60.6592 75.2248 62.5708 74.3606 64.0648C69.5024 72.4632 60.4143 78.125 50.0002 78.125C39.586 78.125 30.4979 72.4632 25.6397 64.0648C24.7755 62.5708 25.286 60.6592 26.78 59.795Z" fill="white"/>
@@ -22,5 +38,8 @@ export default function renderScreenLevelQuestion1T(data) {
             </svg>
         </div>
         `;
+        setTimeout(async () => {
+            navigateToTelefono("/screenQuestion2T");
+          }, 4000);
 
 }

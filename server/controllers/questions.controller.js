@@ -1,3 +1,4 @@
+const { saveAnswer } = require("../db/answersByUser.db");
 const { getAllQuestions } = require("../db/questions.db");
 const { emitEvent } = require("../services/socket.service");
 
@@ -12,7 +13,7 @@ const getQuestions = async (req, res) => {
 };
 
 const handleAnswerQuestion1 = async (req, res) => {
-  const { answer, artist } = req.body;
+  const { answer, artist, name } = req.body;
 
   try {
     const questions = await getAllQuestions();
@@ -32,6 +33,15 @@ const handleAnswerQuestion1 = async (req, res) => {
 
     const correctAnswer = question.correctAnswer.trim().toLowerCase();
     const isCorrect = answer.trim().toLowerCase() === correctAnswer;
+
+    // Guardar la respuesta del usuario en la base de datos
+    await saveAnswer({
+      name,
+      questionNumber: 1,
+      artist,
+      selectedOption: answer,
+      isCorrect,
+    });
 
     emitEvent("notify-answer1", { correct: isCorrect });
     res.status(200).json({ correct: isCorrect });

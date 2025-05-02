@@ -24,7 +24,7 @@ export default function renderScreenFan1M() {
             artistSelectedReceived = true;
             if (artist) {
               clearInterval(interval);
-              navigateToMupi("/selectArtistM", { selectedArtist: artist }); // OK
+              navigateToMupi("/selectArtistM", { selectedArtist: artist }); 
             }
           });
 

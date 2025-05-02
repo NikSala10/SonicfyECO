@@ -6,6 +6,7 @@ import renderScreenTimeUpT from "./screens/timeUpsT.js";
 import renderScreenQuestion2T from "./screens/question2T .js";
 import renderScreenLevelQuestion1T from "./screens/resultGame1T.js";
 import renderScreenWasWrongT from "./screens/wasWrong.js";
+import renderScreenArtistT from "./screens/artistUserT.js";
 
 const socket = io("/", { path: "/real-time" });
 
@@ -29,6 +30,10 @@ function renderRoute(currentRoute) {
     case "/screenSelectArtist":
       clearScripts();
       renderScreenSelectArtistT(currentRoute?.data);
+      break;
+    case "/screenSelectArtistByUser":
+      clearScripts();
+      renderScreenArtistT(currentRoute?.data);
       break;
     case "/timeUp":
       clearScripts();

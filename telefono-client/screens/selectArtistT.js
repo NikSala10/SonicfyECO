@@ -50,20 +50,7 @@ export default function renderScreenSelectArtistT(data) {
                 };
 
                 await makeRequest2("/select-artist", "POST", body);
-
-                const selectedDiv = document.getElementById("screenSelectArtistT");
-                selectedDiv.innerHTML = `
-                <div>
-                    <h1>Selected artist</h1>
-                    <p>The artist you selected is:</p>
-                    <img src="${artist.img}" alt="${artist.name}">
-                    <p>${artist.name}</p>
-                </div>
-                `;
-
-                setTimeout(() => {
-                navigateToTelefono("/screenQuestion1T", { selectedArtist: artist});
-                }, 2500);
+                navigateToTelefono("/screenSelectArtistByUser", { selectedArtist: artist});
             } catch (error) {
                 console.error("Error selecting artist:", error);
             }

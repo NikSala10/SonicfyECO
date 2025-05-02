@@ -98,7 +98,5 @@ export default function renderScreenQuestion1T(selectedArtistData) {
     }
   }
   
-
-  
   getQuestion();
 }

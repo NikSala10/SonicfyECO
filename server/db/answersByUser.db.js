@@ -1,4 +1,4 @@
-const answers = []; 
+let answers = []; 
 
 const saveAnswer = async (answerData) => {
   answers.push({

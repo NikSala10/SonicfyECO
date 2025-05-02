@@ -74,7 +74,7 @@ export default function renderScreenQuestion1T(selectedArtistData) {
         }
       }
 
-      socket.on("notify-answer", (data) => {
+      socket.on("notify-answer1", (data) => {
         if (hasAnswered) return; 
         hasAnswered = true;
         clearTimeout(timeout);

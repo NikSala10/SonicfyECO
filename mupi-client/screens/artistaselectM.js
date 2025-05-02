@@ -1,25 +1,25 @@
-import { navigateToMupi, socket } from "../app.js";
+import { navigateToMupi } from "../app.js";
 
-export default function renderScreenartistaselectM() {
-    const app = document.getElementById("app");
-    app.innerHTML = `
-          <div id="select-artista">
-                <h1> Artist selected</h1>
-                <p>The artist you selected is:</p>
-               <div id="sabrina-selectt">
-                 <h3>Sabrina Carpenter</h3>
-               </div> 
-               <div id="lady-selectt">
-                 <h3>Lady Gaga</h3>
-               </div> 
-               <div id="Shakira-selectt">
-                 <h3>Shakira</h3>
-               </div> 
-               <div id="Arctic-selectt">
-                <h3>Arctic Monkeys</h3>
-               </div> 
-             </div>
-        `;
-     
+export default function renderScreenArtistaSelectM({ selectedArtist }) {
+  const app = document.getElementById("app");
 
+  if (!selectedArtist) {
+    app.innerHTML = `<p>Error: No artist selected.</p>`;
+    return;
   }
+
+  app.innerHTML = `
+    <div id="select-artista">
+      <h1>Artist selected</h1>
+      <p>The artist you selected is:</p>
+      <div id="artist-selected-card">
+        <img src="${selectedArtist.img}" alt="${selectedArtist.name}" />
+        <h3>${selectedArtist.name}</h3>
+      </div>
+    </div>
+  `;
+
+  setTimeout(() => {
+    navigateToMupi("/screenQuestion1M", { selectedArtist });
+  }, 2000);
+}

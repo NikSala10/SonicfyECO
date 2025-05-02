@@ -60,7 +60,7 @@ export default function renderScreenQuestion1M(selectedArtist) {
     console.error("Error fetching questions:", error);
   }
 }
-socket.on("notify-answer", (data) => {
+socket.on("notify-answer1", (data) => {
   if (hasAnswered) return;
   hasAnswered = true;
   clearTimeout(timeoutId);

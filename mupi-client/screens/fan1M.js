@@ -23,21 +23,10 @@ export default function renderScreenFan1M() {
         socket.on("artist-Selected", (artist) => {
             artistSelectedReceived = true;
             if (artist) {
-                clearInterval(interval);
-                selectedArtistDiv.innerHTML = `
-                <div>
-                    <h1>Artist selected</h1>
-                    <p>The artist you selected is:</p>
-                    <img src="${artist.img}" alt="${artist.name}">
-                    <p>${artist.name}</p>
-                </div>
-                `;
-                setTimeout(() => {
-                navigateToMupi("/screenQuestion1M", { selectedArtist: artist});
-                }, 2000);
-
+              clearInterval(interval);
+              navigateToMupi("/selectArtistM", { selectedArtist: artist }); // OK
             }
-        }) 
+          });
 
         const interval = setInterval(async () => {
             secondsRemaining--;

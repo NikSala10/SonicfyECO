@@ -6,6 +6,7 @@ import renderScreenNoSelectM from "./screens/noselec.js";
 import renderScreenQuestion2M from "./screens/question2M.js";
 import renderScreenNoSingM from "./screens/singscreenM.js";
 import renderScreenGameLevels1M from "./screens/gamelevels1M.js";
+import renderScreenArtistaSelectM from "./screens/artistaselectM.js";
 
 const socket = io("/", { path: "/real-time" });
 
@@ -29,6 +30,10 @@ switch (currentRoute.path) {
   case "/screenFan1M":
     clearScripts();
     renderScreenFan1M(currentRoute.data);
+    break;
+  case "/selectArtistM":
+    clearScripts();
+    renderScreenArtistaSelectM(currentRoute.data);
     break;
   case "/noSelectedArtist":
     clearScripts();

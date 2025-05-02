@@ -1,7 +1,10 @@
-import { makeRequest2, socket } from "../app.js";
+import { makeRequest2, navigateToTelefono, socket } from "../app.js";
 
 export default function renderScreenQuestion1T(selectedArtistData) {
   const app = document.getElementById("app");
+
+  let hasAnswered = false;
+  let timeout;
 
   async function getQuestion() {
     try {
@@ -48,12 +51,58 @@ export default function renderScreenQuestion1T(selectedArtistData) {
             <p>Select the correct answer.This question has a percentage of 15%.</p>
           </div>
       `;
+      timeout = setTimeout(() => {
+        if (!hasAnswered) {
+          hasAnswered = true;
+          navigateToTelefono("/timeUp", { correct: false });
+        }
+      }, 6000);
 
+      async function handleAnswer(selectedOption) {
+        if (hasAnswered) return;
+        hasAnswered = true;
+        clearTimeout(timeout);
+        
+        console.log("Enviando respuesta:", selectedOption);
+
+        try {
+          const body = {
+            answer: selectedOption.trim(),
+            artist: artistName,
+          };
+
+          await makeRequest2("/select-answer-question1", "POST", body);
+        } catch (err) {
+          console.error("Error enviando al servidor:", err);
+        }
+      }
+
+      socket.on("notify-answer", (data) => {
+        if (hasAnswered) return;
+
+        hasAnswered = true;
+        clearTimeout(timeout);
+
+        const isCorrect = data.correct;
+
+        navigateToTelefono(
+          isCorrect ? "/screenLevelQuestion1T" : "/screenLevelQuestion1T",
+          { correct: isCorrect }
+        );
+      });
+
+      document.getElementById("option1").addEventListener("click", () => handleAnswer(question.option1));
+      document.getElementById("option2").addEventListener("click", () => handleAnswer(question.option2));
+      document.getElementById("option3").addEventListener("click", () => handleAnswer(question.option3));
+         
+      
     } catch (error) {
       console.error("Error en getQuestion:", error);
       app.innerHTML = "<p>Ocurrió un error al cargar la pregunta.</p>";
     }
   }
+  
 
+  
   getQuestion();
 }

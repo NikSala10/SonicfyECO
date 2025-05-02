@@ -3,6 +3,8 @@ import renderScreenQuestion1T from "./screens/question1T.js";
 import renderScreenRegister from "./screens/register.js";
 import renderScreenStart from "./screens/start.js";
 import renderScreenTimeUpT from "./screens/timeUpsT.js";
+import renderScreenQuestion2T from "./screens/question2T .js";
+import renderScreenLevelQuestion1T from "./screens/resultGame1T.js";
 
 const socket = io("/", { path: "/real-time" });
 
@@ -34,6 +36,14 @@ function renderRoute(currentRoute) {
     case "/screenQuestion1T":
       clearScripts();
       renderScreenQuestion1T(currentRoute?.data);
+      break;
+    case "/screenQuestion2T":
+      clearScripts();
+      renderScreenQuestion2T(currentRoute?.data);
+      break;
+    case "/screenLevelQuestion1T":
+      clearScripts();
+      renderScreenLevelQuestion1T(currentRoute?.data);
       break;
     default:
       const app = document.getElementById("app");

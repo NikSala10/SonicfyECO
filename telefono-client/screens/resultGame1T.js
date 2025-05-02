@@ -12,7 +12,7 @@ export default function renderScreenLevelQuestion1T(data) {
                 <path d="M217.625 178.281C217.625 185.582 213.652 191.5 208.75 191.5C203.848 191.5 199.875 185.582 199.875 178.281C199.875 170.981 203.848 165.062 208.75 165.062C213.652 165.062 217.625 170.981 217.625 178.281Z" fill="white"/>
             </svg>
             <h1>You've gained</h1>
-            <p>0% of your score</p>
+            <p>15% of your score</p>
             <p>Select the correct answer.This question has a percentage of 15%.</p>
             <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M50 93.75C25.8375 93.75 6.25 74.1625 6.25 50C6.25 25.8375 25.8375 6.25 50 6.25C74.1625 6.25 93.75 25.8375 93.75 50C93.75 74.1625 74.1625 93.75 50 93.75ZM50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100Z" fill="white"/>

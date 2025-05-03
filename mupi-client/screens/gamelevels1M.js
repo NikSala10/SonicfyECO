@@ -1,12 +1,14 @@
-import { navigateToMupi } from "../app";
+import { navigateToMupi } from "../app.js";
 
 export default function renderScreenGameLevels1M(data) {
     const app = document.getElementById("app");
 
-    const questionNumber = data.questionNumber 
+    const question = data.questionNumber
+    const selectedArtist = data.selectedArtist;
+
     let porcentaje;
 
-    switch (questionNumber) {
+    switch (question) {
         case 0:
         porcentaje = 15;
         break;
@@ -19,7 +21,7 @@ export default function renderScreenGameLevels1M(data) {
     }
 
     app.innerHTML = `
-        <div id="level 1">
+        <div id="level-1">
             <h1>Game levels</h1>
             <p>Challenge 1</p>
             <h4>Your percentage on this test is:</h4>
@@ -40,7 +42,7 @@ export default function renderScreenGameLevels1M(data) {
         `;
 
         setTimeout(async () => {
-            navigateToMupi("/screenQuestion2M");
+            navigateToMupi("/screenQuestion2M", {selectedArtist});
           }, 4000);
      
   

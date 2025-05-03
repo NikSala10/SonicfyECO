@@ -3,10 +3,10 @@ import { makeRequest, navigateToMupi} from "../app.js";
 export default function renderScreenWasWrongM(data) {
   const app = document.getElementById("app");
   
-  const questionNumber = data.questionNumber 
+  const question = data.questionNumber
   let porcentaje;
 
-  switch (questionNumber) {
+  switch (question) {
     case 0:
       porcentaje = 15;
       break;

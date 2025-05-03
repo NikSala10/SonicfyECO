@@ -1,15 +1,18 @@
-export default function renderScreenQuestion2M(selectedArtist) {
+import { makeRequest, socket } from "../app.js";
+
+export default function renderScreenQuestion2M(data) {
     const app = document.getElementById("app");
 
     async function getQuestion() {
         try {
-        const response = await makeRequest("/questions", "GET");
-        if (!selectedArtist || !selectedArtist.selectedArtist || !selectedArtist.selectedArtist.name) {
+            const response = await makeRequest("/questions", "GET");
+            const selectedArtist = data.selectedArtist.selectedArtist;
+        if (!selectedArtist || !selectedArtist.name) {
             console.error("selectedArtist o selectedArtist.name es undefined");
             return; 
         }
 
-        const artistName = selectedArtist.selectedArtist.name;
+        const artistName = selectedArtist.name;
         const artistData = response.find(artist => artist.artist.toLowerCase() === artistName.toLowerCase());
 
         if (artistData) {
@@ -32,6 +35,6 @@ export default function renderScreenQuestion2M(selectedArtist) {
         } else {app.innerHTML = `<p>No data available for the selected artist.</p>`;}
     } catch (error) {console.error("Error fetching questions:", error);}
     }
-    socket.on("artist-Selected", (artist) => { renderScreenQuestion2M({ selectedArtist: artist } ); });
+    
     getQuestion();
 }

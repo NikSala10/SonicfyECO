@@ -8,7 +8,7 @@ export default function renderScreenStart(data) {
         <h2>Welcome to the</h2>
         <h2>Musical Challenge</h2>
         <div>
-          <p>You are about to experience something unique!!1</p>
+          <p>You are about to experience <br> something unique!!1</p>
           <button id="start">Start</button>
           <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2Fmicro-center.png?alt=media&token=fc646eab-f107-4b69-ba35-603303c84132">
         </div>

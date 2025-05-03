@@ -40,10 +40,23 @@ export default function renderScreenGameLevels1M(data) {
             </svg> <h6>Test 3</h6>
         </div>
         `;
+        switch (question) {
+            case 0:
+                setTimeout(async () => {
+                    navigateToMupi("/screenQuestion2M", {selectedArtist});
+                  }, 4000);
+            break;
+            case 1:
+                setTimeout(async () => {
+                    navigateToMupi("/screenSingingM", {selectedArtist});
+                  }, 4000);
+            break;
+        
+            default:
+                break;
+        }
 
-        setTimeout(async () => {
-            navigateToMupi("/screenQuestion2M", {selectedArtist});
-          }, 4000);
+        
      
   
   }

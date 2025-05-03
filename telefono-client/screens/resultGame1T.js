@@ -2,6 +2,7 @@ import { navigateToTelefono } from "../app.js";
 
 export default function renderScreenLevelQuestion1T(data) {
   const app = document.getElementById("app");
+  const selectedArtist = data.selectedArtistData;
 
   const questionNumber = data.questionNumber 
   let porcentaje;
@@ -38,8 +39,18 @@ export default function renderScreenLevelQuestion1T(data) {
             </svg>
         </div>
         `;
-        setTimeout(async () => {
-            navigateToTelefono("/screenQuestion2T");
-          }, 4000);
+        switch (questionNumber) {
+          case 0:
+            setTimeout(async () => {
+              navigateToTelefono("/screenQuestion2T", {selectedArtist});
+            }, 4000);
+          break;
+          case 1:
+            setTimeout(async () => {
+              navigateToTelefono("/screenQuestion3T", {selectedArtist});
+            }, 4000);
+          break;
+        }
+        
 
 }

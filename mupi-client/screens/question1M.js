@@ -71,7 +71,7 @@ socket.on("notify-answer1", (data) => {
   if (isCorrect) {
     navigateToMupi("/screenQuestion1LevelsM", { selectedArtist, questionNumber: 0 });
   } else {
-    navigateToMupi("/noSelectedArtist", { selectedArtist, questionNumber: 0 });
+    navigateToMupi("/noSelectedArtist");
   }
 });
 

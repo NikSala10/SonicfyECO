@@ -1,12 +1,18 @@
-import { makeRequest, socket } from "../app.js";
+import { makeRequest, navigateToMupi, socket } from "../app.js";
 
 export default function renderScreenQuestion2M(data) {
     const app = document.getElementById("app");
 
+    let hasAnswered = false;
+    let timeoutId = null;
+    let intervalId = null;
+    let timeLeft = 6;
+    let selectedArtist = null;
+
     async function getQuestion() {
         try {
             const response = await makeRequest("/questions", "GET");
-            const selectedArtist = data.selectedArtist.selectedArtist;
+            selectedArtist = data.selectedArtist.selectedArtist;
         if (!selectedArtist || !selectedArtist.name) {
             console.error("selectedArtist o selectedArtist.name es undefined");
             return; 
@@ -25,6 +31,7 @@ export default function renderScreenQuestion2M(data) {
                 </svg>
                 <h2>Challenge 2</h2>
                 <p></p> Your time for this 6 seconds to respond if you do not respond in the given time you will lose</p>
+                <span id="timer">${timeLeft}</span>
                 <div id="artist-2">
                     <h5>${question.question2}</h5>
                     <p>A  ${question.option1}</p>
@@ -32,9 +39,42 @@ export default function renderScreenQuestion2M(data) {
                     <p>C  ${question.option3}</p>
                 </div>
             </div>`;
-        } else {app.innerHTML = `<p>No data available for the selected artist.</p>`;}
-    } catch (error) {console.error("Error fetching questions:", error);}
-    }
+            const timerEl = document.getElementById("timer");
+            intervalId = setInterval(() => {
+              timeLeft--;
+              timerEl.textContent = timeLeft;
+              if (timeLeft <= 0) {
+                clearInterval(intervalId);
+              }
+            }, 1000);
     
+            timeoutId = setTimeout(() => {
+              if (!hasAnswered) {
+                hasAnswered = true;
+                navigateToMupi("/noSelectedArtist");
+              }
+            }, 6000);
+    
+      } else {
+        app.innerHTML = `<p>No data available for the selected artist.</p>`;
+      }
+    } catch (error) {
+        console.error("Error fetching questions:", error);
+      }
+    }
+    socket.on("notify-answer2", (data) => {
+      if (hasAnswered) return;
+      hasAnswered = true;
+      clearTimeout(timeoutId);
+      clearInterval(intervalId);
+    
+      const isCorrect = data.correct;
+      if (isCorrect) {
+        navigateToMupi("/screenQuestion1LevelsM", { selectedArtist, questionNumber: 1});
+      } else {
+        navigateToMupi("/noSelectedArtist");
+      }
+    });
+
     getQuestion();
 }

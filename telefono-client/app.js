@@ -4,7 +4,7 @@ import renderScreenRegister from "./screens/register.js";
 import renderScreenStart from "./screens/start.js";
 import renderScreenTimeUpT from "./screens/timeUpsT.js";
 import renderScreenQuestion2T from "./screens/question2T .js";
-import renderScreenLevelsQuestionsT from "./screens/resultGameT.js";
+import renderScreenLevelsQuestionsT from "./screens/levelsGameT.js";
 import renderScreenWasWrongT from "./screens/wasWrong.js";
 import renderScreenArtistT from "./screens/artistUserT.js";
 import renderScreenQuestion3T from "./screens/question3T.js";

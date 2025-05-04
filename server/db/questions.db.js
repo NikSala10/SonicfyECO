@@ -22,7 +22,8 @@ const questions = [
         
         question3: "I'm working late, 'cause I'm a singer\n(Sign)\ncome and get this pollen",
         correctAnswer: "I'm working late, 'cause I'm a singer\nOh, he looks so cute wrapped 'round my finger\nMy twisted humor makes him laugh so often\nMy honey bee, come and get this pollen",
-        image: "https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Sbri%20sign.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2I2ODAwNTlmLTNiZWYtNDc0YS04N2JlLTFkZmM5YTgwN2E0OCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvU2JyaSBzaWduLnBuZyIsImlhdCI6MTc0NjMyNjY3OCwiZXhwIjoxNzc3ODYyNjc4fQ.ZphCc34FnhejlBRFxoJoAyU8W0vqjIMivZjsKomNsNU"
+        image: "https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Sabri%20sign.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2I2ODAwNTlmLTNiZWYtNDc0YS04N2JlLTFkZmM5YTgwN2E0OCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvU2Ficmkgc2lnbi5wbmciLCJpYXQiOjE3NDYzMjczMTQsImV4cCI6MTc3Nzg2MzMxNH0.OIAIqdAzHYNhGGn5nsoIe1apxlPcGXXtHeKkGP4-mvE",
+        songName: "Espresso"
       }
     ]
   },
@@ -49,7 +50,8 @@ const questions = [
         
         question3: "YElla se hace la bruta pa' cotizarse\ncon mi tigre",
         correctAnswer: "Ella se hace la bruta pa' cotizarse conmigo en frente\nElla se hace la gata en celo contigo\nTe cotorrea al oído pa' tenerte en alta\nElla muere por ti, tú por mí es que matas\nYo sigo tranquila, como una paloma de esquina\nMientras ella se pasa en su BM al lado mío\nYo, de aquí, no me voy\nLo que está pa' mí, ninguna va a poder quitármelo de un tirón\nYo soy loca con mi tigre",
-        image: "https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Shaki%20sign.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2I2ODAwNTlmLTNiZWYtNDc0YS04N2JlLTFkZmM5YTgwN2E0OCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvU2hha2kgc2lnbi5wbmciLCJpYXQiOjE3NDYzMjY2NTcsImV4cCI6MTc3Nzg2MjY1N30.y2kGqQhwew8vuobJP30l-otpmny1fOEpRAv9An0kyKQ"
+        image: "https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Shaki%20sign%20(1).png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2I2ODAwNTlmLTNiZWYtNDc0YS04N2JlLTFkZmM5YTgwN2E0OCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvU2hha2kgc2lnbiAoMSkucG5nIiwiaWF0IjoxNzQ2MzI3MzAxLCJleHAiOjE3Nzc4NjMzMDF9.P3tPoW3ovSw45TSgs1bLOsU8KYWCAACjz6x1vBn0eds",
+        songName: "Loca"
       }
     ]
   },
@@ -76,7 +78,8 @@ const questions = [
       
         question3: "Pay the toll to the angels\n(Sign)\nIn the magic",
         correctAnswer: "Pay the toll to the angels\nDrawin' circles in the clouds\nKeep your mind on the distance\nWhen the devil turns around\nHold me in your heart tonight\nIn the magic",
-        image: "https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Lady%20sign.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2I2ODAwNTlmLTNiZWYtNDc0YS04N2JlLTFkZmM5YTgwN2E0OCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvTGFkeSBzaWduLnBuZyIsImlhdCI6MTc0NjMyNjYxNSwiZXhwIjoxNzc3ODYyNjE1fQ.drJSheAcUyXZ6oKOC3W4beRjLSPzoD6Ez0cW0Bfuzmc"
+        image: "https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Lady%20sing.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2I2ODAwNTlmLTNiZWYtNDc0YS04N2JlLTFkZmM5YTgwN2E0OCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvTGFkeSBzaW5nLnBuZyIsImlhdCI6MTc0NjMyNzI4NywiZXhwIjoxNzc3ODYzMjg3fQ.k6NhosSqQt6AjFegUktgCVR5LCqC35BcuMFA3zebMx4",
+        songName: "Abracadabra"
       }
     ]
   },
@@ -103,7 +106,8 @@ const questions = [
       
         question3: "You got the lights\n(Sing)\ndrop coloured tongue",
         correctAnswer: "You got the lights on in the afternoon\nAnd the nights are drawn out long\nAnd you're kissin' to cut through the gloom\nWith a cough drop coloured tongue",
-        image: "https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Arctic%20sign.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2I2ODAwNTlmLTNiZWYtNDc0YS04N2JlLTFkZmM5YTgwN2E0OCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvQXJjdGljIHNpZ24ucG5nIiwiaWF0IjoxNzQ2MzI2NTY4LCJleHAiOjE3Nzc4NjI1Njh9.ptA3ZI_YGVpSjUd6llbYgXcqsANYRL6UhnFOi_oMnuw"
+        image: "https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Artic%20sign.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2I2ODAwNTlmLTNiZWYtNDc0YS04N2JlLTFkZmM5YTgwN2E0OCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvQXJ0aWMgc2lnbi5wbmciLCJpYXQiOjE3NDYzMjcyNzAsImV4cCI6MTc3Nzg2MzI3MH0.LDX4GJeOlNYXyPnfdreDSh5BTXA6Qgr4msA8t6wtrGs",
+        songName: "Knee Socks"
       }
     ]
   }

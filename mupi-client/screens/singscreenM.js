@@ -21,7 +21,11 @@ export default async function renderScreenSingM(data) {
                   <span id="timer">${timeLeft}</span>
             </div>
             <div id="arctic-sing">
-                  <img src="${question.image}" alt="Artist Image" />
+              <div id="img-textsong"></div>
+                  <img src="${question.image}" alt="Artist Image"/>
+                  <p>${question.songName}</p>
+                  <p>${selectedArtist}</p>
+              </div>
                   <h4>${question.question3}</h4>
             </div>          
                   <p>You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!</p>

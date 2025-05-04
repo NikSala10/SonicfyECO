@@ -1,17 +1,25 @@
-import { socket } from "../app.js";
+import { makeRequest, navigateToMupi, socket } from "../app.js";
 
-export default function renderScreenNoSingM(selectedArtist) {
+export default function renderScreenSingM(data) {
     const app = document.getElementById("app");
+
+    let hasAnswered = false;
+    let timeoutId = null;
+    let intervalId = null;
+    let timeLeft = 19;
+    let selectedArtist = null;
 
     async function getQuestion() {
       try {
-      const response = await makeRequest("/questions", "GET");
-      if (!selectedArtist || !selectedArtist.selectedArtist || !selectedArtist.selectedArtist.name) {
+          const response = await makeRequest("/questions", "GET");
+          console.log(data)
+          selectedArtist = data.selectedArtist;
+      if (!selectedArtist || !selectedArtist.name) {
           console.error("selectedArtist o selectedArtist.name es undefined");
           return; 
       }
 
-      const artistName = selectedArtist.selectedArtist.name;
+      const artistName = selectedArtist.name;
       const artistData = response.find(artist => artist.artist.toLowerCase() === artistName.toLowerCase());
 
       if (artistData) {
@@ -25,6 +33,7 @@ export default function renderScreenNoSingM(selectedArtist) {
                   <h1>Challenge 3</h1>
             <div id="contador">
                   <p>Your time for this 19 seconds to respond if you do not respond in the given time you will lose</p>
+                  <span id="timer">${timeLeft}</span>
             </div>
             <div id="arctic-sing">
                   <h4>${question.question3}</h4>
@@ -33,9 +42,43 @@ export default function renderScreenNoSingM(selectedArtist) {
                   <p>Press the button on your phone to start!</p>
             </div>
         `;
-      } else {app.innerHTML = `<p>No data available for the selected artist.</p>`;}
-      } catch (error) {console.error("Error fetching questions:", error);}
-      }
-      socket.on("artist-Selected", (artist) => { renderScreenQuestion2M({ selectedArtist: artist } ); });
-      getQuestion();
+
+        const timerEl = document.getElementById("timer");
+        intervalId = setInterval(() => {
+          timeLeft--;
+          timerEl.textContent = timeLeft;
+          if (timeLeft <= 0) {
+            clearInterval(intervalId);
+          }
+        }, 1000);
+
+        timeoutId = setTimeout(() => {
+          if (!hasAnswered) {
+            hasAnswered = true;
+            navigateToMupi("/noSelectedM");
+          }
+        }, 19000);
+
+  } else {
+    app.innerHTML = `<p>No data available for the selected artist.</p>`;
+  }
+} catch (error) {
+    console.error("Error fetching questions:", error);
+  }
+}
+socket.on("notify-answer2", (data) => {
+  if (hasAnswered) return;
+  hasAnswered = true;
+  clearTimeout(timeoutId);
+  clearInterval(intervalId);
+
+  const isCorrect = data.correct;
+  if (isCorrect) {
+    navigateToMupi("/screenLevels2M", { selectedArtist, questionNumber: 2});
+  } else {
+    navigateToMupi("/screenWasWrongM", { selectedArtist, questionNumber: 2});
+  }
+});
+
+getQuestion();
 }

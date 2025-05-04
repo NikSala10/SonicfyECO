@@ -4,9 +4,11 @@ import renderScreenQuestion1M from "./screens/question1M.js";
 import renderScreenFan1M from "./screens/fan1M.js";
 import renderScreenNoSelectM from "./screens/noselec.js";
 import renderScreenQuestion2M from "./screens/question2M.js";
-import renderScreenNoSingM from "./screens/singscreenM.js";
+import renderScreenSingM from "./screens/singscreenM.js";
 import renderScreenGameLevels1M from "./screens/gamelevels1M.js";
 import renderScreenArtistaSelectM from "./screens/artistaselectM.js";
+import renderScreenGameLevels2M from "./screens/gamelevels2M.js";
+import renderScreenWasWrongM from "./screens/wasWrongM.js";
 
 const socket = io("/", { path: "/real-time" });
 
@@ -35,7 +37,7 @@ switch (currentRoute.path) {
     clearScripts();
     renderScreenArtistaSelectM(currentRoute.data);
     break;
-  case "/noSelectedArtist":
+  case "/noSelectedM":
     clearScripts();
     renderScreenNoSelectM(currentRoute.data);
     break;
@@ -43,7 +45,7 @@ switch (currentRoute.path) {
     clearScripts();
     renderScreenQuestion1M(currentRoute.data);
     break;
-  case "/screenQuestion1LevelsM":
+  case "/screenLevels1M":
     clearScripts();
     renderScreenGameLevels1M(currentRoute.data);
     break;
@@ -53,8 +55,16 @@ switch (currentRoute.path) {
     break;
    case "/screenSingingM":
     clearScripts();
-    renderScreenNoSingM(currentRoute.data);
+    renderScreenSingM(currentRoute.data);
     break;
+    case "/screenLevels2M":
+      clearScripts();
+      renderScreenGameLevels2M(currentRoute.data);
+      break;
+    case "/screenWasWrongM":
+      clearScripts();
+      renderScreenWasWrongM(currentRoute.data);
+      break;
   default:
     const app = document.getElementById("app");
     app.innerHTML = `<h1>404 - Not Found</h1><p>The page you are looking for does not exist.</p>`;

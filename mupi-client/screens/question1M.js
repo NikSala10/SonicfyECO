@@ -50,7 +50,7 @@ export default function renderScreenQuestion1M(selectedArtist) {
         timeoutId = setTimeout(() => {
           if (!hasAnswered) {
             hasAnswered = true;
-            navigateToMupi("/noSelectedArtist");
+            navigateToMupi("/noSelectedM");
           }
         }, 6000);
 
@@ -69,9 +69,9 @@ socket.on("notify-answer1", (data) => {
 
   const isCorrect = data.correct;
   if (isCorrect) {
-    navigateToMupi("/screenQuestion1LevelsM", { selectedArtist, questionNumber: 0 });
+    navigateToMupi("/screenLevels1M", { selectedArtist, questionNumber: 0 });
   } else {
-    navigateToMupi("/noSelectedArtist");
+    navigateToMupi("/screenWasWrongM", { selectedArtist, questionNumber: 0 });
   }
 });
 

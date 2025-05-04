@@ -39,6 +39,7 @@ export default function renderScreenQuestion2M(data) {
                     <p>C  ${question.option3}</p>
                 </div>
             </div>`;
+
             const timerEl = document.getElementById("timer");
             intervalId = setInterval(() => {
               timeLeft--;
@@ -51,7 +52,7 @@ export default function renderScreenQuestion2M(data) {
             timeoutId = setTimeout(() => {
               if (!hasAnswered) {
                 hasAnswered = true;
-                navigateToMupi("/noSelectedArtist");
+                navigateToMupi("/noSelectedM");
               }
             }, 6000);
     
@@ -70,9 +71,9 @@ export default function renderScreenQuestion2M(data) {
     
       const isCorrect = data.correct;
       if (isCorrect) {
-        navigateToMupi("/screenQuestion1LevelsM", { selectedArtist, questionNumber: 1});
+        navigateToMupi("/screenLevels1M", { selectedArtist, questionNumber: 1});
       } else {
-        navigateToMupi("/noSelectedArtist");
+        navigateToMupi("/screenWasWrongM", { selectedArtist, questionNumber: 1 });
       }
     });
 

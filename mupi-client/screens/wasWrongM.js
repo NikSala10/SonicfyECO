@@ -12,9 +12,8 @@ export default function renderScreenWasWrongM(data) {
       break;
     case 1:
       porcentaje = 25;
-      break;
     case 2:
-      porcentaje =60 ;
+      porcentaje = 60;
       break;
   }
 

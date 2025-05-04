@@ -34,7 +34,7 @@ export default function renderScreenFan1M() {
             if (secondsRemaining <= 0) {
                 clearInterval(interval);
                 if (!artistSelectedReceived) { 
-                    navigateToMupi("/noSelectedArtist"); 
+                    navigateToMupi("/noSelectedM"); 
                 }
             }
         }, 1000);

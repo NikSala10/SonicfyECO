@@ -2,6 +2,9 @@ import { navigateToTelefono } from "../app.js";
 
 export default function renderScreenQuestion3T(data) {
   const app = document.getElementById("app");
+
+  let timeout;
+
   app.innerHTML = `
         <div id="screenQuestion3T">
             <h1>Get started</h1>
@@ -17,7 +20,7 @@ export default function renderScreenQuestion3T(data) {
                 <path d="M177.875 181.5C177.875 191.096 170.096 198.875 160.5 198.875C150.904 198.875 143.125 191.096 143.125 181.5V138.062C143.125 128.467 150.904 120.688 160.5 120.688C170.096 120.688 177.875 128.467 177.875 138.062V181.5ZM160.5 112C146.106 112 134.438 123.669 134.438 138.062V181.5C134.438 195.894 146.106 207.562 160.5 207.562C174.894 207.562 186.562 195.894 186.562 181.5V138.062C186.562 123.669 174.894 112 160.5 112Z" fill="white"/>
                 </svg>
             </button>
-           
+          
             <svg width="322" height="78" viewBox="0 0 322 78" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="161.035" cy="53.4727" r="24.5273" fill="#42C83C"/>
                 <path d="M111.492 50.4258C111.492 50.1208 111.244 49.8735 110.939 49.8735C110.634 49.8735 110.387 50.1208 110.387 50.4258V59.2617C110.387 59.5667 110.634 59.814 110.939 59.814C111.244 59.814 111.492 59.5667 111.492 59.2617L111.492 50.4258Z" fill="white"/>
@@ -37,15 +40,11 @@ export default function renderScreenQuestion3T(data) {
         </div>
         `;
 
-  const start = document.getElementById("start");
-
-  start.addEventListener("click", () => {
-    async function startGame() {
-      const response = await makeRequest("/start-game", "POST", {
-        message: "Juego iniciado"
-      });
-    }
-    startGame();
-    navigateToTelefono("/");
-  });
-}
+        timeout = setTimeout(() => {
+          if (!hasAnswered) {
+            hasAnswered = true;
+            navigateToTelefono("/timeUp", { correct: false });
+          }
+        }, 19000);
+  
+  }

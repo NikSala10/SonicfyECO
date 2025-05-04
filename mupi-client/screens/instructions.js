@@ -33,7 +33,7 @@ export default function renderScreenInstructions() {
     if (gameStarted) {
       navigateToMupi("/screenFan1M", { name: "Usuario" });
     } else {
-      navigateToMupi("/noSelectedArtist");
+      navigateToMupi("/noSelectedM");
     }
   });
   

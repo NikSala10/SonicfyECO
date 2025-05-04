@@ -74,7 +74,7 @@ socket.on("notify-answer2", (data) => {
 
   const isCorrect = data.correct;
   if (isCorrect) {
-    navigateToMupi("/screenLevels2M", { selectedArtist, questionNumber: 2});
+    navigateToMupi("/screenLevelsM", { selectedArtist, questionNumber: 2});
   } else {
     navigateToMupi("/screenWasWrongM", { selectedArtist, questionNumber: 2});
   }

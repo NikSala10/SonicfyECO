@@ -71,7 +71,7 @@ export default function renderScreenQuestion2M(data) {
     
       const isCorrect = data.correct;
       if (isCorrect) {
-        navigateToMupi("/screenLevels1M", { selectedArtist, questionNumber: 1});
+        navigateToMupi("/screenLevelsM", { selectedArtist, questionNumber: 1});
       } else {
         navigateToMupi("/screenWasWrongM", { selectedArtist, questionNumber: 1 });
       }

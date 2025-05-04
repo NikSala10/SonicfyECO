@@ -23,7 +23,7 @@ function renderRoute(currentRoute) {
   switch (currentRoute?.path) {
     case "/":
       clearScripts();
-      renderScreenRegister(currentRoute?.data);
+      renderScreenSelectArtistT(currentRoute?.data);
       break;
     case "/screenStart":
       clearScripts();

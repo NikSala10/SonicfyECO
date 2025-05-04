@@ -6,7 +6,7 @@
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     position: relative;
-    overflow: hidden; /* bloquea cualquier scroll */
+    overflow: hidden;
     box-sizing: border-box;
     
   }
@@ -17,7 +17,7 @@
   }
   
   #screen1 h1 {
-    color: #00cc66; /* verde vibrante */
+    color: #00cc66; 
     font-size: 2rem;
     margin-bottom: 10px;
   }
@@ -51,7 +51,7 @@
     max-width: 300px;
     padding: 12px 15px;
     margin-top: 15px;
-    background-color: #32cd32; /* verde botón */
+    background-color: #32cd32; 
     color: white;
     border: none;
     border-radius: 25px;
@@ -61,7 +61,7 @@
   }
   
   #screen1 button#register:hover {
-    background-color: #28a428; /* verde más oscuro al pasar el mouse */
+    background-color: #28a428;
   }
   
   #screen1 #messageBox {
@@ -87,14 +87,14 @@
 
 #modal-ok-btn:hover,
 #register:hover {
-  background-color: #1f9f1f; /* verde más oscuro */
-  transform: scale(1.05); /* agranda 5% */
+  background-color: #1f9f1f; 
+  transform: scale(1.05); 
 }
 
   
 #screenStart {
     background-color: #000;
-    color: white;
+    color: #1f9f1f;
     text-align: center;
     padding: 30px 20px;
     font-family: 'Poppins', sans-serif;
@@ -103,7 +103,14 @@
     overflow: hidden;
     
   }
-
+#texto
+{
+    color: white;
+    background-color: #1a1a1a;
+    padding: 20px 90px;
+    border-radius: 20px;
+    left:8px;
+}
   #screenStart button#start {
     background-color: white;
     color: #121212;
@@ -115,6 +122,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
+ 
   #screenSelectArtistT{
     background-color: #6ec1f7;
     font-family: 'Poppins', sans-serif;
@@ -143,11 +151,11 @@
 }
  #information img {
     position: absolute;
-    top: 8.5%; /* centro vertical */
-    left: 65%; /* centro horizontal */
-    width: 140px; /* ajusta el tamaño según lo necesites */
+    top: 8.5%; 
+    left: 65%; 
+    width: 140px; 
     height: auto;
-    pointer-events: none; /* opcional: la imagen no bloquea clics al texto */
+    pointer-events: none;
     border-radius:15px ;
 }
  #artists {
@@ -155,9 +163,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-top: 40px;
-    width: 100%; /* ocupa todo el ancho disponible */
-    max-width: 600px; /* límite máximo para que no se vea gigante */
-    justify-items: center; /* centra las imágenes dentro de cada celda */
+    width: 100%; 
+    max-width: 600px; 
+    justify-items: center; 
 }
 #screenSelectArtistT svg {
     width: 180px;
@@ -181,7 +189,7 @@
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
-    background-color: #0f0f0f; /* fondo negro */
+    background-color: #0f0f0f; 
     font-family: 'Arial', sans-serif;
     color: white;
     margin: 0;
@@ -191,7 +199,7 @@
 
 #screenTimeUpT h1 {
     font-size: 2.5rem;
-    color: #1DB954; /* verde Spotify */
+    color: #1DB954; 
     margin: 0.2em 0;
     font-weight: bold;
     text-shadow: 1px 1px 2px black;
@@ -222,7 +230,7 @@ footer strong {
     font-weight: bold;
 }
 
-/* Extra - estrellas, cruces, decoraciones */
+
 .decor {
     position: absolute;
     animation: spin 4s linear infinite;
@@ -236,7 +244,7 @@ footer strong {
 #screenLevel1T {
     max-width: 300px;
     padding: 20px;
-    background-color: #00D75A;  /* verde brillante de fondo */
+    background-color: #00D75A;  
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;

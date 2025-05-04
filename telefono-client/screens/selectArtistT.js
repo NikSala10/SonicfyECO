@@ -20,12 +20,12 @@ export default function renderScreenSelectArtistT(data) {
     let artistSelected = false;
 
 
-    // const TimeOutMs = 6000;
-    // const timeout = setTimeout(() => {
-    //     if (!artistSelected) {
-    //     navigateToTelefono("/timeUp", data);
-    //     }
-    // }, TimeOutMs);
+    const TimeOutMs = 6000;
+    const timeout = setTimeout(() => {
+        if (!artistSelected) {
+        navigateToTelefono("/timeUp", data);
+        }
+    }, TimeOutMs);
 
     async function getArtists() {
         try {
@@ -51,7 +51,7 @@ export default function renderScreenSelectArtistT(data) {
                 };
 
                 await makeRequest2("/select-artist", "POST", body);
-                //navigateToTelefono("/screenSelectArtistByUser", { selectedArtist: artist});
+                navigateToTelefono("/screenSelectArtistByUser", { selectedArtist: artist});
             } catch (error) {
                 console.error("Error selecting artist:", error);
             }

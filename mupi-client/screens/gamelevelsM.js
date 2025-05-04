@@ -40,7 +40,7 @@ export default function renderScreenGameLevelsM(data) {
     app.innerHTML = `
         <div id="level-1">
             <h1>Game levels</h1>
-            <p>Challenge 1</p>
+            <p><p>Challenge ${question + 1}</p></p>
             <h4>Your percentage on this test is:</h4>
             <h4>${porcentaje}%</h4>
             <h5>Congratulations, you got the maximum percentage for this challenge which  </h5>

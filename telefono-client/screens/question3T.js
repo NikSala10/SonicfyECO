@@ -41,10 +41,7 @@ export default function renderScreenQuestion3T(data) {
         `;
 
         timeout = setTimeout(() => {
-          if (!hasAnswered) {
-            hasAnswered = true;
-            navigateToTelefono("/timeUp", { correct: false });
-          }
+          navigateToTelefono("/timeUp", { correct: false });
         }, 19000);
   
   }

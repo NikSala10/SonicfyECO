@@ -3,6 +3,7 @@ import { navigateToTelefono } from "../app.js";
 export default function renderScreenLevelsQuestionsT(data) {
   const app = document.getElementById("app");
   const selectedArtist = data.selectedArtistData;
+  const actualArtist = selectedArtist?.selectedArtist?.selectedArtist?.selectedArtist;
 
   const questionNumber = data.questionNumber 
   let porcentaje;
@@ -79,7 +80,7 @@ export default function renderScreenLevelsQuestionsT(data) {
             break;
           case 2:
             setTimeout(async () => {
-              navigateToTelefono("/screenResulT", {selectedArtist});
+              navigateToTelefono("/screenResulT", {selectedArtist: actualArtist});
             }, 4000);
           break;
         }

@@ -6,7 +6,8 @@
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* bloquea cualquier scroll */
+    box-sizing: border-box;
     
   }
   
@@ -107,7 +108,7 @@
     background-color: white;
     color: #121212;
     border: none;
-    padding: 15px 20px;
+    padding: 15px 155px;
     border-radius: 30px;
     font-size: 16px;
     font-weight: bold;
@@ -115,31 +116,61 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
   #screenSelectArtistT{
-    background-color: #6ec1f7; 
+    background-color: #6ec1f7;
     font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box; 
   }
  #information
  {
-    width:45px ;
-    height: 15px; ;
+    width: auto; 
+    padding: 20px 90px; 
     background-color: #EC219A;
-    padding:20px; 
-    text-align: center;
+    font-size: 14px;
     color: white;
     border-radius: 15px;
-    display: block;
-    margin-top:2% ;
+    margin-top: 70px;
+    overflow: hidden;
  }
+ .info-text {
+    text-align: left;
+    margin-left:-68px; 
+}
+ #information img {
+    position: absolute;
+    top: 8.5%; /* centro vertical */
+    left: 65%; /* centro horizontal */
+    width: 140px; /* ajusta el tamaño según lo necesites */
+    height: auto;
+    pointer-events: none; /* opcional: la imagen no bloquea clics al texto */
+    border-radius:15px ;
+}
  #artists {
-    margin-top:10%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    margin-top: 40px;
+    width: 100%; /* ocupa todo el ancho disponible */
+    max-width: 600px; /* límite máximo para que no se vea gigante */
+    justify-items: center; /* centra las imágenes dentro de cada celda */
 }
+#screenSelectArtistT svg {
+    width: 180px;
+    margin: 80px 23;
+   margin-left: 24%;
+}
+#screenSelectArtistT h3 {
+    font-size: 24 px;
+    color: white;
+    margin: 0;
+    text-align: center;
+}
+
 
  
 

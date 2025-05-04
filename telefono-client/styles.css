@@ -1,0 +1,218 @@
+#screen1 {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    
+  }
+  
+  #screen1 img {
+    width: 160px;
+    margin-bottom: 20px;
+  }
+  
+  #screen1 h1 {
+    color: #00cc66; /* verde vibrante */
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  #screen1 p {
+    color: #cccccc;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+  
+  #screen1 input[type="text"] {
+    width: 80%;
+    max-width: 300px;
+    padding: 12px 15px;
+    margin: 20px 0;
+    border: 1px solid white;
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  #screen1 input[type="text"]::placeholder {
+    color: #aaaaaa;
+  }
+  
+  #screen1 button#register {
+    width: 80%;
+    max-width: 300px;
+    padding: 12px 15px;
+    margin-top: 15px;
+    background-color: #32cd32; /* verde botón */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #screen1 button#register:hover {
+    background-color: #28a428; /* verde más oscuro al pasar el mouse */
+  }
+  
+  #screen1 #messageBox {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  #screen1::after {
+    content: "";
+    background: url('formulario (3).png') no-repeat;
+    background-size: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    opacity: 0.9;
+  }
+  #modal-ok-btn,
+#register {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#modal-ok-btn:hover,
+#register:hover {
+  background-color: #1f9f1f; /* verde más oscuro */
+  transform: scale(1.05); /* agranda 5% */
+}
+
+  
+#screenStart {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    
+  }
+
+  #screenStart button#start {
+    background-color: white;
+    color: #121212;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  #screenSelectArtistT{
+    background-color: #6ec1f7; 
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+ #information
+ {
+    width:45px ;
+    height: 15px; ;
+    background-color: #EC219A;
+    padding:20px; 
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    display: block;
+    margin-top:2% ;
+ }
+ #artists {
+    margin-top:10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+ 
+
+#screenTimeUpT {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #0f0f0f; /* fondo negro */
+    font-family: 'Arial', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#screenTimeUpT h1 {
+    font-size: 2.5rem;
+    color: #1DB954; /* verde Spotify */
+    margin: 0.2em 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+}
+
+#screenTimeUpT svg {
+    width: 200px;
+    height: auto;
+    margin: 20px 0;
+}
+
+#screenTimeUpT p {
+    font-size: 1rem;
+    color: white;
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #1a1a1a;
+    padding: 15px;
+    width: 100%;
+    font-size: 1rem;
+    border-top: 2px solid #ff9f1c;
+    border-bottom: 2px solid #ff9f1c;
+}
+
+footer strong {
+    font-weight: bold;
+}
+
+/* Extra - estrellas, cruces, decoraciones */
+.decor {
+    position: absolute;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#screenLevel1T {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #00D75A;  /* verde brillante de fondo */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+

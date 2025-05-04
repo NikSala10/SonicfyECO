@@ -1,0 +1,124 @@
+body {
+    background-color: #0B0B0B;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#welcome {
+    background-color: #0B0B0B; 
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+    padding: auto;
+}
+
+#welcome h2 {
+    font-size: 28px;
+    color: #00D75A;  
+    margin: 10px 0 0 0;
+}
+
+#welcome h4 {
+    font-size: 18px;
+    color: #D3D3D3;
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+#welcome h1 {
+    font-size: 48px;
+    color: #00FF85; 
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+#welcome img {
+    width: 100%;
+    max-width: 350px;
+    margin: 20px 0;
+ 
+}
+
+#welcome h5 {
+    font-size: 20px;
+    color: #00FF85;
+    margin: 20px 0 10px 0;
+    font-weight: 600;
+}
+
+#welcome p {
+    font-size: 16px;
+    color: #D3D3D3;
+    margin: 5px 0;
+}
+
+
+#noselectartista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #0f0f0f; 
+    font-family: 'Arial', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#noselectartista h1 {
+    font-size: 2.5rem;
+    color: #1DB954; 
+    margin: 0.2em 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+}
+
+#icon-sad svg {
+    width: 120px;
+    height: auto;
+    margin: 20px 0;
+    color: #ff4b91; 
+}
+
+#noselectartista h4 {
+    font-size: 1.5rem;
+    color: white;
+    margin: 15px 0 10px 0;
+    line-height: 1.4;
+}
+
+#noselectartista p {
+    font-size: 1rem;
+    color: white;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #1a1a1a;
+    padding: 15px;
+    width: 100%;
+    font-size: 1rem;
+    border-top: 2px solid #ff9f1c;
+    border-bottom: 2px solid #ff9f1c;
+}
+
+footer strong {
+    font-weight: bold;
+}
+
+
+
+#screenInstructions
+{  font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+}

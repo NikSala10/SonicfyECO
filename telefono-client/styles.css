@@ -151,35 +151,81 @@ html, body, #app {
 
 #screenStart {
     background-color: #000;
-    color: #1f9f1f;
+    color: #14E371;
     text-align: center;
-    padding: 30px 20px;
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     position: relative;
     overflow: hidden;
-    
   }
+
+#screenStart h1 {
+  color: transparent;
+  -webkit-text-stroke: 1px #14E371;
+  font-size: 2rem;
+  padding-top: 0;
+  margin: 0;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+#screenStart h2 {
+    color: #14E371;
+    font-size: 1.5rem;
+    margin: 0;
+    padding-top: 2rem;
+    font-weight: bold;
+}
+
 #texto
 {
     color: white;
     background-color: #1a1a1a;
-    padding: 20px 90px;
     border-radius: 20px;
-    left:8px;
+    text-align: center;
+    padding-top: 2rem;
+    width: 92%;
+    margin: 0 auto;
+    overflow: hidden; 
+}
+#texto p {
+    padding-bottom: 1rem;
+}
+#texto img {
+  margin-top: 1.6rem;
 }
   #screenStart button#start {
     background-color: white;
     color: #121212;
     border: none;
-    padding: 15px 155px;
+    padding: 20px 155px;
     border-radius: 30px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
- 
+  .svg-fondo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    pointer-events: none; 
+  }
+  #texto > *:not(.svg-fondo) {
+    position: relative;
+    z-index: 1;
+  }
+  #svgDecorativo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    pointer-events: none; 
+    padding-top: 14.5rem;
+    margin: 0 auto;
+    left: 18%;
+  }
   #screenSelectArtistT{
     background-color: #6ec1f7;
     font-family: 'Poppins', sans-serif;
@@ -215,6 +261,9 @@ html, body, #app {
     pointer-events: none;
     border-radius:15px ;
 }
+
+
+
  #artists {
     display: grid;
     grid-template-columns: 1fr 1fr;

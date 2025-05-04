@@ -4,14 +4,11 @@ export default async function renderScreenQuestion1M(selectedArtist) {
   const app = document.getElementById("app");
 
   let hasAnswered = false;
-  let timeoutId = null;
-  let intervalId = null;
   let timeLeft = 6;
 
+  try {
+    const question = await getQuestionData(selectedArtist, 0);
 
-    try {
-      const question = await getQuestionData(selectedArtist, 0);
-  
     app.innerHTML = `
       <div id="question1M">
         <svg width="177" height="177" viewBox="0 0 177 177" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,9 +45,6 @@ export default async function renderScreenQuestion1M(selectedArtist) {
 socket.on("notify-answer1", (data) => {
   if (hasAnswered) return;
   hasAnswered = true;
-  clearTimeout(timeoutId);
-  clearInterval(intervalId);
-
   const isCorrect = data.correct;
   if (isCorrect) {
     navigateToMupi("/screenLevelsM", { selectedArtist, questionNumber: 0 });

@@ -1,29 +1,14 @@
-import { makeRequest, navigateToMupi, socket } from "../app.js";
+import { getQuestionData, navigateToMupi, startCountdown } from "../app.js";
 
-export default function renderScreenSingM(data) {
+export default async function renderScreenSingM(data) {
     const app = document.getElementById("app");
 
-    let hasAnswered = false;
-    let timeoutId = null;
-    let intervalId = null;
     let timeLeft = 19;
     let selectedArtist = null;
 
-    async function getQuestion() {
-      try {
-          const response = await makeRequest("/questions", "GET");
-          console.log(data)
-          selectedArtist = data.selectedArtist;
-      if (!selectedArtist || !selectedArtist.name) {
-          console.error("selectedArtist o selectedArtist.name es undefined");
-          return; 
-      }
-
-      const artistName = selectedArtist.name;
-      const artistData = response.find(artist => artist.artist.toLowerCase() === artistName.toLowerCase());
-
-      if (artistData) {
-        const question = artistData.questions[2];  
+    try {
+      selectedArtist = data.selectedArtist
+      const question = await getQuestionData(selectedArtist, 2);
 
       app.innerHTML = `
             <div id="sing">
@@ -36,6 +21,7 @@ export default function renderScreenSingM(data) {
                   <span id="timer">${timeLeft}</span>
             </div>
             <div id="arctic-sing">
+                  <img src="${question.image}" alt="Artist Image" />
                   <h4>${question.question3}</h4>
             </div>          
                   <p>You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!</p>
@@ -44,41 +30,15 @@ export default function renderScreenSingM(data) {
         `;
 
         const timerEl = document.getElementById("timer");
-        intervalId = setInterval(() => {
-          timeLeft--;
-          timerEl.textContent = timeLeft;
-          if (timeLeft <= 0) {
-            clearInterval(intervalId);
+        startCountdown(
+          19,
+          (timeLeft) => (timerEl.textContent = timeLeft),
+          () => {
+            navigateToMupi("/screenLevelsM", { selectedArtist, questionNumber: 2 });
           }
-        }, 1000);
-
-        timeoutId = setTimeout(() => {
-          if (!hasAnswered) {
-            hasAnswered = true;
-            navigateToMupi("/noSelectedM");
-          }
-        }, 19000);
-
-  } else {
-    app.innerHTML = `<p>No data available for the selected artist.</p>`;
-  }
+        );
 } catch (error) {
     console.error("Error fetching questions:", error);
   }
-}
-socket.on("notify-answer2", (data) => {
-  if (hasAnswered) return;
-  hasAnswered = true;
-  clearTimeout(timeoutId);
-  clearInterval(intervalId);
 
-  const isCorrect = data.correct;
-  if (isCorrect) {
-    navigateToMupi("/screenLevelsM", { selectedArtist, questionNumber: 2});
-  } else {
-    navigateToMupi("/screenWasWrongM", { selectedArtist, questionNumber: 2});
-  }
-});
-
-getQuestion();
 }

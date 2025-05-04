@@ -20,8 +20,9 @@ const questions = [
       },
       {
         
-        question3: "You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!",
-        correctAnswer: "I'm working late, 'cause I'm a singer\nOh, he looks so cute wrapped 'round my finger\nMy twisted humor makes him laugh so often\nMy honey bee, come and get this pollen"
+        question3: "I'm working late, 'cause I'm a singer\n(Sign)\ncome and get this pollen",
+        correctAnswer: "I'm working late, 'cause I'm a singer\nOh, he looks so cute wrapped 'round my finger\nMy twisted humor makes him laugh so often\nMy honey bee, come and get this pollen",
+        image: "https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Sbri%20sign.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2I2ODAwNTlmLTNiZWYtNDc0YS04N2JlLTFkZmM5YTgwN2E0OCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvU2JyaSBzaWduLnBuZyIsImlhdCI6MTc0NjMyNjY3OCwiZXhwIjoxNzc3ODYyNjc4fQ.ZphCc34FnhejlBRFxoJoAyU8W0vqjIMivZjsKomNsNU"
       }
     ]
   },
@@ -46,8 +47,9 @@ const questions = [
       },
       {
         
-        question3: "You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!",
-        correctAnswer: "Ella se hace la bruta pa' cotizarse conmigo en frente\nElla se hace la gata en celo contigo\nTe cotorrea al oído pa' tenerte en alta\nElla muere por ti, tú por mí es que matas\nYo sigo tranquila, como una paloma de esquina\nMientras ella se pasa en su BM al lado mío\nYo, de aquí, no me voy\nLo que está pa' mí, ninguna va a poder quitármelo de un tirón\nYo soy loca con mi tigre"
+        question3: "YElla se hace la bruta pa' cotizarse\ncon mi tigre",
+        correctAnswer: "Ella se hace la bruta pa' cotizarse conmigo en frente\nElla se hace la gata en celo contigo\nTe cotorrea al oído pa' tenerte en alta\nElla muere por ti, tú por mí es que matas\nYo sigo tranquila, como una paloma de esquina\nMientras ella se pasa en su BM al lado mío\nYo, de aquí, no me voy\nLo que está pa' mí, ninguna va a poder quitármelo de un tirón\nYo soy loca con mi tigre",
+        image: "https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Shaki%20sign.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2I2ODAwNTlmLTNiZWYtNDc0YS04N2JlLTFkZmM5YTgwN2E0OCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvU2hha2kgc2lnbi5wbmciLCJpYXQiOjE3NDYzMjY2NTcsImV4cCI6MTc3Nzg2MjY1N30.y2kGqQhwew8vuobJP30l-otpmny1fOEpRAv9An0kyKQ"
       }
     ]
   },
@@ -72,8 +74,9 @@ const questions = [
       },
       {
       
-        question3: "You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!",
-        correctAnswer: "Pay the toll to the angels\nDrawin' circles in the clouds\nKeep your mind on the distance\nWhen the devil turns around\nHold me in your heart tonight\nIn the magic"
+        question3: "Pay the toll to the angels\n(Sign)\nIn the magic",
+        correctAnswer: "Pay the toll to the angels\nDrawin' circles in the clouds\nKeep your mind on the distance\nWhen the devil turns around\nHold me in your heart tonight\nIn the magic",
+        image: "https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Lady%20sign.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2I2ODAwNTlmLTNiZWYtNDc0YS04N2JlLTFkZmM5YTgwN2E0OCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvTGFkeSBzaWduLnBuZyIsImlhdCI6MTc0NjMyNjYxNSwiZXhwIjoxNzc3ODYyNjE1fQ.drJSheAcUyXZ6oKOC3W4beRjLSPzoD6Ez0cW0Bfuzmc"
       }
     ]
   },
@@ -98,8 +101,9 @@ const questions = [
       },
       {
       
-        question3: "You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!",
-        correctAnswer: "You got the lights on in the afternoon\nAnd the nights are drawn out long\nAnd you're kissin' to cut through the gloom\nWith a cough drop coloured tongue"
+        question3: "You got the lights\n(Sing)\ndrop coloured tongue",
+        correctAnswer: "You got the lights on in the afternoon\nAnd the nights are drawn out long\nAnd you're kissin' to cut through the gloom\nWith a cough drop coloured tongue",
+        image: "https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Arctic%20sign.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2I2ODAwNTlmLTNiZWYtNDc0YS04N2JlLTFkZmM5YTgwN2E0OCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvQXJjdGljIHNpZ24ucG5nIiwiaWF0IjoxNzQ2MzI2NTY4LCJleHAiOjE3Nzc4NjI1Njh9.ptA3ZI_YGVpSjUd6llbYgXcqsANYRL6UhnFOi_oMnuw"
       }
     ]
   }

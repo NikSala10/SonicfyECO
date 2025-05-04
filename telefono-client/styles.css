@@ -177,7 +177,17 @@ footer strong {
     to { transform: rotate(360deg); }
 }
 
-
-
-
+#screenLevel1T {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #00D75A;  /* verde brillante de fondo */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
 

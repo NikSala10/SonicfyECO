@@ -1,4 +1,4 @@
-import { navigateToMupi } from "../app";
+import { navigateToMupi } from "../app.js";
 
 export default function renderScreenGameLevels1M(data) {
     const app = document.getElementById("app");

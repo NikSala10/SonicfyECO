@@ -1,3 +1,61 @@
+body {
+    background-color: #0B0B0B;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#welcome {
+    background-color: #0B0B0B;  /* fondo negro */
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+    padding: auto;
+}
+
+#welcome h2 {
+    font-size: 28px;
+    color: #00D75A;  /* verde neón */
+    margin: 10px 0 0 0;
+}
+
+#welcome h4 {
+    font-size: 18px;
+    color: #D3D3D3;
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+#welcome h1 {
+    font-size: 48px;
+    color: #00FF85;  /* verde más brillante */
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+#welcome img {
+    width: 100%;
+    max-width: 350px;
+    margin: 20px 0;
+ 
+}
+
+#welcome h5 {
+    font-size: 20px;
+    color: #00FF85;
+    margin: 20px 0 10px 0;
+    font-weight: 600;
+}
+
+#welcome p {
+    font-size: 16px;
+    color: #D3D3D3;
+    margin: 5px 0;
+}
 
 
 #noselectartista {

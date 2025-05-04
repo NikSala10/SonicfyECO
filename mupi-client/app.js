@@ -8,6 +8,7 @@ import renderScreenSingM from "./screens/singscreenM.js";
 import renderScreenGameLevelsM from "./screens/gamelevelsM.js";
 import renderScreenArtistaSelectM from "./screens/artistaselectM.js";
 import renderScreenWasWrongM from "./screens/wasWrongM.js";
+import renderScreenCongratulationsM from "./screens/CongratulationsM.js";
 
 const socket = io("/", { path: "/real-time" });
 
@@ -59,6 +60,10 @@ switch (currentRoute.path) {
     case "/screenWasWrongM":
       clearScripts();
       renderScreenWasWrongM(currentRoute.data);
+      break;
+    case "/screenCongrats":
+      clearScripts();
+      renderScreenCongratulationsM(currentRoute.data);
       break;
   default:
     const app = document.getElementById("app");

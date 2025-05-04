@@ -8,6 +8,7 @@ import renderScreenLevelsQuestionsT from "./screens/resultGameT.js";
 import renderScreenWasWrongT from "./screens/wasWrong.js";
 import renderScreenArtistT from "./screens/artistUserT.js";
 import renderScreenQuestion3T from "./screens/question3T.js";
+import renderScreenResulFinalT from "./screens/resultFinalT.js";
 
 const socket = io("/", { path: "/real-time" });
 
@@ -57,10 +58,13 @@ function renderRoute(currentRoute) {
       renderScreenLevelsQuestionsT(currentRoute?.data);
       break;
     case "/screenWasWrongT":
-    clearScripts();
-    renderScreenWasWrongT(currentRoute?.data);
+      clearScripts();
+      renderScreenWasWrongT(currentRoute?.data);
     break;
-
+    case "/screenResulT":
+      clearScripts();
+      renderScreenResulFinalT(currentRoute?.data);
+      break;
       
     default:
       const app = document.getElementById("app");

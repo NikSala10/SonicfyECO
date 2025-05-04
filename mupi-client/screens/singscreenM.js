@@ -1,6 +1,7 @@
 import { getQuestionData, navigateToMupi, startCountdown } from "../app.js";
 
 export default async function renderScreenSingM(data) {
+  console.log("Render data:", data);
     const app = document.getElementById("app");
 
     let timeLeft = 19;
@@ -24,7 +25,7 @@ export default async function renderScreenSingM(data) {
               <div id="img-textsong"></div>
                   <img src="${question.image}" alt="Artist Image"/>
                   <p>${question.songName}</p>
-                  <p>${selectedArtist}</p>
+                  <p>${selectedArtist.selectedArtist.name}</p>
               </div>
                   <h4>${question.question3}</h4>
             </div>          

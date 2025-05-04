@@ -76,6 +76,11 @@ export default function renderScreenLevelsQuestionsT(data) {
             setTimeout(async () => {
               navigateToTelefono("/screenQuestion3T", {selectedArtist});
             }, 4000);
+            break;
+          case 2:
+            setTimeout(async () => {
+              navigateToTelefono("/screenResulT", {selectedArtist});
+            }, 4000);
           break;
         }
         

@@ -1,6 +1,6 @@
 import { navigateToTelefono } from "../app.js";
 
-export default function renderScreenQuestion3T(data) {
+export default function renderScreenQuestion3T(selectedArtistData) {
   const app = document.getElementById("app");
 
   let timeout;
@@ -41,7 +41,7 @@ export default function renderScreenQuestion3T(data) {
         `;
 
         timeout = setTimeout(() => {
-          navigateToTelefono("/timeUp", { correct: false });
+          navigateToTelefono("/screenLevelsQuestionsT", { selectedArtistData, questionNumber: 2 });
         }, 19000);
   
   }

@@ -9,7 +9,6 @@ export default function renderScreenQuestion2T(selectedArtistData) {
 
   async function getQuestion() {
     try {
-      console.log("Datos del artista recibidos:", selectedArtistData);
       const selectedArtist = selectedArtistData.selectedArtist.selectedArtist;
       if (!selectedArtist || !selectedArtist.name) {
         app.innerHTML = "<p>Error: No se ha seleccionado un artista válido.</p>";

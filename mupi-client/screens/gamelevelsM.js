@@ -60,6 +60,11 @@ export default function renderScreenGameLevelsM(data) {
                     navigateToMupi("/screenSingingM", {selectedArtist});
                   }, 4000);
             break;
+            case 2:
+                setTimeout(async () => {
+                    navigateToMupi("/screenCongrats", {selectedArtist});
+                  }, 4000);
+            break;
         
             default:
                 break;

@@ -28,7 +28,6 @@ const updateGameStatus = (req, res) => {
 
 const resetGame = async (req, res) => {
   try {
-    console.log("RESET solicitado");
     await clearUsers();
     await clearSelectedArtist();
     await clearAnswers();

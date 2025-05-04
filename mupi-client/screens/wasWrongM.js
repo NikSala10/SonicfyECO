@@ -1,4 +1,4 @@
-import { makeRequest, navigateToMupi} from "../app.js";
+import { makeRequest, navigateToMupi, socket} from "../app.js";
 
 export default function renderScreenWasWrongM(data) {
   const app = document.getElementById("app");
@@ -48,13 +48,8 @@ export default function renderScreenWasWrongM(data) {
         `;
         
 
-        setTimeout(async () => {
-            try {
-              await makeRequest("/reset-game", "POST");
-              navigateToMupi("/");
-            } catch (error) {
-              console.error("Error al resetear el juego:", error);
-            }
-          }, 4000);
+        socket.on("game-reset", () => {
+          navigateToMupi("/"); 
+        });
 
 }

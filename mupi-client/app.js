@@ -86,4 +86,33 @@ async function makeRequest(url, method, body) {
   return response;
 }
 
-export { navigateToMupi, socket, makeRequest };
+async function getQuestionData(selectedArtist, index = 0) {
+  const response = await makeRequest("/questions", "GET");
+  if (!selectedArtist?.selectedArtist?.name) {
+    throw new Error("selectedArtist.name es undefined");
+  }
+
+  const artistName = selectedArtist.selectedArtist.name;
+  const artistData = response.find(artist => artist.artist.toLowerCase() === artistName.toLowerCase());
+
+  if (!artistData) {
+    throw new Error("No hay datos para ese artista");
+  }
+
+  return artistData.questions[index]; 
+}
+function startCountdown(duration, onTick, onEnd) {
+  let timeLeft = duration;
+  const intervalId = setInterval(() => {
+    timeLeft--;
+    onTick(timeLeft);
+    if (timeLeft <= 0) {
+      clearInterval(intervalId);
+      onEnd();
+    }
+  }, 1000);
+
+  return intervalId; 
+}
+
+export { navigateToMupi, socket, makeRequest, getQuestionData, startCountdown};

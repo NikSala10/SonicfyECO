@@ -1,6 +1,6 @@
-import { makeRequest, navigateToMupi, socket } from "../app.js";
+import { getQuestionData, navigateToMupi, socket, startCountdown } from "../app.js";
 
-export default function renderScreenQuestion1M(selectedArtist) {
+export default async function renderScreenQuestion1M(selectedArtist) {
   const app = document.getElementById("app");
 
   let hasAnswered = false;
@@ -8,18 +8,9 @@ export default function renderScreenQuestion1M(selectedArtist) {
   let intervalId = null;
   let timeLeft = 6;
 
-  async function getQuestion() {
-    try {
-    const response = await makeRequest("/questions", "GET");
-    if (!selectedArtist || !selectedArtist.selectedArtist || !selectedArtist.selectedArtist.name) {
-      console.error("selectedArtist o selectedArtist.name es undefined");
-      return; 
-    }
 
-    const artistName = selectedArtist.selectedArtist.name;
-    const artistData = response.find(artist => artist.artist.toLowerCase() === artistName.toLowerCase());
-    if (artistData) {
-      const question = artistData.questions[0];  
+    try {
+      const question = await getQuestionData(selectedArtist, 0);
   
     app.innerHTML = `
       <div id="question1M">
@@ -39,28 +30,21 @@ export default function renderScreenQuestion1M(selectedArtist) {
       </div>
     `;
     const timerEl = document.getElementById("timer");
-        intervalId = setInterval(() => {
-          timeLeft--;
-          timerEl.textContent = timeLeft;
-          if (timeLeft <= 0) {
-            clearInterval(intervalId);
-          }
-        }, 1000);
+    startCountdown(
+      6,
+      (timeLeft) => (timerEl.textContent = timeLeft),
+      () => {
+        if (!hasAnswered) {
+          hasAnswered = true;
+          navigateToMupi("/noSelectedM");
+        }
+      }
+    );
 
-        timeoutId = setTimeout(() => {
-          if (!hasAnswered) {
-            hasAnswered = true;
-            navigateToMupi("/noSelectedM");
-          }
-        }, 6000);
-
-  } else {
-    app.innerHTML = `<p>No data available for the selected artist.</p>`;
-  }
 } catch (error) {
     console.error("Error fetching questions:", error);
   }
-}
+
 socket.on("notify-answer1", (data) => {
   if (hasAnswered) return;
   hasAnswered = true;
@@ -78,5 +62,4 @@ socket.on("notify-answer1", (data) => {
 socket.on("artist-Selected", (artist) => { 
   renderScreenQuestion1M({ selectedArtist: artist } ); 
 });
-getQuestion();
 }

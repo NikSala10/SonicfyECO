@@ -1,4 +1,4 @@
-import { makeRequest, navigateToMupi, socket } from "../app.js";
+import { navigateToMupi, socket } from "../app.js";
 
 export default function renderScreenNoSelectM() {
     const app = document.getElementById("app");
@@ -19,14 +19,9 @@ export default function renderScreenNoSelectM() {
       </div>
       `;
 
-      setTimeout(async () => {
-            try {
-              await makeRequest("/reset-game", "POST");
-              navigateToMupi("/");
-            } catch (error) {
-              console.error("Error al resetear el juego:", error);
-            }
-      }, 4000);
+      socket.on("game-reset", () => {
+            navigateToMupi("/"); 
+          });
     
 
   }

@@ -114,8 +114,33 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
-  
- 
+  #screenSelectArtistT{
+    background-color: #6ec1f7; 
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+ #information
+ {
+    width:45px ;
+    height: 15px; ;
+    background-color: #EC219A;
+    padding:20px; 
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    display: block;
+    margin-top:2% ;
+ }
+ #artists {
+    margin-top:10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
  
 
 #screenTimeUpT {

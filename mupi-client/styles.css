@@ -10,7 +10,7 @@ body {
 }
 
 #welcome {
-    background-color: #0B0B0B;  /* fondo negro */
+    background-color: #0B0B0B; 
     font-family: 'Poppins', sans-serif;
     color: white;
     text-align: center;
@@ -19,7 +19,7 @@ body {
 
 #welcome h2 {
     font-size: 28px;
-    color: #00D75A;  /* verde neón */
+    color: #00D75A;  
     margin: 10px 0 0 0;
 }
 
@@ -32,7 +32,7 @@ body {
 
 #welcome h1 {
     font-size: 48px;
-    color: #00FF85;  /* verde más brillante */
+    color: #00FF85; 
     margin: 10px 0;
     font-weight: 700;
 }
@@ -65,7 +65,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
-    background-color: #0f0f0f; /* fondo negro oscuro */
+    background-color: #0f0f0f; 
     font-family: 'Arial', sans-serif;
     color: white;
     margin: 0;
@@ -75,7 +75,7 @@ body {
 
 #noselectartista h1 {
     font-size: 2.5rem;
-    color: #1DB954; /* verde Spotify */
+    color: #1DB954; 
     margin: 0.2em 0;
     font-weight: bold;
     text-shadow: 1px 1px 2px black;
@@ -85,7 +85,7 @@ body {
     width: 120px;
     height: auto;
     margin: 20px 0;
-    color: #ff4b91; /* magenta brillante */
+    color: #ff4b91; 
 }
 
 #noselectartista h4 {
@@ -115,13 +115,10 @@ footer strong {
     font-weight: bold;
 }
 
-/* Decoración opcional */
-.decor {
-    position: absolute;
-    animation: spin 4s linear infinite;
-}
 
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+
+#screenInstructions
+{  font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
 }

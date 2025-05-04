@@ -4,7 +4,7 @@ import renderScreenRegister from "./screens/register.js";
 import renderScreenStart from "./screens/start.js";
 import renderScreenTimeUpT from "./screens/timeUpsT.js";
 import renderScreenQuestion2T from "./screens/question2T .js";
-import renderScreenLevelQuestion1T from "./screens/resultGame1T.js";
+import renderScreenLevelsQuestionsT from "./screens/resultGameT.js";
 import renderScreenWasWrongT from "./screens/wasWrong.js";
 import renderScreenArtistT from "./screens/artistUserT.js";
 import renderScreenQuestion3T from "./screens/question3T.js";
@@ -52,9 +52,9 @@ function renderRoute(currentRoute) {
     clearScripts();
     renderScreenQuestion3T(currentRoute?.data);
     break;
-    case "/screenLevelQuestion1T":
+    case "/screenLevelsQuestionsT":
       clearScripts();
-      renderScreenLevelQuestion1T(currentRoute?.data);
+      renderScreenLevelsQuestionsT(currentRoute?.data);
       break;
     case "/screenWasWrongT":
     clearScripts();

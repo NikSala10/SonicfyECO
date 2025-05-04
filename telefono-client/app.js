@@ -117,4 +117,5 @@ async function fetchArtistQuestion(selectedArtistData, questionIndex = 0) {
     artistName,
   };
 }
+
 export { navigateToTelefono, socket, makeRequest2, fetchArtistQuestion};

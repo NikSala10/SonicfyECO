@@ -1,37 +1,13 @@
-import { makeRequest2, navigateToTelefono, socket } from "../app.js";
+import { fetchArtistQuestion, makeRequest2, navigateToTelefono, socket } from "../app.js";
 
-export default function renderScreenQuestion1T(selectedArtistData) {
+export default async function renderScreenQuestion1T(selectedArtistData) {
   const app = document.getElementById("app");
 
   let hasAnswered = false;
   let timeout;
 
-  async function getQuestion() {
     try {
-      if (!selectedArtistData || !selectedArtistData.selectedArtist || !selectedArtistData.selectedArtist.name) {
-        app.innerHTML = "<p>Error: No se ha seleccionado un artista válido.</p>";
-        return;
-      }
-
-      const artistName = selectedArtistData.selectedArtist.name;
-
-      const response = await makeRequest2("/questions", "GET");
-
-      if (!response || !Array.isArray(response)) {
-        app.innerHTML = "<p>Error al obtener preguntas del servidor.</p>";
-        return;
-      }
-
-      const artistData = response.find(
-        (artist) => artist.artist.toLowerCase() === artistName.toLowerCase()
-      );
-
-      if (!artistData || !artistData.questions || artistData.questions.length === 0) {
-        app.innerHTML = "<p>No hay preguntas disponibles para el artista seleccionado.</p>";
-        return;
-      }
-
-      const question = artistData.questions[0];
+      const { question, artistName } = await fetchArtistQuestion(selectedArtistData, 0);
 
       app.innerHTML = `
           <div id="screenQuestion1T">
@@ -98,5 +74,3 @@ export default function renderScreenQuestion1T(selectedArtistData) {
     }
   }
   
-  getQuestion();
-}

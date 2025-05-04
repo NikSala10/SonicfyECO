@@ -92,4 +92,29 @@ function navigateToTelefono(path, data) {
   renderRoute(route);
 }
 
-export { navigateToTelefono, socket, makeRequest2};
+async function fetchArtistQuestion(selectedArtistData, questionIndex = 0) {
+  if (!selectedArtistData?.selectedArtist?.name) {
+    throw new Error("No se ha seleccionado un artista válido.");
+  }
+
+  const response = await makeRequest2("/questions", "GET");
+
+  if (!Array.isArray(response)) {
+    throw new Error("Error al obtener preguntas del servidor.");
+  }
+
+  const artistName = selectedArtistData.selectedArtist.name;
+  const artistData = response.find(
+    (artist) => artist.artist.toLowerCase() === artistName.toLowerCase()
+  );
+
+  if (!artistData?.questions?.length) {
+    throw new Error("No hay preguntas disponibles para el artista seleccionado.");
+  }
+
+  return {
+    question: artistData.questions[questionIndex],
+    artistName,
+  };
+}
+export { navigateToTelefono, socket, makeRequest2, fetchArtistQuestion};

@@ -12,7 +12,7 @@ export default function renderScreenResulFinalT(selectedArtistData) {
             <div id=""winnerTicket">
                 <h1>Congratulations!</h1>
                 <h1>Congratulations!</h1>
-                <p>You've successfully completed the challenge and won a ticket to the concert.</p>
+                <p>You've successfully completed the challenge and won a ticket to ${selectedArtistData.selectedArtist.name} the concert.</p>
                 <svg width="298" height="382" viewBox="0 0 298 382" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="218.094" height="331.661" rx="15" transform="matrix(0.974379 -0.224913 0.22924 0.97337 2.78027 53.8521)" fill="#F575C2"/>
                     <rect width="206.934" height="326.026" rx="15" transform="matrix(0.999977 -0.00672764 0.00190964 0.999998 44.4424 27.6631)" fill="#FC7556"/>
@@ -26,7 +26,7 @@ export default function renderScreenResulFinalT(selectedArtistData) {
             </div>
         </div>
         `;
-        // ${selectedArtistData.selectedArtist.name}
+         
 
         // setTimeout(async () => {
         //     try {

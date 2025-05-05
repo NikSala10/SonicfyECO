@@ -1,4 +1,3 @@
-import renderScreen1 from "./screens/welcome.js";
 import renderScreenInstructions from "./screens/instructions.js";
 import renderScreenQuestion1M from "./screens/question1M.js";
 import renderScreenFan1M from "./screens/fan1M.js";
@@ -9,6 +8,7 @@ import renderScreenGameLevelsM from "./screens/gamelevelsM.js";
 import renderScreenArtistaSelectM from "./screens/artistaselectM.js";
 import renderScreenWasWrongM from "./screens/wasWrongM.js";
 import renderScreenCongratulationsM from "./screens/CongratulationsM.js";
+import renderscreenWelcome from "./screens/welcome.js";
 
 const socket = io("/", { path: "/real-time" });
 
@@ -23,7 +23,7 @@ function renderRoute(currentRoute) {
 switch (currentRoute.path) {
   case "/":
     clearScripts();
-    renderScreen1(currentRoute.data);
+    renderscreenWelcome(currentRoute.data);
     break;
   case "/screenInstructions":
     clearScripts();

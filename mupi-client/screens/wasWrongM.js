@@ -36,8 +36,11 @@ export default function renderScreenWasWrongM(data) {
     }
   app.innerHTML = `
         <div id="screenWasWrongT">
+        <img src="https://cbnylposiazbgqyzeifz.supabase.co/storage/v1/object/sign/img/Time's%20up!.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzZmMzU0ZTcyLTRmYWQtNGU1NS04ZDYyLWVmZDYwYThhMzUzMyJ9.eyJ1cmwiOiJpbWcvVGltZSdzIHVwIS5wbmciLCJpYXQiOjE3NDY0MDU0MDcsImV4cCI6MTkwNDA4NTQwN30.O2rYr_rf9lFIUcbEwam0cJ1R05u65VDGY2IFPrPMTYA" alt=""
+        <img src="https://cbnylposiazbgqyzeifz.supabase.co/storage/v1/object/sign/img/Time's%20up!.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzZmMzU0ZTcyLTRmYWQtNGU1NS04ZDYyLWVmZDYwYThhMzUzMyJ9.eyJ1cmwiOiJpbWcvVGltZSdzIHVwIS5wbmciLCJpYXQiOjE3NDY0MDUyODQsImV4cCI6MTkwNDA4NTI4NH0.Ag99DGe5ylD3OElVXl63jwBkLqTMo4Il4imr9TjTLz0" alt="">
+
             <h1>Game levels</h1>
-            <h1>Game levels</h1>
+            <img src="https://cbnylposiazbgqyzeifz.supabase.co/storage/v1/object/sign/img/Time's%20up!.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzZmMzU0ZTcyLTRmYWQtNGU1NS04ZDYyLWVmZDYwYThhMzUzMyJ9.eyJ1cmwiOiJpbWcvVGltZSdzIHVwIS5wbmciLCJpYXQiOjE3NDY0MDUxNTYsImV4cCI6MjA5MzMwMTE1Nn0.vMzJLAOWvh47VC_ZrWtDsWpYKkvln1acw0JR8p7pz7g" alt="">
             <p><p>Challenge ${question + 1}</p></p>
             <h4>Your percentage on this test is:</h4>
             <h4>0%</h4>

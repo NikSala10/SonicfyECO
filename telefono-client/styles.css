@@ -400,3 +400,16 @@ footer strong {
     color: white;
 }
 
+
+#screenResultFinalGame {
+  width: 100%;
+  height: 100vh;
+  background-color: #6ec1f7;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+

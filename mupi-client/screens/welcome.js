@@ -1,6 +1,6 @@
 import { socket, navigateToMupi} from "../app.js";
 
-export default function renderscreenwelcome() {
+export default function renderscreenWelcome() {
   const app = document.getElementById("app");
   app.innerHTML = `
       <div id="welcome">

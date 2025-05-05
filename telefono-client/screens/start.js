@@ -51,24 +51,24 @@ export default function renderScreenStart(data) {
       }
     });
   
-    // const interval = setInterval(async () => {
-    //   if (secondsRemaining <= 0) {
-    //     clearInterval(interval);
-    //     if (!buttonClicked) {
-    //       await makeRequest2("/update-game-status", "POST", {
-    //         gameStarted: false,
-    //       });
-    //       navigateToTelefono("/timeUp", data);
-    //     }
-    //   } else {
-    //     secondsRemaining--;
-    //   }
-    // }, 1000);
+    const interval = setInterval(async () => {
+      if (secondsRemaining <= 0) {
+        clearInterval(interval);
+        if (!buttonClicked) {
+          await makeRequest2("/update-game-status", "POST", {
+            gameStarted: false,
+          });
+          navigateToTelefono("/timeUp", data);
+        }
+      } else {
+        secondsRemaining--;
+      }
+    }, 1000);
   
     const start = document.getElementById("start");
     start.addEventListener("click", async () => {
       buttonClicked = true;
       await makeRequest2("/start-game", "POST", { message: "Juego iniciado desde TELÉFONO" });
-      // navigateToTelefono("/screenSelectArtist", data);
+      navigateToTelefono("/screenSelectArtist", data);
     });
 }

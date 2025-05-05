@@ -60,7 +60,7 @@ export default function renderScreenArtistT({ selectedArtist }) {
     </div>
   `;
 
-  // setTimeout(() => {
-  //   navigateToTelefono("/screenQuestion1T", { selectedArtist});
-  // }, 2000);
+  setTimeout(() => {
+    navigateToTelefono("/screenQuestion1T", { selectedArtist});
+  }, 2000);
 }

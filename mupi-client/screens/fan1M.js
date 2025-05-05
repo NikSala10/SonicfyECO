@@ -5,9 +5,9 @@ export default function renderScreenFan1M() {
     app.innerHTML = `
         <div id="select-artista">
             <h1>Prove that you're the fan!</h1>
+            <h2 id="timer">6</h2>
             <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2FHimbre%20fan.png?alt=media&token=5d6dff78-2da5-4597-acf3-0c19c84fbbcc">
             <p>Pick your favorite artist!</p>
-            <h2 id="timer">6</h2>
             <p>If you get them right... the ticket could be yours!</p>
             <p>Ready for the challenge?</p>
             <p>Good luck!</p>            

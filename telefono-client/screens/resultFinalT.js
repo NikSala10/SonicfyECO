@@ -28,12 +28,12 @@ export default function renderScreenResulFinalT(selectedArtistData) {
         `;
          
 
-        // setTimeout(async () => {
-        //     try {
-        //       await makeRequest2("/reset-game", "POST");
-        //       navigateToTelefono("/");
-        //     } catch (error) {
-        //       console.error("Error al resetear el juego:", error);
-        //     }
-        //   }, 8000);
+        setTimeout(async () => {
+            try {
+              await makeRequest2("/reset-game", "POST");
+              navigateToTelefono("/");
+            } catch (error) {
+              console.error("Error al resetear el juego:", error);
+            }
+          }, 8000);
 }

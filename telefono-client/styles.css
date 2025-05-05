@@ -386,7 +386,7 @@ footer strong {
     to { transform: rotate(360deg); }
 }
 
-#screenLevel1T {
+#screenLevelsT {
     max-width: 300px;
     padding: 20px;
     background-color: #00D75A;  

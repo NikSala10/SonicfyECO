@@ -20,7 +20,6 @@ export default function renderScreenStart(data) {
       <div id="texto">
         <p>You are about to experience <br> something unique!!1</p>
         <button id="start">Start</button>
-        <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2Fmicro-center.png?alt=media&token=fc646eab-f107-4b69-ba35-603303c84132">
         <svg class="svg-fondo" width="440" height="351" viewBox="0 0 440 351" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_752_448)">
         <path d="M138.812 348.974C111.414 342.494 83.8654 336.31 56.616 329.429C39.9775 325.207 23.4634 320.416 8.61823 312.543C4.4835 310.433 -1.12074 307.773 0.274109 303.109C1.66896 298.444 8.29443 298.887 12.9771 298.697C38.4331 297.959 63.3163 302.074 88.1246 305.958C118.562 310.707 148.801 316.279 181.579 321.915C163.471 301.969 147.705 283.1 135.151 262.542C132.511 258.32 125.188 252.642 130.667 248.822C134.927 245.783 141.826 251.481 146.708 254.394C173.808 270.604 198.592 289.263 225.567 308.998L225.567 264.04C225.701 255.952 227.194 247.921 230.001 240.189C231.221 236.707 232.691 232.106 238.345 232.148C243.052 232.148 245.07 236.01 246.838 239.113C256.802 256.61 262.257 275.332 267.562 294.117C268.484 297.368 267.562 301.251 272.12 303.763C282.557 291.626 290.527 277.907 303.479 267.396C306.319 265.095 309.183 260.811 313.667 263.175C317.353 265.285 314.414 269 313.492 271.913C308.393 286.731 301.724 301.128 293.566 314.928C291.773 318.116 289.332 320.965 292.719 327.044C309.382 312.269 325.099 297.98 341.389 284.155C353.993 273.433 367.343 263.365 383.733 256.716C386.423 255.619 389.81 252.875 392.55 255.851C395.041 258.468 392.227 261.148 390.334 263.449C374.367 282.846 354.615 299.457 335.262 316.343C333.02 318.285 329.683 319.319 327.79 321.83C336.308 324.258 342.087 320.838 348.015 318.496C372.001 308.998 395.863 299.162 421.967 294.392C427.895 293.315 436.762 289.727 439.701 296.249C442.043 301.462 433.574 304.692 428.642 307.457C406.225 320.121 382.114 330.357 357.928 340.404C352.747 342.515 347.616 344.752 340.293 347.834C357.181 350.768 372.425 346.736 386.871 350.536C386.793 350.431 386.684 350.345 386.555 350.285C386.427 350.226 386.283 350.194 386.137 350.194C385.99 350.194 385.846 350.226 385.718 350.285C385.589 350.345 385.481 350.431 385.402 350.536C319.661 350.648 253.937 350.754 188.23 350.852C171.666 350.916 155.127 351.633 138.812 348.974Z" fill="#8EACF6"/>
@@ -37,6 +36,7 @@ export default function renderScreenStart(data) {
         </clipPath>
         </defs>
         </svg>
+        <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2Fmicro-center.png?alt=media&token=fc646eab-f107-4b69-ba35-603303c84132">
       </div>
     </div>
     `;
@@ -51,24 +51,24 @@ export default function renderScreenStart(data) {
       }
     });
   
-    const interval = setInterval(async () => {
-      if (secondsRemaining <= 0) {
-        clearInterval(interval);
-        if (!buttonClicked) {
-          await makeRequest2("/update-game-status", "POST", {
-            gameStarted: false,
-          });
-          navigateToTelefono("/timeUp", data);
-        }
-      } else {
-        secondsRemaining--;
-      }
-    }, 1000);
+    // const interval = setInterval(async () => {
+    //   if (secondsRemaining <= 0) {
+    //     clearInterval(interval);
+    //     if (!buttonClicked) {
+    //       await makeRequest2("/update-game-status", "POST", {
+    //         gameStarted: false,
+    //       });
+    //       navigateToTelefono("/timeUp", data);
+    //     }
+    //   } else {
+    //     secondsRemaining--;
+    //   }
+    // }, 1000);
   
     const start = document.getElementById("start");
     start.addEventListener("click", async () => {
       buttonClicked = true;
       await makeRequest2("/start-game", "POST", { message: "Juego iniciado desde TELÉFONO" });
-      navigateToTelefono("/screenSelectArtist", data);
+      // navigateToTelefono("/screenSelectArtist", data);
     });
 }

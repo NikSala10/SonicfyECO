@@ -191,7 +191,7 @@ html, body, #app {
     padding-bottom: 1rem;
 }
 #texto img {
-  margin-top: 1.6rem;
+  margin-top: 3.6rem;
 }
   #screenStart button#start {
     background-color: white;
@@ -279,7 +279,8 @@ html, body, #app {
     justify-items: center; 
     padding-top: 4rem;
     margin: 0 auto;
-    padding-bottom: 2.2rem;
+    padding-bottom: 2rem;
+    cursor: pointer;
 }
 #artists h3 {
     text-align: left;
@@ -296,7 +297,35 @@ html, body, #app {
 }
 
 
- 
+
+#select-artistaT {
+  background-color: #6ec1f7;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  box-sizing: border-box; 
+
+}
+
+#selected-us {
+  width: auto; 
+  padding: 18px 90px; 
+  background-color: #EC219A;
+  font-size: 14px;
+  color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  color: white;
+}
+#selected-us h2, p {
+ margin: 0;
+ padding: 0;
+}
+
+
 
 #screenTimeUpT {
     display: flex;

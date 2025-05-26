@@ -1,9 +1,5 @@
 const { createUser, getAllUsers, clearUsers } = require("../db/users.db");
 const { emitEvent } = require("../services/socket.service");
-const { resetGame } = require("./game.controller");
-
-let currentUser = null;
-let timeoutId = null;
 
 const registerPlayer = async (req, res) => {
   const { name, email } = req.body;
@@ -22,11 +18,6 @@ const registerPlayer = async (req, res) => {
     name,
     email
   };
-
-  timeoutId = setTimeout(async () => {
-    currentUser = null;
-    await clearUsers(); 
-  }, 10 * 1000);
 
   await createUser(newUser);
 

@@ -9,6 +9,7 @@ import renderScreenArtistaSelectM from "./screens/artistaselectM.js";
 import renderScreenWasWrongM from "./screens/wasWrongM.js";
 import renderScreenCongratulationsM from "./screens/CongratulationsM.js";
 import renderscreenWelcome from "./screens/welcome.js";
+import renderScreenLoserM from "./screens/loser.js";
 
 const socket = io("/", { path: "/real-time" });
 
@@ -61,6 +62,10 @@ switch (currentRoute.path) {
       clearScripts();
       renderScreenWasWrongM(currentRoute.data);
       break;
+    case "/screenLoserM":
+      clearScripts(); 
+      renderScreenLoserM(currentRoute.data);
+      break;
     case "/screenCongrats":
       clearScripts();
       renderScreenCongratulationsM(currentRoute.data);
@@ -91,20 +96,36 @@ async function makeRequest(url, method, body) {
   return response;
 }
 
-async function getQuestionData(selectedArtist, index = 0) {
-  const response = await makeRequest("/questions", "GET");
-  if (!selectedArtist?.selectedArtist?.name) {
-    throw new Error("selectedArtist.name es undefined");
+async function getQuestionData(artistId, artistName, questionNumber) {
+  const allQuestions =  await makeRequest("/questions", "GET");
+  console.log("Datos recibidos desde /questions:", allQuestions);
+  console.log("artistId:", artistId);
+
+  const artistQuestions = allQuestions.filter(
+    (q) =>
+      q.idArtist &&
+      q.idArtist.toString() === artistId.toString()
+  );
+
+  if (!artistQuestions || artistQuestions.length === 0) {
+    throw new Error(`No se encontraron preguntas para el artista: ${artistName}`);
+  }
+  
+  const questionData = artistQuestions.find(q => q.questionNumber === questionNumber);
+
+  if (!questionData) {
+    throw new Error(`No se encontró la pregunta número ${questionNumber} para ${artistName}`);
   }
 
-  const artistName = selectedArtist.selectedArtist.name;
-  const artistData = response.find(artist => artist.artist.toLowerCase() === artistName.toLowerCase());
-
-  if (!artistData) {
-    throw new Error("No hay datos para ese artista");
-  }
-
-  return artistData.questions[index]; 
+  return {
+    artistName: questionData.name,
+    artistId: questionData.idArtist,
+    question1: questionData.question,
+    option1: questionData.option1,
+    option2: questionData.option2,
+    option3: questionData.option3,
+    answer: questionData.respuestaCorrecta
+  };
 }
 function startCountdown(duration, onTick, onEnd) {
   let timeLeft = duration;

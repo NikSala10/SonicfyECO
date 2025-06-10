@@ -1,6 +1,6 @@
 import { navigateToMupi, socket } from "../app.js";
 
-export default function renderScreenCongratulationsM(selectedArtist) {
+export default function renderScreenCongratulationsM({selectedArtist}) {
     const app = document.getElementById("app");
     app.innerHTML = `
           <div id="Congratulations!">
@@ -11,7 +11,7 @@ export default function renderScreenCongratulationsM(selectedArtist) {
             <h1>Congratulations!</h1>
         
             <div id="artist-exito">
-             <h5>You won a ticket to ${selectedArtist.selectedArtist.selectedArtist.name}'s next concert.</h5>
+             <h5>You won a ticket to ${selectedArtist.name}'s next concert.</h5>
             </div>
             
         <h5>Your ticket with all the information will be sent to the email address you enter.</h5>

@@ -20,5 +20,9 @@ export default function renderScreenLoserM() {
                 <p>If there are any irregularities, please contact us at spotify@gmail.com</p>
         </div>
         `;
+
+      socket.on("game-reset", () => {
+      navigateToMupi("/"); 
+      });
      
   }

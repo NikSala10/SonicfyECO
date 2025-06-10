@@ -1,15 +1,17 @@
-import { getQuestionData, navigateToMupi, startCountdown } from "../app.js";
+import { getQuestionData, navigateToMupi, socket, startCountdown } from "../app.js";
 
-export default async function renderScreenSingM(data) {
-  console.log("Render data:", data);
+export default async function renderScreenSingM({selectedArtist}) {
+
     const app = document.getElementById("app");
 
     let timeLeft = 19;
-    let selectedArtist = null;
+    let hasAnswered = false;
+    let verifyingModal;
+    const imgArtist = localStorage.getItem("imgArtist");
 
     try {
-      selectedArtist = data.selectedArtist
-      const question = await getQuestionData(selectedArtist, 2);
+      const questionNumber = 3;
+      const question = await getQuestionData(selectedArtist.id, selectedArtist.name, questionNumber);
 
       app.innerHTML = `
             <div id="sing">
@@ -23,27 +25,58 @@ export default async function renderScreenSingM(data) {
             </div>
             <div id="arctic-sing">
               <div id="img-textsong"></div>
-                  <img src="${question.image}" alt="Artist Image"/>
-                  <p>${question.songName}</p>
-                  <p>${selectedArtist.selectedArtist.name}</p>
+                  <img src="${imgArtist}" alt="Artist Image"/>
+                  <p>${question.option1}</p>
+                  <p>${selectedArtist.name}</p>
               </div>
-                  <h4>${question.question3}</h4>
+                  <h4>${question.question1}</h4>
             </div>          
                   <p>You’ll see the first line of the lyrics on the screen. Your challenge is to sing the missing part out loud!</p>
                   <p>Press the button on your phone to start!</p>
+              <div id="verifying-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); color:white; font-size:1.5em; display:flex; align-items:center; justify-content:center; z-index:1000;">
+                Estamos comprobando tu nivel de acierto, por favor espera unos segundos...
+              </div>
             </div>
         `;
 
+        verifyingModal = document.getElementById("verifying-modal")
+        verifyingModal.style.display = "none";
+
         const timerEl = document.getElementById("timer");
-        startCountdown(
-          19,
-          (timeLeft) => (timerEl.textContent = timeLeft),
-          () => {
-            navigateToMupi("/screenLevelsM", { selectedArtist, questionNumber: 2 });
-          }
-        );
-} catch (error) {
-    console.error("Error fetching questions:", error);
-  }
+        socket.on("initSing", ({initMicro}) => {
+          if (initMicro) {
+            startCountdown(
+              19,
+              (timeLeft) => (timerEl.textContent = timeLeft),
+            );
+          } 
+         });
+
+        socket.on("active", ({activeMicro}) => {
+          if (activeMicro) {
+            navigateToMupi("/noSelectedM");
+          } 
+         });
+
+        socket.on("verifying-user", () => {
+          verifyingModal.style.display = "flex";
+        });
+
+
+    } catch (error) {
+        console.error("Error fetching questions:", error);
+      }
+    
+    socket.on("result-canto", ({ porcentaje, esPerfecto }) => {
+      verifyingModal.style.display = "none";
+      if (hasAnswered) return;
+      hasAnswered = true;  
+      const isCorrect = esPerfecto;
+      if (isCorrect) {
+        navigateToMupi("/screenLevelsM", { selectedArtist, questionNumber: 2});
+      } else {
+        navigateToMupi("/screenWasWrongM", { selectedArtist, questionNumber: 2 });
+      }
+    });
 
 }

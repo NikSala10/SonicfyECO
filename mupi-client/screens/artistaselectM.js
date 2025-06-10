@@ -8,6 +8,8 @@ export default function renderScreenArtistaSelectM({ selectedArtist }) {
     return;
   }
 
+  localStorage.setItem("imgArtist", selectedArtist.img);
+
   app.innerHTML = `
     <div id="select-artista">
       <h1>Artist selected</h1>

@@ -89,7 +89,7 @@ const sendAudio = [
         esPerfecto: porcentaje >= 65,
       });
 
-      if (porcentaje === 65) {
+      if (porcentaje >= 65) {
         await sendEmailWithTemplate(userEmail, userName, artist)
       }
 
@@ -101,7 +101,26 @@ const sendAudio = [
   }
 ];
 
+let activeMicro = false;
+
+const microActived = (req, res) => {
+  const { message } = req.body;
+  activeMicro = true;
+  emitEvent("active", { activeMicro: true })  
+  res.send({ message: "Cambio de pantalla exitoso" });
+};
+
+let initMicro = false;
+
+const microStart = (req, res) => {
+  const { message } = req.body;
+  initMicro = true;
+  emitEvent("initSing", { initMicro: true })  
+  res.send({ message: "Cambio de pantalla exitoso" });
+};
 
 module.exports = {
-  sendAudio
+  sendAudio,
+  microActived,
+  microStart
 };

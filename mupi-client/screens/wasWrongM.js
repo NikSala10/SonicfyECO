@@ -18,6 +18,7 @@ export default function renderScreenWasWrongM(data) {
       break;
   }
 
+  
   const totalTests = 3;
   let starsHTML = "";
   for (let i = 0; i < totalTests; i++) {
@@ -48,9 +49,14 @@ export default function renderScreenWasWrongM(data) {
         </div>
         `;
         
-
+      if (question == 2) {
+        setTimeout(async () => {
+            navigateToMupi("/screenLoserM");
+          }, 4000);
+      }else {
         socket.on("game-reset", () => {
           navigateToMupi("/"); 
         });
+        }
 
 }

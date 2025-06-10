@@ -1,15 +1,15 @@
 import { getQuestionData, navigateToMupi, socket, startCountdown } from "../app.js";
 
-export default async function renderScreenQuestion2M(data) {
+export default async function renderScreenQuestion2M({selectedArtist}) {
     const app = document.getElementById("app");
 
     let hasAnswered = false;
     let timeLeft = 6;
-    let selectedArtist = null;
 
     try {
-      selectedArtist = data.selectedArtist
-      const question = await getQuestionData(selectedArtist, 1);
+      const questionNumber = 2;
+      const question = await getQuestionData(selectedArtist.id, selectedArtist.name, questionNumber);
+
       app.innerHTML = `
           <div id="question2M">
               <svg width="177" height="177" viewBox="0 0 177 177" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +19,7 @@ export default async function renderScreenQuestion2M(data) {
               <p></p> Your time for this 6 seconds to respond if you do not respond in the given time you will lose</p>
               <span id="timer">${timeLeft}</span>
               <div id="artist-2">
-                  <h5>${question.question2}</h5>
+                  <h5>${question.question1}</h5>
                   <p>A  ${question.option1}</p>
                   <p>B  ${question.option2}</p>
                   <p>C  ${question.option3}</p>

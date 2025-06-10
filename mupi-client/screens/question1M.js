@@ -1,13 +1,14 @@
 import { getQuestionData, navigateToMupi, socket, startCountdown } from "../app.js";
 
-export default async function renderScreenQuestion1M(selectedArtist) {
+export default async function renderScreenQuestion1M({selectedArtist}) {
   const app = document.getElementById("app");
 
   let hasAnswered = false;
   let timeLeft = 6;
 
   try {
-    const question = await getQuestionData(selectedArtist, 0);
+    const questionNumber = 1;
+    const question = await getQuestionData(selectedArtist.id, selectedArtist.name, questionNumber);
 
     app.innerHTML = `
       <div id="question1M">
@@ -54,6 +55,6 @@ socket.on("notify-answer1", (data) => {
 });
 
 socket.on("artist-Selected", (artist) => { 
-  renderScreenQuestion1M({ selectedArtist: artist } ); 
+  renderScreenQuestion1M({artist } ); 
 });
 }

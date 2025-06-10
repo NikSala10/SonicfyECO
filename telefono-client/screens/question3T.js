@@ -1,4 +1,4 @@
-import { navigateToTelefono, socket } from "../app.js";
+import { makeRequest2, navigateToTelefono, socket } from "../app.js";
 
 export default function renderScreenQuestion3T({selectedArtist}) {
   console.log("Renderizando pantalla de pregunta 3 con el artista:", selectedArtist);
@@ -59,11 +59,13 @@ export default function renderScreenQuestion3T({selectedArtist}) {
   timeout = setTimeout(() => {
     if (!clicked) {
       navigateToTelefono("/timeUp"); 
+      makeRequest2("/active-microphone", "POST", { message: "Microfono no activado" });
     }
   }, 6000);
 
   document.getElementById("active-microphone").addEventListener("click", async () => {
     clicked = true;
+    makeRequest2("/microInit", "POST", { message: "Microfono activado" });
     
     clearTimeout(timeout);
     try {

@@ -1,9 +1,17 @@
-import { navigateToTelefono } from "../app.js";
+import { navigateToTelefono, socket } from "../app.js";
 
-export default function renderScreenQuestion3T(selectedArtistData) {
+export default function renderScreenQuestion3T({selectedArtist}) {
+  console.log("Renderizando pantalla de pregunta 3 con el artista:", selectedArtist);
+  
   const app = document.getElementById("app");
 
   let timeout;
+  let clicked = false;
+
+  if (!selectedArtist || !selectedArtist.name) {
+    app.innerHTML = `<p>Error: No se encontró el artista seleccionado.</p>`;
+    return;
+  }
 
   app.innerHTML = `
         <div id="screenQuestion3T">
@@ -20,7 +28,7 @@ export default function renderScreenQuestion3T(selectedArtistData) {
                 <path d="M177.875 181.5C177.875 191.096 170.096 198.875 160.5 198.875C150.904 198.875 143.125 191.096 143.125 181.5V138.062C143.125 128.467 150.904 120.688 160.5 120.688C170.096 120.688 177.875 128.467 177.875 138.062V181.5ZM160.5 112C146.106 112 134.438 123.669 134.438 138.062V181.5C134.438 195.894 146.106 207.562 160.5 207.562C174.894 207.562 186.562 195.894 186.562 181.5V138.062C186.562 123.669 174.894 112 160.5 112Z" fill="white"/>
                 </svg>
             </button>
-          
+                      
             <svg width="322" height="78" viewBox="0 0 322 78" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="161.035" cy="53.4727" r="24.5273" fill="#42C83C"/>
                 <path d="M111.492 50.4258C111.492 50.1208 111.244 49.8735 110.939 49.8735C110.634 49.8735 110.387 50.1208 110.387 50.4258V59.2617C110.387 59.5667 110.634 59.814 110.939 59.814C111.244 59.814 111.492 59.5667 111.492 59.2617L111.492 50.4258Z" fill="white"/>
@@ -37,11 +45,100 @@ export default function renderScreenQuestion3T(selectedArtistData) {
                 <ellipse cx="161" cy="6.5" rx="7" ry="6.5" fill="white"/>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M150.572 41.842C150.611 41.5138 150.726 41.1993 150.908 40.9233C151.09 40.6474 151.334 40.4178 151.62 40.2526C151.907 40.0874 152.227 39.9913 152.557 39.9719C152.887 39.9525 153.217 40.0103 153.521 40.1408C155.056 40.797 158.496 42.3565 162.861 44.8758C167.227 47.3965 170.298 49.5977 171.633 50.5965C172.771 51.4507 172.774 53.1446 171.634 54.0017C170.313 54.9947 167.279 57.167 162.861 59.7195C158.438 62.272 155.038 63.8128 153.518 64.4603C152.208 65.0196 150.743 64.1712 150.572 62.7591C150.373 61.1085 150 57.3607 150 52.2991C150 47.2404 150.371 43.494 150.572 41.842Z" fill="white"/>
             </svg>
+            <p id="recording-status" style="text-align:center; font-size: 1.2em; margin-top: 10px;"></p>
+            <div id="verifying-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); color:white; font-size:1.5em; display:flex; align-items:center; justify-content:center; z-index:1000;">
+                Estamos verificando tu grabación, por favor espera...
+            </div>
         </div>
         `;
 
-        timeout = setTimeout(() => {
-          navigateToTelefono("/screenLevelsQuestionsT", { selectedArtistData, questionNumber: 2 });
-        }, 19000);
+        const statusText = document.getElementById("recording-status");
+        const verifyingModal = document.getElementById("verifying-modal")
+        verifyingModal.style.display = "none";
+
+  timeout = setTimeout(() => {
+    if (!clicked) {
+      navigateToTelefono("/timeUp"); 
+    }
+  }, 6000);
+
+  document.getElementById("active-microphone").addEventListener("click", async () => {
+    clicked = true;
+    
+    clearTimeout(timeout);
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mediaRecorder = new MediaRecorder(stream);
+      const audioChunks = [];
+
+      mediaRecorder.ondataavailable = event => {
+        if (event.data.size > 0) {
+          audioChunks.push(event.data);
+        }
+      };
+
+      const emailUser = localStorage.getItem("userEmail");
+      const nameUser = localStorage.getItem("userName");
+      const artist = localStorage.getItem("artistSelect");
+
+      mediaRecorder.onstop = async () => {
+        const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+
+        const formData = new FormData();
+        formData.append("audio", audioBlob, "grabacion.webm");
+        formData.append("idArtist", selectedArtist.id); 
+        formData.append("artist", artist); 
+        formData.append("emailUser", emailUser); 
+        formData.append("nameUser", nameUser); 
+        
+        console.log("⏺️ Audio Blob listo:", audioBlob);
+
+        try {
+          const response = await fetch("/api/upload-audio", {
+            method: "POST",
+            body: formData
+          });
+
+          if (response.ok) {
+            const result = await response.json();
+            console.log("✅ Audio enviado correctamente:", result);
+          } else {
+            const errorText = await response.text();
+            console.error("❌ Error al enviar el audio:", response.status, errorText);
+          }
+        } catch (err) {
+          console.error("❌ Error de red al enviar el audio:", err);
+        }
+      };
+
+      mediaRecorder.start();
+      console.log("🎙️ Grabando...");
+      statusText.textContent = "🎙️ Grabando...";
+      
+      // Detener después de 19 segundos
+      setTimeout(() => {
+        mediaRecorder.stop();
+        statusText.textContent = "✅ Grabación finalizada";
+        console.log("🛑 Grabación detenida.");
+      }, 19000);
+
+       socket.on("verifying-user", () => {
+        verifyingModal.style.display = "flex";
+      });
+      socket.on("result-canto", ({ porcentaje, esPerfecto }) => {
+        console.log("Porcentaje recibido del socket:", { porcentaje, esPerfecto });
+        verifyingModal.style.display = "none";
+        clearTimeout(timeout); // cancela el timeout si llega un resultado
+        navigateToTelefono(
+          esPerfecto ? "/screenLevelsQuestionsT" : "/screenWasWrongT",
+          { correct: esPerfecto, questionNumber: 2, selectedArtistData: selectedArtist }
+        );
+      });
+
+    } catch (error) {
+      console.error("❌ Error accediendo al micrófono:", error);
+      alert("No se pudo acceder al micrófono.");
+    }
+  });
   
   }

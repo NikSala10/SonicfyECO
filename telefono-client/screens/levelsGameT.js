@@ -75,12 +75,12 @@ export default function renderScreenLevelsQuestionsT(data) {
           break;
           case 1:
             setTimeout(async () => {
-              navigateToTelefono("/screenQuestion3T", {selectedArtist});
+              navigateToTelefono("/screenQuestion3T", {selectedArtist });
             }, 4000);
             break;
           case 2:
             setTimeout(async () => {
-              navigateToTelefono("/screenResulT", {selectedArtist: actualArtist});
+              navigateToTelefono("/screenResulT", {selectedArtist});
             }, 4000);
           break;
         }

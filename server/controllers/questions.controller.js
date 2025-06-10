@@ -13,43 +13,61 @@ const getQuestions = async (req, res) => {
 };
 
 const handleAnswerQuestion1 = async (req, res) => {
+  console.log("Body recibido:", req.body);
   const { answer, artist, name } = req.body;
 
   try {
+    if (!artist || !answer) {
+      const msg = "Faltan datos: artist o answer.";
+      emitEvent("notify-answer1", { correct: false, message: msg });
+      return res.status(400).json({ message: msg });
+    }
+
     const questions = await getAllQuestions();
-    const artistData = questions.find((q) => q.artist.toLowerCase() === artist.toLowerCase());
 
-    if (!artistData || !artistData.questions || artistData.questions.length === 0) {
-      emitEvent("notify-answer1", { correct: false, message: "No hay preguntas disponibles para este artista." });
-      return res.status(400).json({ message: "No hay preguntas disponibles para este artista." });
+    const questionData = questions.find(
+      (q) =>
+        q.idArtist &&
+        q.idArtist === artist &&
+        Number(q.questionNumber) === 1
+    );
+
+    console.log("Artista recibido:", artist);
+    console.log("Pregunta encontrada:", questionData);
+
+    // Validar existencia de la pregunta
+    if (!questionData || !questionData.respuestaCorrecta) {
+      const msg = "Pregunta inválida o sin respuesta correcta.";
+      emitEvent("notify-answer1", { correct: false, message: msg });
+      return res.status(400).json({ message: msg });
     }
 
-    const question = artistData.questions[0];
+    // Comparar respuesta del usuario con la correcta
+    const correctAnswer = String(questionData.respuestaCorrecta).trim().toLowerCase();
+    const userAnswer = String(answer).trim().toLowerCase();
 
-    if (!question || !question.correctAnswer) {
-      emitEvent("notify-answer1", { correct: false, message: "Pregunta inválida o sin respuesta correcta." });
-      return res.status(400).json({ message: "Pregunta inválida o sin respuesta correcta." });
-    }
+    console.log("Respuesta correcta esperada:", correctAnswer);
+    console.log("Respuesta seleccionada por el usuario:", userAnswer);
 
-    const correctAnswer = question.correctAnswer.trim().toLowerCase();
-    const isCorrect = answer.trim().toLowerCase() === correctAnswer;
+    const isCorrect = userAnswer === correctAnswer;
 
-    // Guardar la respuesta del usuario en la base de datos
+    // Guardar la respuesta del usuario
     await saveAnswer({
       name,
       questionNumber: 1,
       artist,
       selectedOption: answer,
       isCorrect,
+      question: questionData.id
     });
-
+    
     emitEvent("notify-answer1", { correct: isCorrect });
-    res.status(200).json({ correct: isCorrect });
+    return res.status(200).json({ correct: isCorrect });
 
   } catch (error) {
     console.error("Error al verificar la respuesta:", error);
     emitEvent("notify-answer1", { correct: false, message: "Error al verificar la respuesta." });
-    res.status(500).json({ message: "Error al verificar la respuesta." });
+    return res.status(500).json({ message: "Error al verificar la respuesta." });
   }
 };
 
@@ -57,24 +75,40 @@ const handleAnswerQuestion2 = async (req, res) => {
   const { answer, artist, name } = req.body;
 
   try {
+
+    if (!artist || !answer) {
+      const msg = "Faltan datos: artist o answer.";
+      emitEvent("notify-answer2", { correct: false, message: msg });
+      return res.status(400).json({ message: msg });
+    }
+
     const questions = await getAllQuestions();
-    const artistData = questions.find((q) => q.artist.toLowerCase() === artist.toLowerCase());
-  
-    if (!artistData || !artistData.questions || artistData.questions.length === 0) {
-      emitEvent("notify-answer2", { correct: false, message: "No hay preguntas disponibles para este artista." });
-      return res.status(400).json({ message: "No hay preguntas disponibles para este artista." });
+
+    const questionData = questions.find(
+      (q) =>
+        q.idArtist &&
+        q.idArtist === artist &&
+        Number(q.questionNumber) === 2
+    );
+
+    console.log("Artista recibido:", artist);
+    console.log("Pregunta encontrada:", questionData);
+
+    // Validar existencia de la pregunta
+    if (!questionData || !questionData.respuestaCorrecta) {
+      const msg = "Pregunta inválida o sin respuesta correcta.";
+      emitEvent("notify-answer2", { correct: false, message: msg });
+      return res.status(400).json({ message: msg });
     }
-    
-    const question = artistData.questions[1];
-   
-    if (!question || !question.correctAnswer) {
-      emitEvent("notify-answer2", { correct: false, message: "Pregunta inválida o sin respuesta correcta." });
-      return res.status(400).json({ message: "Pregunta inválida o sin respuesta correcta." });
-    }
-    
-    const correctAnswer = question.correctAnswer.trim().toLowerCase();
- 
-    const isCorrect = answer.trim().toLowerCase() === correctAnswer;
+
+    const correctAnswer = String(questionData.respuestaCorrecta).trim().toLowerCase();
+    const userAnswer = String(answer).trim().toLowerCase();
+
+    console.log("Respuesta correcta esperada:", correctAnswer);
+    console.log("Respuesta seleccionada por el usuario:", userAnswer);
+
+    const isCorrect = userAnswer === correctAnswer;
+
 
     // Guardar la respuesta del usuario en la base de datos
     await saveAnswer({
@@ -83,6 +117,7 @@ const handleAnswerQuestion2 = async (req, res) => {
       artist,
       selectedOption: answer,
       isCorrect,
+      question: questionData.id
     });
 
     emitEvent("notify-answer2", { correct: isCorrect });
@@ -94,6 +129,7 @@ const handleAnswerQuestion2 = async (req, res) => {
     res.status(500).json({ message: "Error al verificar la respuesta." });
   }
 };
+
 
 module.exports = {
   getQuestions,

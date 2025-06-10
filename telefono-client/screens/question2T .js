@@ -1,12 +1,20 @@
-import { fetchArtistQuestion, makeRequest2, navigateToTelefono, socket } from "../app.js";
+import { fetchArtistQuestion2, makeRequest2, navigateToTelefono, socket } from "../app.js";
 
-export default async function renderScreenQuestion2T(selectedArtistData) {
+export default async function renderScreenQuestion2T({selectedArtist}) {
   const app = document.getElementById("app");
-  
+
+  if (!selectedArtist || !selectedArtist.name) {
+    app.innerHTML = `<p>Error: No se encontró el artista seleccionado.</p>`;
+    return;
+  }
+
   let hasAnswered = false;
   let timeout;
+  
     try {
-      const { question, artistName } = await fetchArtistQuestion(selectedArtistData.selectedArtist, 1);
+      const questionNumber = 2;
+      const question = await fetchArtistQuestion2(selectedArtist.id, selectedArtist.name, questionNumber);
+      console.log("Pregunta obtenida:", question);
 
       app.innerHTML = `
         <div id="screenQuestion2T">
@@ -16,12 +24,12 @@ export default async function renderScreenQuestion2T(selectedArtistData) {
           </svg>
           <div id="question">
             <h4>Challenge 2</h4>
-            <p id="question2Artist">${question.question2}</p>
+            <p id="question2Artist">${question.question1}</p>
           </div>
           <div id="selectAnwswer2">
-            <button id="option1">A ${question.option1}</button>
-            <button id="option2">B ${question.option2}</button>
-            <button id="option3">C ${question.option3}</button>
+            <button id="option1">A</button>
+            <button id="option2">B</button>
+            <button id="option3">C</button>
           </div>
           <p>Select the correct answer.This question has a percentage of 25%.</p>
         </div>
@@ -40,7 +48,8 @@ export default async function renderScreenQuestion2T(selectedArtistData) {
         try {
           const body = {
             answer: selectedOption.trim(),
-            artist: artistName,
+            name: selectedArtist.name,
+            artist: selectedArtist.id,
           };
       
           await makeRequest2("/select-answer-question2", "POST", body);
@@ -58,7 +67,7 @@ export default async function renderScreenQuestion2T(selectedArtistData) {
       
         navigateToTelefono(
           isCorrect ? "/screenLevelsQuestionsT" : "/screenWasWrongT",
-          { correct: isCorrect, questionNumber:1, selectedArtistData}
+          { correct: isCorrect, questionNumber:1, selectedArtistData: selectedArtist}
         );
       });
 

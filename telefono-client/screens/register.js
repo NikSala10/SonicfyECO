@@ -9,7 +9,7 @@ export default function renderScreenRegister() {
           <svg width="76" height="112" viewBox="0 0 76 112" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M38.3652 -3.45507L26.1568 13.9286L45.7617 5.74482L30.0995 20.0944L51.009 16.3179L32.6252 26.9624L53.8616 27.7699L33.616 34.2116L75.5566 35.5396L33.0254 41.5029L51.9677 51.1523L30.8811 48.4954L47.3097 61.9895L27.2834 54.8622L40.4301 71.5699L22.4004 60.3055L31.6505 79.4457L16.4605 64.5708L21.3815 85.2485L9.74148 67.4588L10.1033 88.707L2.55745 68.8343L2.38239e-06 112L-4.75564 68.633L-13.3491 88.0616L-11.8559 66.8644L-24.4266 83.9878L-18.4112 63.6111L-34.3714 77.6286L-24.1151 59.0253L-42.7185 69.2815L-28.7009 53.3214L-49.0776 59.3367L-31.9542 46.766L-53.1514 48.2593L-33.7229 39.6658L-77.0898 34.9102L-33.9241 32.3527L-53.7969 24.8069L-32.5486 25.1687L-50.3383 13.5287L-29.6607 18.4497L-44.5355 3.25966L-25.3953 12.5098L-36.6598 -5.51991L-19.952 7.62681L-27.0793 -12.3995L-13.5852 4.02906L-16.2422 -17.0575L-6.59269 1.88477L-0.179688 -42L0.698615 1.2942L7.14028 -18.9514L7.94776 2.28495L18.5922 -16.0988L14.8158 4.81071L29.1654 -10.8516L20.9816 8.75338L38.3652 -3.45507Z" fill="#C13DFF"/>
           </svg>
-          <img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/gusano%20rgeis.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzVmY2M1ZDA4LTBjZGYtNDA4NS04NzdiLTcxMmY0MzBjMjRiYSJ9.eyJ1cmwiOiJyZXNvdXJjZXMvZ3VzYW5vIHJnZWlzLnBuZyIsImlhdCI6MTc0ODI2MzAzMCwiZXhwIjoxNzc5Nzk5MDMwfQ.vJzrI6zdKd3ClBSovtvDzeNvuJXYssNHUzT-P4mqnXc">
+          <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2Fgusano%20rgeis.png?alt=media&token=e181fb29-8bbc-435e-be97-2b0d3d27e399">
         </div>
         <div id="vec-end">
           <svg width="193" height="50" viewBox="0 0 193 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@ export default function renderScreenRegister() {
             <svg width="195" height="175" viewBox="0 0 195 175" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M36.5 0L49.8668 35.5947L70.5728 3.70564L75.9753 41.3416L103.052 14.6493L100.238 52.5667L132.42 32.3193L121.52 68.7452L157.303 55.8893L138.827 89.1204L176.537 84.2573L151.349 112.74L189.223 116.097L158.501 138.499L194.768 149.919L159.949 165.193L192.912 184.142L155.624 191.575L183.743 217.167L145.729 216.409L167.689 247.448L130.726 238.536L145.5 273.57L111.318 256.921L118.215 294.312L88.4109 270.704L87.1093 308.703L63.0768 279.24L53.6369 316.071L36.5 282.13L19.3631 316.071L9.9232 279.24L-14.1093 308.703L-15.4109 270.704L-45.2153 294.312L-38.3177 256.921L-72.5004 273.57L-57.7261 238.536L-94.6887 247.448L-72.7286 216.409L-110.743 217.167L-82.6237 191.575L-119.912 184.142L-86.9487 165.193L-121.768 149.919L-85.5014 138.499L-116.223 116.097L-78.3494 112.74L-103.537 84.2573L-65.8272 89.1204L-84.3027 55.8893L-48.5203 68.7452L-59.4201 32.3193L-27.2379 52.5667L-30.0524 14.6493L-2.97525 41.3416L2.42719 3.70564L23.1332 35.5947L36.5 0Z" fill="#66C0FF"/>
             </svg>
-            <img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Audifonos%20register.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzVmY2M1ZDA4LTBjZGYtNDA4NS04NzdiLTcxMmY0MzBjMjRiYSJ9.eyJ1cmwiOiJyZXNvdXJjZXMvQXVkaWZvbm9zIHJlZ2lzdGVyLnBuZyIsImlhdCI6MTc0ODI2MzA4MiwiZXhwIjoxNzc5Nzk5MDgyfQ.7EwPs_GBOZ8i5-OJP23yXeaogCh08ZJcR9QJIczwrqs">
+            <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2FAudifonos%20register.png?alt=media&token=5b03ec81-bf7a-48cd-93df-d973dc844ee4">
           </div>
           <svg width="66" height="86" viewBox="0 0 66 86" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.5 85.6283C17.7194 85.6283 17.0169 85.0899 16.9388 84.417C15.5337 72.169 14.4409 68.2657 1.40507 67.189C0.624475 67.1217 0 66.516 0 65.8431C0 65.1701 0.624475 64.5644 1.40507 64.4971C14.7532 63.4204 15.5337 60.4593 16.9388 48.2113C16.9388 47.5384 17.7194 47 18.5 47C19.2806 47 19.9831 47.5384 20.0612 48.2113C21.4662 60.4593 22.3249 63.4204 35.5949 64.4971C36.3755 64.5644 37 65.1701 37 65.8431C37 66.516 36.3755 67.1217 35.5949 67.189C22.481 68.2657 21.4662 72.169 20.0612 84.4842C20.0612 85.1572 19.3586 85.6956 18.5 85.6956V85.6283Z" fill="white"/>
@@ -126,6 +126,14 @@ export default function renderScreenRegister() {
     };
 
     const response = await makeRequest2("/register", "POST", body);
+    
+    if (response.user && response.user.id) {
+      localStorage.setItem("userId", response.user.id);
+      localStorage.setItem("userName", response.user.name);
+      localStorage.setItem("userEmail", response.user.email);
+    } else {
+      console.error("No se recibió userId");
+    }
 
     if (response.success) {
       showModal(`Your registration has been successful.<br>Welcome ${nameInput.value}!`, true, "/screenStart",);

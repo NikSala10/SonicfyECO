@@ -1,14 +1,21 @@
 import { fetchArtistQuestion, makeRequest2, navigateToTelefono, socket } from "../app.js";
 
-export default async function renderScreenQuestion1T(selectedArtistData) {
+export default async function renderScreenQuestion1T({selectedArtist} ) {
   const app = document.getElementById("app");
+
+  if (!selectedArtist || !selectedArtist.name) {
+    app.innerHTML = `<p>Error: No se encontró el artista seleccionado.</p>`;
+    return;
+  }
 
   let hasAnswered = false;
   let timeout;
 
     try {
-      const { question, artistName } = await fetchArtistQuestion(selectedArtistData, 0);
-
+      
+      const questionNumber = 1;
+      const question = await fetchArtistQuestion(selectedArtist.id, selectedArtist.name, questionNumber);
+     
       app.innerHTML = `
           <div id="screenQuestion1T">
             <svg width="193" height="50" viewBox="0 0 193 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +48,8 @@ export default async function renderScreenQuestion1T(selectedArtistData) {
         try {
           const body = {
             answer: selectedOption.trim(),
-            artist: artistName,
+            name: selectedArtist.name,
+            artist: selectedArtist.id,
           };
       
           await makeRequest2("/select-answer-question1", "POST", body);
@@ -59,7 +67,7 @@ export default async function renderScreenQuestion1T(selectedArtistData) {
       
         navigateToTelefono(
           isCorrect ? "/screenLevelsQuestionsT" : "/screenWasWrongT",
-          { correct: isCorrect, questionNumber:0, selectedArtistData}
+          { correct: isCorrect, questionNumber:0, selectedArtistData: selectedArtist}
         );
       });
 

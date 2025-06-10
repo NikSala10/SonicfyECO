@@ -1,18 +1,48 @@
-let answers = []; 
+const supabaseCli = require("../services/supabase.service");
 
 const saveAnswer = async (answerData) => {
-  answers.push({
-    ...answerData,
-  });
+  const { data, error } = await supabaseCli
+    .from("respuestaUsuario")
+    .insert([{
+      isCorrect: answerData.isCorrect,
+      question: answerData.question, 
+    }]);
+
+  if (error) {
+    console.error("Error al guardar la respuesta:", error);
+    throw error;
+  }
+
+  return data;
 };
 
+// Obtener todas las respuestas
 const getAllAnswers = async () => {
-  return answers;
+  const { data, error } = await supabaseCli
+    .from('respuestaUsuario')
+    .select('*');
+
+  if (error) {
+    console.error('Error al obtener las respuestas:', error);
+    throw error;
+  }
+
+  return data;
 };
 
+// Borrar todas las respuestas
 const clearAnswers = async () => {
-    answers = [];
-  };
+  const { error } = await supabaseCli
+    .from("respuestaUsuario")
+    .delete(); 
+
+  if (error) {
+    console.error("Error al eliminar las respuestas:", error);
+    return false;
+  }
+
+  return true;
+};
 
 module.exports = {
   saveAnswer,

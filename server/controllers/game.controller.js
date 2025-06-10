@@ -2,6 +2,7 @@ const { clearAnswers } = require("../db/answersByUser.db");
 const { clearUsers } = require("../db/users.db");
 const { emitEvent } = require("../services/socket.service");
 const { clearSelectedArtist } = require("./artists.controller");
+const supabaseCli = require("../services/supabase.service");
 
 let gameStarted = false;
 
@@ -28,7 +29,7 @@ const updateGameStatus = (req, res) => {
 
 const resetGame = async (req, res) => {
   try {
-    await clearUsers();
+    await supabaseCli.from("users").update({ isActive: false }).neq("id", null);
     await clearSelectedArtist();
     await clearAnswers();
 

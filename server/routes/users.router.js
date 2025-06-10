@@ -1,10 +1,9 @@
 const express = require("express");
-const { registerPlayer } = require("../controllers/users.controller");
+const { registerPlayer, updateUser, deactivateUser } = require("../controllers/users.controller");
 const router = express.Router();
 
-// router.get("/users", getUsers);
-
 router.post("/register", registerPlayer);
-
+router.put("/users/:userId", updateUser);
+router.post("/deactivate-user/:userId", deactivateUser);
 
 module.exports = router;

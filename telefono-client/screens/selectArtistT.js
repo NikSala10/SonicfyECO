@@ -13,7 +13,7 @@ export default function renderScreenSelectArtistT(data) {
             <h2>Select the Artist!</h2>
             <p>You want to compete for to win a ticket.</p>
         </div>
-            <img src="https://cbnylposiazbgqyzeifz.supabase.co/storage/v1/object/sign/img/Espresso%20png%201.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzZmMzU0ZTcyLTRmYWQtNGU1NS04ZDYyLWVmZDYwYThhMzUzMyJ9.eyJ1cmwiOiJpbWcvRXNwcmVzc28gcG5nIDEucG5nIiwiaWF0IjoxNzQ2Mzg1NzEyLCJleHAiOjIwOTMyODE3MTJ9.ghIrxc0NgyihDDX3fMChVG3Mi7mE011Cm7goUEscwko" alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2Fmicro%20artisSelected.png?alt=media&token=b3740ccb-b2a4-47ee-8699-f1371c92161a" alt="">
         </div>
         <div id="artists"></div>
         <svg id="decor-artist" width="440" height="130" viewBox="0 0 440 130" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,12 +61,14 @@ export default function renderScreenSelectArtistT(data) {
             clearTimeout(timeout); 
 
             try {
+                const userId = localStorage.getItem("userId");
+                console.log("userId:", userId);
+
                 const body = {
-                name: artist.name,
-                img: artist.img,
+                artistSelect: artist.id,
                 };
 
-                await makeRequest2("/select-artist", "POST", body);
+                await makeRequest2(`/select-artist/${userId}`, "PUT", { artistSelect: artist.id });
                 navigateToTelefono("/screenSelectArtistByUser", { selectedArtist: artist});
             } catch (error) {
                 console.error("Error selecting artist:", error);

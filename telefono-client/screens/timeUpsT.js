@@ -17,12 +17,19 @@ export default function renderScreenTimeUpT(data) {
       </div>
       `;
       setTimeout(async () => {
-        try {
-          await makeRequest2("/reset-game", "POST");
-          navigateToTelefono("/");
-        } catch (error) {
-          console.error("Error al resetear el juego:", error);
+      try {
+        const userId = localStorage.getItem("userId");
+
+        if (userId) {
+          await makeRequest2(`/deactivate-user/${userId}`, "POST");
+          localStorage.removeItem("userId");
         }
-      }, 4000);
+        await makeRequest2("/reset-game", "POST");
+        navigateToTelefono("/");
+      } catch (error) {
+        console.error("Error al resetear el juego:", error);
+      }
+    }, 4000);
+
 }
   

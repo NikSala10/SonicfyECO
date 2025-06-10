@@ -1,4 +1,6 @@
-export default function renderScreenLoser(selectedArtistData) {
+import { makeRequest2, navigateToTelefono } from "../app.js";
+
+export default function renderScreenLoserT(data) {
        
   const app = document.getElementById("app");
   
@@ -20,4 +22,19 @@ export default function renderScreenLoser(selectedArtistData) {
         <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2Fmicrophone-no-background-png%201.png?alt=media&token=d2a63982-0be0-41de-b6e1-b75fc3ef46cb" id="microphone">
     </div>
 `;
+
+    setTimeout(async () => {
+      try {
+        const userId = localStorage.getItem("userId");
+
+        if (userId) {
+          await makeRequest2(`/deactivate-user/${userId}`, "POST");
+          localStorage.removeItem("userId");
+        }
+        await makeRequest2("/reset-game", "POST");
+        navigateToTelefono("/");
+      } catch (error) {
+        console.error("Error al resetear el juego:", error);
+      }
+    }, 4000);
 }

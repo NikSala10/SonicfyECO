@@ -13,7 +13,7 @@ export default function renderScreenSelectArtistT(data) {
             <h2>Select the Artist!</h2>
             <p>You want to compete for to win a ticket.</p>
         </div>
-            <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2Fmicro%20artisSelected.png?alt=media&token=b3740ccb-b2a4-47ee-8699-f1371c92161a" alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2FEspresso%20png%201.png?alt=media&token=716ee861-2e2d-4685-8472-8aadd8fe1736" alt="">
         </div>
         <div id="artists"></div>
         <svg id="decor-artist" width="440" height="130" viewBox="0 0 440 130" fill="none" xmlns="http://www.w3.org/2000/svg">

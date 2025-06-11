@@ -123,7 +123,20 @@ footer strong {
    background-color: #1a1a1a;
    
 }
-
+#screenWasWrongT
+{
+  background-color: #1ED760;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
 #level-1{
   background-color: #1ED760;
   color: white;
@@ -142,14 +155,7 @@ footer strong {
   justify-content: center;
 }
 
-.test-star
-{   font-family: 'Poppins', sans-serif;
-    background-color: #00D75A;
-    color: white;
-    text-align: center;
-    justify-self: start;
-    
-}
+
 #stars {
   display: flex;
   justify-content: center;
@@ -178,17 +184,8 @@ footer strong {
   font-size: 16px;
   color: #ffffff;
   letter-spacing: 8px;
-}
-#level-1::before {
-  content: '✦';
-  position: absolute;
-  top: 800px;
-  right:500px;
-  font-size: 16px;
-  color: #ffffff;
-  letter-spacing: 8px;
-}
 
+}
 
 
 #select-artista
@@ -212,9 +209,6 @@ footer strong {
   width: 80%;
   max-width: 200px;
 }
-
-
-
 
 
 #select-artista p {
@@ -527,7 +521,7 @@ max-width:300px ;
     margin: 20px 0;
     z-index: 2;
   }
-  
+ 
   /* Título Challenge 3 */
   #sing h1 {
     font-size: 28px;

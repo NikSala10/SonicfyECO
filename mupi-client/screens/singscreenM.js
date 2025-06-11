@@ -32,7 +32,8 @@ export default async function renderScreenSingM({selectedArtist}) {
                   <p>${selectedArtist.name}</p>
               </div>
                   <h4>${question.question1}</h4>
-            </div>          
+            </div>    
+                  
                   <p>You’ll see the first line of the lyrics on the screen.<br>Your challenge is to sing the missing part out loud!</p>
                   <p>Press the button on your phone to start!</p>
               <div id="verifying-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); color:white; font-size:1.5em; display:flex; align-items:center; justify-content:center; z-index:1000;">

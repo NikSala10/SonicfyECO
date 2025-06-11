@@ -36,9 +36,9 @@ export default async function renderScreenQuestion2T({selectedArtist}) {
             <button id="option3">C </button>
             <img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/morado.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvbW9yYWRvLnBuZyIsImlhdCI6MTc0OTQ5MjEzOSwiZXhwIjoxNzgxMDI4MTM5fQ.T3QMZFWjlnK8vlxR7doHzhoaRz8HPUKMUkMdxm4YwJM" alt="">
           </div>
-          <p>Select the correct answer.This question has a percentage of 25%.</p>
+          <p>Select the correct answer.This<br> question has a percentage of 25%.</p>
           <img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/audifono%20y%20estrella.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvYXVkaWZvbm8geSBlc3RyZWxsYS5wbmciLCJpYXQiOjE3NDk0OTEyNDIsImV4cCI6MTc4MTAyNzI0Mn0.cM1KK8wylLwD3B7rG6wvO2aIcKFFoH6pP4TCa__PgsY" alt="">
-          <img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Change%20Circle%204%20Color%20Here.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvQ2hhbmdlIENpcmNsZSA0IENvbG9yIEhlcmUucG5nIiwiaWF0IjoxNzQ5NDkxNjgyLCJleHAiOjE3ODEwMjc2ODJ9.TztrYcrWIHvLJTo822s6I-dmZmzbugbA1LljM0rzE8M" alt="">
+          <img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Change%20Circle%204%20Color%20Here%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvQ2hhbmdlIENpcmNsZSA0IENvbG9yIEhlcmUgKDEpLnBuZyIsImlhdCI6MTc0OTYxNzEzMCwiZXhwIjoxNzgxMTUzMTMwfQ.q9yJNGe5VI6U00X0kqafOYjeWBFNNqFNTl0Yjw2xm_Q" alt="">
         </div>
         `;
       timeout = setTimeout(() => {

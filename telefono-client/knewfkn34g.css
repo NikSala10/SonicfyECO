@@ -362,11 +362,24 @@ html, body, #app {
     margin: 10px 0;
 }
 
+footer {
+    background-color: #1a1a1a;
+    padding: 15px;
+    width: 100%;
+    font-size: 1rem;
+    border-top: 2px solid #ff9f1c;
+    border-bottom: 2px solid #ff9f1c;
+}
+
+footer strong {
+    font-weight: bold;
+}
 
 
-
-
-
+.decor {
+    position: absolute;
+    animation: spin 4s linear infinite;
+}
 
 
 #screenQuestion1T {
@@ -379,6 +392,7 @@ html, body, #app {
   align-items: center;
   position: relative;
   overflow: hidden;
+  padding: 40px 20px 120px; /* más espacio abajo para el micrófono */
   box-sizing: border-box;
 }
 
@@ -430,36 +444,38 @@ html, body, #app {
   z-index: -1;
 }
 
-#microfono  {
+/* Microphone image */
+#microfono {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 250px;
+  width: 200px;
   height: auto;
-  left: -40px;
-  top:600px;
-  z-index: 2;
-
+  margin-left:-180px;
+  z-index: 1;
 }
 
 #ola {
+  position:relative;
+  bottom: 0;
   left: 0;
   width: 100%;
-  max-width: 1000px;
-  height: 205px;
-  margin-top: 70px;
+  max-width: 600px;
+  z-index: 2;
+  margin-top:300px;
 }
 
 #screenQuestion1T > p {
-  background-color: #EC219A;
-  padding:35px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 25px;
+  border-radius: 10px;
   font-size: 0.9rem;
-  top: -250px;
-  left:80px ;
+  margin-top: 20px;
   width: 90%;
   max-width: 400px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  margin-top:10px ;
 }
 
 
@@ -532,9 +548,9 @@ html, body, #app {
 
 /* Worm image at top */
 #screenQuestion2T > img:first-child {
-  width: 200px;
+  width: 180px;
   height: auto;
-  margin-top: -50px;
+  margin-bottom: 15px;
 }
 
 /* Logo/SVG styling */
@@ -612,74 +628,73 @@ html, body, #app {
 /* Percentage text */
 #screenQuestion2T > p {
   background-color: rgba(255, 255, 255, 0.2);
-  padding:35px;
+  padding: 15px;
+  border-radius: 10px;
   font-size: 0.9rem;
-  top: 20px;
-  left:-1px ;
+  margin: 20px 0;
   width: 90%;
-  max-width: 400px;
+  max-width: 350px;
   position: relative;
-  z-index: 1;
-  text-align: left;
+  z-index: 2;
 }
 
 /* Headphones image */
 #screenQuestion2T > img:nth-last-child(2) {
   position: absolute;
   bottom: 50px;
-  right: -50px;
-  width: 300px;
+  right: -30px;
+  width: 200px;
   height: auto;
-  z-index: 2;
-  top:650px;
+  z-index: 1;
 }
 
 /* Decorative circle image */
 #screenQuestion2T > img:last-child {
   position: absolute;
   bottom: -50px;
-  padding:50px ;
   left: -50px;
   width: 150px;
   height: auto;
   z-index: 1;
-  top:850px;
 }
+
+/* Decorative star elements */
+#screenQuestion2T::before {
+  content: '✦';
+  position: absolute;
+  top: 150px;
+  right: 30px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#screenQuestion2T::after {
+  content: '✦';
+  position: absolute;
+  bottom: 180px;
+  left: 30px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 8px;
+}
+  
 
 
 #screenQuestion3T {
-background-color: #121212;
+background-color:#121212;
 color: white;
 font-family: 'Poppins', sans-serif;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-position: absolute;
-z-index: 2;
-text-align: center;
+z-index: 1;
 }
-#active-microphone{
-  flex-direction: column;
-  left:10px;
-  background-color: transparent;
+#fondo{
+margin-top:-500px;
+z-index: 2;      
 }
-#getstarted{
-align-items: center;
-justify-content: center;
-margin-top:5px;
-}
-
-#mancharosa{
-margin-left: 390px;
-margin-top:-180px ;
-}
-#microfonoarriba{
-  margin-left:-90px;
-  max-width:100px ;
-}
-#circulo3{
-  margin-top:-10px;
-  margin-right:340px;
+#screenQuestion3T h1{
+  left: 80px;
 }
 
 @keyframes spin {
@@ -798,9 +813,5 @@ margin-top:-180px ;
   z-index: 1;
 }
 #xxx{
-margin-left:45px;
-margin-top:80px ;
-
+margin-left:50px;
 }
-
-

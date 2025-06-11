@@ -15,7 +15,10 @@ html, body, #app {
     color: white;
     text-align: center;
     padding: auto;
+    min-height: 100vh;
+    width: 100%;
 }
+
 
 #welcome h2 {
     font-size: 28px;
@@ -39,8 +42,9 @@ html, body, #app {
 
 #welcome img {
     width: 100%;
-    max-width: 350px;
-    margin: 20px 0;
+  height: 100vh;
+  display: block;
+  object-fit: contain;
  
 }
 

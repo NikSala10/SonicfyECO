@@ -1,11 +1,12 @@
-body {
+html, body, #app {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
 }
 
 #welcome {
@@ -63,19 +64,30 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 20px;
+    width: 100%;
     background-color: #0f0f0f; 
     font-family: 'Arial', sans-serif;
     color: white;
     margin: 0;
     padding: 0;
     text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
 }
-
+#res-art{
+  position: absolute;
+  font-weight: 600;
+  text-align: center;
+  top: 38.5rem;
+}
+#final-se{
+  margin-top: 3rem;
+}
 #noselectartista h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #1DB954; 
-    margin: 0.2em 0;
+    margin-top: -3rem;
     font-weight: bold;
     text-shadow: 1px 1px 2px black;
 }
@@ -88,17 +100,17 @@ body {
 }
 
 #noselectartista h4 {
-    font-size: 1.5rem;
-    color: white;
-    margin: 15px 0 10px 0;
-    line-height: 1.4;
-}
-
-#noselectartista p {
     font-size: 1rem;
     color: white;
-    margin: 8px 0;
-    line-height: 1.5;
+}
+#text-sad{
+  position: absolute;
+  top: 22.5rem;
+}
+#noselectartista p {
+    font-size: 0.85rem;
+    color: white;
+    margin-top: -0.8rem ;
 }
 
 footer {
@@ -116,12 +128,22 @@ footer strong {
 
 
 
-#screenInstructions
-{  
-   max-width:100%;
-   min-height: 100vh;
-   background-color: #1a1a1a;
-   
+#screenInstructions {
+  background-color: #121212; 
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#screenInstructions img {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  object-fit: contain;
 }
 
 #level-1{
@@ -197,7 +219,7 @@ footer strong {
     font-family: 'Poppins', sans-serif;
     color: white;
     text-align: center;
-    padding: auto;
+    width: 100%;
 
 }
 .star-icon {
@@ -226,10 +248,8 @@ footer strong {
     color: white;
     font-weight: 40px;
     line-height: 1;
-    margin-bottom: 10px;
-    text-align: left;
-    margin-left: 25px;
-    margin-top: 45px;
+    text-align: center;
+    margin-top: 1.5rem;
   }
   
 #chico
@@ -247,69 +267,77 @@ max-width:300px ;
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding: 40px 20px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Título principal */
 #select-artista h1 {
   font-size: 32px;
   line-height: 1.2;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   z-index: 3;
+  padding-right: 3rem;
 }
 
 /* Imagen del fan */
 #fan1 {
   width: 70px;
   position: absolute;
-  top: 40px;
-  right: 30px;
+  top: 1rem;
+  margin-left: 15%;
   z-index: 2;
 }
-
+#fond-3{
+  position: absolute;
+  width: 34%;
+  height: 100vh;
+  z-index: 10;
+}
 /* Temporizador */
 #timer {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 30px;
+  margin: 0 auto 15px;
   z-index: 3;
 }
 
 /* Imagen del chico */
 #chico {
   width: 200px;
-  margin: 0 auto 30px;
   z-index: 2;
+  margin-top: -1rem;
 }
 
 /* Textos descriptivos */
 #select-artista p {
   font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 15px;
   max-width: 300px;
   z-index: 3;
+  margin: 0;
+  padding: 0;
 }
 
 /* Targeta/entrada */
 #targeta {
-  width: 200px;
-  margin: 10px 2px;
+  width: 27%;
   z-index: 2;
+  margin: 0;
+  padding: 0;
 }
 
 /* Estrellas decorativas */
 #morado {
   position: absolute;
-  top: 1px;
-  left: -8px;
+  left: 5rem;
   width: 80px;
   z-index: 1;
 }

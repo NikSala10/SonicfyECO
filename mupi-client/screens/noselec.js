@@ -4,19 +4,20 @@ export default function renderScreenNoSelectM() {
     const app = document.getElementById("app");
     app.innerHTML = `
       <div id="noselectartista">
+
+            <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2FGroup%20234.png?alt=media&token=af7c305d-c0da-40c1-a21f-f5b49b4eb471" alt="" style="width: 30%;">
             <h1>Time's Up!</h1>
             
             <div id="icon-sad">
-                  <svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M500 0L542.166 112.286L607.485 11.6897L624.528 130.415L709.945 46.2123L701.066 165.826L802.587 101.953L768.203 216.862L881.081 176.307L822.799 281.137L941.756 265.796L862.301 355.646L981.775 366.236L884.862 436.905L999.267 472.931L889.428 521.114L993.413 580.891L875.784 604.336L964.488 685.069L844.57 682.679L913.844 780.594L797.243 752.481L843.85 862.998L736.018 810.476L757.777 928.429L663.757 853.954L659.651 973.827L583.839 880.882L554.06 997.069L500 890L445.94 997.069L416.162 880.882L340.349 973.827L336.243 853.954L242.223 928.429L263.982 810.476L156.15 862.998L202.757 752.481L86.1555 780.594L155.43 682.679L35.5116 685.069L124.216 604.336L6.58673 580.891L110.572 521.114L0.733307 472.931L115.138 436.905L18.225 366.236L137.699 355.646L58.244 265.796L177.201 281.137L118.919 176.307L231.797 216.862L197.413 101.953L298.934 165.826L290.055 46.2123L375.472 130.415L392.515 11.6897L457.834 112.286L500 0Z" fill="#DB148B"/>
-                  <path d="M500 500.875C410.599 500.875 338.125 428.401 338.125 339C338.125 249.599 410.599 177.125 500 177.125C589.401 177.125 661.875 249.599 661.875 339C661.875 428.401 589.401 500.875 500 500.875ZM500 524C602.173 524 685 441.173 685 339C685 236.827 602.173 154 500 154C397.827 154 315 236.827 315 339C315 441.173 397.827 524 500 524Z" fill="white"/>
-                  <path d="M414.086 441.509C419.613 444.706 426.687 442.817 429.884 437.29C443.896 413.067 470.057 396.812 500.001 396.812C529.944 396.812 556.105 413.067 570.117 437.29C573.315 442.817 580.388 444.706 585.915 441.509C591.443 438.311 593.332 431.238 590.134 425.71C572.159 394.636 538.533 373.688 500.001 373.688C461.468 373.688 427.842 394.636 409.867 425.71C406.669 431.238 408.558 438.311 414.086 441.509Z" fill="white"/>
-                  <path d="M476.875 304.312C476.875 323.47 466.522 339 453.75 339C440.978 339 430.625 323.47 430.625 304.312C430.625 285.155 440.978 269.625 453.75 269.625C466.522 269.625 476.875 285.155 476.875 304.312Z" fill="white"/>
-                  <path d="M569.375 304.312C569.375 323.47 559.022 339 546.25 339C533.478 339 523.125 323.47 523.125 304.312C523.125 285.155 533.478 269.625 546.25 269.625C559.022 269.625 569.375 285.155 569.375 304.312Z" fill="white"/>
+            <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2FGroup%20233.png?alt=media&token=4a3aeac6-a0fc-4c80-8894-a204618323ce" alt="" style="width: 35%;">
             </div>
-            <h4>You Didn't Select An<br>Answer In Time.</h4>
-            <p>But no worries — you'll get<br>another chance soon.</p>
-            <p>Respond quickly and confidently - you can do it!</p>
+            <div id="text-sad">
+                  <h4>You Didn't Select An<br>Answer In Time.</h4>
+                  <p>But no worries — you'll get<br>another chance soon.</p>
+            </div>
+            
+            <p id="res-art">Respond quickly and confidently - you can do it!</p>
+            <img id="final-se" src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2FGroup%20235.png?alt=media&token=bb7ae388-33ac-4dd4-916b-f4efd6539990" alt="" style="width: 30%;">
       </div>
       `;
 

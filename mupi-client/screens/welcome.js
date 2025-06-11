@@ -5,7 +5,7 @@ export default function renderscreenWelcome() {
   app.innerHTML = `
       <div id="welcome">
   
-        <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2FMUPI.png?alt=media&token=387a4808-96de-4540-97fb-d2ca42b47c02">
+        <img src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2FMUPI%20(1).png?alt=media&token=147fbd4c-07c1-4b1b-a504-36d5596c4902">
         
 
       </div>

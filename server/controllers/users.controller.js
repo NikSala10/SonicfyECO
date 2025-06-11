@@ -7,13 +7,13 @@ const registerPlayer = async (req, res) => {
   const users = await getAllUsers();
   const activeUsers = users.filter(user => user.isActive);
 
-  // if (activeUsers.length > 0) {
-  //   // Si ya existe un usuario registrado, enviamos un mensaje de error
-  //   return res.status(400).send({
-  //     success: false,
-  //     message: "Your registration has been rejected, someone else is already participating, please try again in a few more minutes."
-  //   });
-  // }
+  if (activeUsers.length > 0) {
+    // Si ya existe un usuario registrado, enviamos un mensaje de error
+    return res.status(400).send({
+      success: false,
+      message: "Your registration has been rejected, someone else is already participating, please try again in a few more minutes."
+    });
+  }
 
   const newUser = {
     name,

@@ -29,7 +29,7 @@ export default async function renderScreenQuestion1M({selectedArtist}) {
             <p>C  ${question.option3}</p>
             <img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/morado.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvbW9yYWRvLnBuZyIsImlhdCI6MTc0OTIzMTgyMiwiZXhwIjoxNzgwNzY3ODIyfQ.xeqcS5BZsSuIVWJFbHW1gSuXbFrIj4xMBtAkbSqzT9k" alt="">
         </div>
-        <p>On your cell phone screen, select the correct answer.</p>
+        <p id="p-txt">On your cell phone screen, <br> select the correct answer.</p>
         <img id="fnd-qq1" src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2FGroup%20243.png?alt=media&token=25a5223d-26d5-4269-9ea4-1dab4ace4416" alt="">
 
       </div>

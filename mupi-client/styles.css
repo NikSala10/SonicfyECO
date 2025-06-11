@@ -388,8 +388,13 @@ max-width:300px ;
   position: absolute;
   width: 50%;
   margin-top: -42rem;
+  margin-left: -18rem;
 }
-
+#p-txt{
+  z-index: 2;
+  position: absolute;
+  margin-left: 41rem;
+}
 #timer {
   font-size: 2rem;
   font-weight: bold;

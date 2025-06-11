@@ -520,16 +520,17 @@ html, body, #app {
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: 60px 10px;
-  margin-top: 80px;
+  box-sizing: border-box;
 }
 
-#audifonos{
+#audifonos2{
   margin-left: -280px;
-  margin-top:-300px;
+  margin-top:-45rem;
+  position: absolute;
+
 }
-#mancha{
-  margin-block-end:-200px ;
+#mancha2{
+  position: absolute;
   margin-top: 300px;
 }
 
@@ -689,11 +690,16 @@ flex-direction: column;
 position: absolute;
 z-index: 2;
 text-align: center;
+box-sizing: border-box;
+min-height: 100vh;
+padding: 0;
+margin: 0;
 }
 #active-microphone{
   flex-direction: column;
   left:10px;
   background-color: transparent;
+  border: none;
 }
 #getstarted{
 align-items: center;
@@ -702,7 +708,7 @@ margin-top:5px;
 }
 
 #mancharosa{
-margin-left: 390px;
+margin-left: 385px;
 margin-top:-180px ;
 }
 #microfonoarriba{
@@ -710,8 +716,8 @@ margin-top:-180px ;
   max-width:100px ;
 }
 #circulo3{
-  margin-top:-10px;
-  margin-right:340px;
+  margin-top:16px;
+  margin-right:320px;
 }
 
 @keyframes spin {
@@ -742,11 +748,11 @@ margin-top:-180px ;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 40px 20px;
   color: white;
   font-family: 'Poppins', sans-serif;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Logo Spotify */
@@ -771,8 +777,9 @@ margin-top:-180px ;
 #winnerTicket h1 {
   font-size: 32px;
   font-weight: bold;
-  margin: 10px 0;
   color: white;
+  margin: 0;
+  padding: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -795,7 +802,6 @@ margin-top:-180px ;
 /* Título "You are a Winner!" */
 #winnerTicket h1:last-of-type {
   font-size: 28px;
-  margin: 30px 0 15px;
   color: #fff;
 }
 
@@ -806,7 +812,13 @@ margin-top:-180px ;
   opacity: 0.9;
   margin-bottom: 20px;
 }
-
+#con-ts, #win-of{
+  margin: 0;
+  padding: 0;
+}
+#txt-win{
+  width: 100%;
+}
 /* Efectos decorativos */
 #screenResultFinalGame::before {
   content: '';
@@ -831,8 +843,32 @@ margin-top:-180px ;
 }
 #xxx{
 margin-left:45px;
-margin-top:80px ;
+margin-top:3rem ;
+margin-bottom: -3rem;
 
 }
 
-
+#lost-game{
+  background-color: #66C0FF;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+#lost-game h1 {
+  margin: 0;
+  padding: 0;
+}
+#logo-loser{
+  margin-top: 6rem;
+  margin-bottom: 6.5rem;
+}
+#microphone-loser{
+  position: absolute;
+}

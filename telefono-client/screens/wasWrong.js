@@ -7,7 +7,7 @@ export default function renderScreenWasWrongT(data) {
   
   app.innerHTML = `
         <div id="screenWasWrongT">
-            <img id="audifonos" src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Group%20220.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvR3JvdXAgMjIwLnBuZyIsImlhdCI6MTc0OTI0NTI0MywiZXhwIjoxNzgwNzgxMjQzfQ.aW9c6qrYKn2BH5R_GpzgPIaUkmSpiWvsypUo0TAzyUU" alt="">
+            <img id="audifonos2" src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Group%20220.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvR3JvdXAgMjIwLnBuZyIsImlhdCI6MTc0OTI0NTI0MywiZXhwIjoxNzgwNzgxMjQzfQ.aW9c6qrYKn2BH5R_GpzgPIaUkmSpiWvsypUo0TAzyUU" alt="">
             <h1>You have lost</h1>
             <p>0% of the score</p>
             <svg width=100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,7 +18,7 @@ export default function renderScreenWasWrongT(data) {
             </svg>
             <p>Incorrect!</p>
             <p>The game will restart automatically  </p>
-            <img id="mancha" src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Vector.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvVmVjdG9yLnBuZyIsImlhdCI6MTc0OTI0NjQ4NCwiZXhwIjoxNzgwNzgyNDg0fQ.MJp16l-wJR8y8IXYBGEAJZfFvNDr5yg0hFsmq1acSGE" alt="">
+            <img id="mancha2" src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Vector.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvVmVjdG9yLnBuZyIsImlhdCI6MTc0OTI0NjQ4NCwiZXhwIjoxNzgwNzgyNDg0fQ.MJp16l-wJR8y8IXYBGEAJZfFvNDr5yg0hFsmq1acSGE" alt="">
         </div>
         `;
 

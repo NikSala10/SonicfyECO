@@ -50,7 +50,7 @@ export default function renderScreenQuestion3T({selectedArtist}) {
             <img id="mancharosa"src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Vector%20(2).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvVmVjdG9yICgyKS5wbmciLCJpYXQiOjE3NDk2MjI0NDIsImV4cCI6MTc4MTE1ODQ0Mn0.PYym18a6G3HyeMnXzBnRxaAUO3o00RbaFSOtDeQ4dcQ" alt="">
             <p id="recording-status" style="text-align:center; font-size: 1.2em; margin-top: 10px;"></p>
             <div id="verifying-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); color:white; font-size:1.5em; display:flex; align-items:center; justify-content:center; z-index:1000;">
-                Estamos verificando tu grabación, por favor espera...
+                Estamos verificando tu grabación, <br> por favor espera...
             </div>
             <div id="circulo3">
             <img id="circuloamarillo"src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Change%20Circle%204%20Color%20Here%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvQ2hhbmdlIENpcmNsZSA0IENvbG9yIEhlcmUgKDEpLnBuZyIsImlhdCI6MTc0OTYyMzM3NiwiZXhwIjoxNzgxMTU5Mzc2fQ.wEEcu5s28M1BA5kIRge9xsf_ei7ElIxF6Bua2_UJH3M" alt="">
@@ -62,12 +62,12 @@ export default function renderScreenQuestion3T({selectedArtist}) {
         const verifyingModal = document.getElementById("verifying-modal")
         verifyingModal.style.display = "none";
 
-  timeout = setTimeout(() => {
-    if (!clicked) {
-      navigateToTelefono("/timeUp"); 
-      makeRequest2("/active-microphone", "POST", { message: "Microfono no activado" });
-    }
-  }, 6000);
+  // timeout = setTimeout(() => {
+  //   if (!clicked) {
+  //     navigateToTelefono("/timeUp"); 
+  //     makeRequest2("/active-microphone", "POST", { message: "Microfono no activado" });
+  //   }
+  // }, 6000);
 
   document.getElementById("active-microphone").addEventListener("click", async () => {
     clicked = true;
@@ -128,7 +128,7 @@ export default function renderScreenQuestion3T({selectedArtist}) {
         mediaRecorder.stop();
         statusText.textContent = "✅ Grabación finalizada";
         console.log("🛑 Grabación detenida.");
-      }, 19000);
+      }, 1000);
 
        socket.on("verifying-user", () => {
         verifyingModal.style.display = "flex";

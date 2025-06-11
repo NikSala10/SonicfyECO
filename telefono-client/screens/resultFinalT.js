@@ -44,18 +44,18 @@ export default function renderScreenResulFinalT({selectedArtist}) {
         </div>
         `;
                  
-        // setTimeout(async () => {
-        //   try {
-        //     const userId = localStorage.getItem("userId");
+        setTimeout(async () => {
+          try {
+            const userId = localStorage.getItem("userId");
 
-        //     if (userId) {
-        //       await makeRequest2(`/deactivate-user/${userId}`, "POST");
-        //       localStorage.removeItem("userId");
-        //     }
-        //     await makeRequest2("/reset-game", "POST");
-        //     navigateToTelefono("/");
-        //   } catch (error) {
-        //     console.error("Error al resetear el juego:", error);
-        //   }
-        // }, 9000);
+            if (userId) {
+              await makeRequest2(`/deactivate-user/${userId}`, "POST");
+              localStorage.removeItem("userId");
+            }
+            await makeRequest2("/reset-game", "POST");
+            navigateToTelefono("/");
+          } catch (error) {
+            console.error("Error al resetear el juego:", error);
+          }
+        }, 9000);
 }

@@ -128,7 +128,7 @@ export default function renderScreenQuestion3T({selectedArtist}) {
         mediaRecorder.stop();
         statusText.textContent = "✅ Grabación finalizada";
         console.log("🛑 Grabación detenida.");
-      }, 1000);
+      }, 19000);
 
        socket.on("verifying-user", () => {
         verifyingModal.style.display = "flex";

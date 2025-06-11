@@ -69,23 +69,23 @@ export default function renderScreenLevelsQuestionsT(data) {
             <img id="mancha2" src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Vector.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvVmVjdG9yLnBuZyIsImlhdCI6MTc0OTI0NjQ4NCwiZXhwIjoxNzgwNzgyNDg0fQ.MJp16l-wJR8y8IXYBGEAJZfFvNDr5yg0hFsmq1acSGE" alt="">
         </div>
         `;
-        // switch (questionNumber) {
-        //   case 0:
-        //     setTimeout(async () => {
-        //       navigateToTelefono("/screenQuestion2T", {selectedArtist});
-        //     }, 4000);
-        //   break;
-        //   case 1:
-        //     setTimeout(async () => {
-        //       navigateToTelefono("/screenQuestion3T", {selectedArtist });
-        //     }, 4000);
-        //     break;
-        //   case 2:
-        //     setTimeout(async () => {
-        //       navigateToTelefono("/screenResulT", {selectedArtist});
-        //     }, 4000);
-        //   break;
-        // }
+        switch (questionNumber) {
+          case 0:
+            setTimeout(async () => {
+              navigateToTelefono("/screenQuestion2T", {selectedArtist});
+            }, 4000);
+          break;
+          case 1:
+            setTimeout(async () => {
+              navigateToTelefono("/screenQuestion3T", {selectedArtist });
+            }, 4000);
+            break;
+          case 2:
+            setTimeout(async () => {
+              navigateToTelefono("/screenResulT", {selectedArtist});
+            }, 4000);
+          break;
+        }
         
 
 }

@@ -550,13 +550,15 @@ html, body, #app {
 }
 
 #audifonos2{
-  margin-left: -100px;
-  margin-top:-900px;
+  margin-left: -250px;
+  margin-top: -45rem;
+  position: absolute;
 }
 #mancha2{
-  margin-block-end:-500px ;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  margin-top: 51rem;
 }
 
 

@@ -27,19 +27,24 @@ export default async function renderScreenQuestion1T({selectedArtist} ) {
               <p id="question1Artist">${question.question1}</p>
             </div>
             <div id="selectAnwswer1">
-              <button id="option1">A</button>
-              <button id="option2">B</button>
-              <button id="option3">C</button>
+              <button  id="option1">A<img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/azul.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvYXp1bC5wbmciLCJpYXQiOjE3NDkyMzIwMDcsImV4cCI6MTc4MDc2ODAwN30.Y0RDKDAjhg9j5da6V65T81l1KpD9OLnuWitjWV37NhE" alt="">
+              </button>
+              <button id="option2">B<img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/naranga.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvbmFyYW5nYS5wbmciLCJpYXQiOjE3NDkyMzIxMDEsImV4cCI6MTc4MDc2ODEwMX0.H9q-2nBnsfqBulN2Ll8I_aU_B6qKTqJW_RMTLTVfOeE" alt="">
+              </button>
+              <button id="option3">C<img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/morado.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvbW9yYWRvLnBuZyIsImlhdCI6MTc0OTIzMTgyMiwiZXhwIjoxNzgwNzY3ODIyfQ.xeqcS5BZsSuIVWJFbHW1gSuXbFrIj4xMBtAkbSqzT9k" alt=""></button>
+            
+              <img id="microfono"src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2Fmicro-center.png?alt=media&token=fc646eab-f107-4b69-ba35-603303c84132 " alt="">
+              <img id="ola"src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/ola%20amarilla.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvb2xhIGFtYXJpbGxhLnBuZyIsImlhdCI6MTc0OTIzMjQxMiwiZXhwIjoxNzgwNzY4NDEyfQ.4Yp9MUCr8SnbKnMpS1XowXY7_UaFFkxOToIZy5-SKEs" alt="">
             </div>
             <p>Select the correct answer.This question has a percentage of 15%.</p>
           </div>
       `;
       timeout = setTimeout(() => {
-        if (!hasAnswered) {
-          hasAnswered = true;
-          navigateToTelefono("/timeUp", { correct: false });
-        }
-      }, 6000);
+         if (!hasAnswered) {
+           hasAnswered = true;
+           navigateToTelefono("/timeUp", { correct: false });
+         }
+       }, 6000);
 
       async function handleAnswer(selectedOption) {
         if (hasAnswered) return;

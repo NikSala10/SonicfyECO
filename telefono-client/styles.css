@@ -335,7 +335,7 @@ html, body, #app {
     min-height: 100vh;
     padding: 20px;
     background-color: #0f0f0f; 
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
     margin: 0;
     padding: 0;
@@ -381,6 +381,322 @@ footer strong {
     animation: spin 4s linear infinite;
 }
 
+
+#screenQuestion1T {
+  background-color: #DB148B;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px 120px; /* más espacio abajo para el micrófono */
+  box-sizing: border-box;
+}
+
+#screenQuestion1T svg {
+  margin-bottom: 20px;
+}
+
+#question {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  z-index: 10;
+  max-width: 300px;
+}
+
+#selectAnwswer1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin: 30px 0;
+  position: relative;
+  z-index: 2;
+}
+
+#selectAnwswer1 button {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+#selectAnwswer1 button img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: -1;
+}
+
+/* Microphone image */
+#microfono {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: auto;
+  margin-left:-180px;
+  z-index: 1;
+}
+
+#ola {
+  position:relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 600px;
+  z-index: 2;
+  margin-top:300px;
+}
+
+#screenQuestion1T > p {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 25px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  z-index: 2;
+  margin-top:10px ;
+}
+
+
+
+#screenWasWrongT{
+  font-family: 'Poppins', sans-serif;
+  background:#1ED760 ;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 60px 10px;
+  margin-top: 80px;
+}
+
+#audifonos{
+  margin-left: -280px;
+  margin-top:-300px;
+}
+#mancha{
+  margin-block-end:-200px ;
+  margin-top: 300px;
+}
+
+#screenLevelsT{
+  font-family: 'Poppins', sans-serif;
+  background:#1ED760 ;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 60px 10px;
+  margin-top: 80px;
+}
+
+#audifonos2{
+  margin-left: -100px;
+  margin-top:-900px;
+}
+#mancha2{
+  margin-block-end:-500px ;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#screenQuestion2T {
+  background-color: #66C0FF;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* Worm image at top */
+#screenQuestion2T > img:first-child {
+  width: 180px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Logo/SVG styling */
+#screenQuestion2T > svg {
+  width: 150px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+/* Question container */
+#question {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 0 0 30px;
+  width: 90%;
+  max-width: 350px;
+}
+
+#question h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 600;
+}
+
+#question2Artist {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: white;
+  font-weight: 400;
+}
+
+/* Answer options */
+#selectAnwswer2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+#selectAnwswer2 button {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  z-index: 2;
+}
+
+#selectAnwswer2 img {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* Position each colored circle behind its button */
+#selectAnwswer2 img:nth-of-type(1) { top: 0; left: 50%; transform: translateX(-50%); }
+#selectAnwswer2 img:nth-of-type(2) { top: 100px; left: 50%; transform: translateX(-50%); }
+#selectAnwswer2 img:nth-of-type(3) { top: 200px; left: 50%; transform: translateX(-50%); }
+
+/* Percentage text */
+#screenQuestion2T > p {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin: 20px 0;
+  width: 90%;
+  max-width: 350px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Headphones image */
+#screenQuestion2T > img:nth-last-child(2) {
+  position: absolute;
+  bottom: 50px;
+  right: -30px;
+  width: 200px;
+  height: auto;
+  z-index: 1;
+}
+
+/* Decorative circle image */
+#screenQuestion2T > img:last-child {
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 150px;
+  height: auto;
+  z-index: 1;
+}
+
+/* Decorative star elements */
+#screenQuestion2T::before {
+  content: '✦';
+  position: absolute;
+  top: 150px;
+  right: 30px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#screenQuestion2T::after {
+  content: '✦';
+  position: absolute;
+  bottom: 180px;
+  left: 30px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 8px;
+}
+  
+
+
+#screenQuestion3T {
+background-color:#121212;
+color: white;
+font-family: 'Poppins', sans-serif;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+z-index: 1;
+}
+#fondo{
+margin-top:-500px;
+z-index: 2;      
+}
+#screenQuestion3T h1{
+  left: 80px;
+}
+
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -400,16 +716,102 @@ footer strong {
     color: white;
 }
 
-
 #screenResultFinalGame {
-  width: 100%;
-  height: 100vh;
   background-color: #6ec1f7;
-  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
   color: white;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Logo Spotify */
+#logo1 svg {
+  width: 150px;
+  height: auto;
+  margin-bottom: 30px;
+}
 
+/* Contenedor principal del ticket */
+#winnerTicket {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Títulos "Congratulations!" */
+#winnerTicket h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Primer párrafo */
+#winnerTicket p:first-of-type {
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 20px 0 30px;
+}
+
+/* Ticket gráfico */
+#winnerTicket svg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 20px 0;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Título "You are a Winner!" */
+#winnerTicket h1:last-of-type {
+  font-size: 28px;
+  margin: 30px 0 15px;
+  color: #fff;
+}
+
+/* Último párrafo */
+#winnerTicket p:last-of-type {
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+/* Efectos decorativos */
+#screenResultFinalGame::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  z-index: 1;
+}
+
+#screenResultFinalGame::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  z-index: 1;
+}
+#xxx{
+margin-left:50px;
+}

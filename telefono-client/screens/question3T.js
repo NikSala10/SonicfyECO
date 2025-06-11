@@ -62,12 +62,12 @@ export default function renderScreenQuestion3T({selectedArtist}) {
         const verifyingModal = document.getElementById("verifying-modal")
         verifyingModal.style.display = "none";
 
-  // timeout = setTimeout(() => {
-  //   if (!clicked) {
-  //     navigateToTelefono("/timeUp"); 
-  //     makeRequest2("/active-microphone", "POST", { message: "Microfono no activado" });
-  //   }
-  // }, 6000);
+  timeout = setTimeout(() => {
+    if (!clicked) {
+      navigateToTelefono("/timeUp"); 
+      makeRequest2("/active-microphone", "POST", { message: "Microfono no activado" });
+    }
+  }, 6000);
 
   document.getElementById("active-microphone").addEventListener("click", async () => {
     clicked = true;

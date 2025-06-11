@@ -86,10 +86,10 @@ const sendAudio = [
 
       emitEvent("result-canto", { 
         porcentaje,
-        esPerfecto: porcentaje === 0,
+        esPerfecto: porcentaje >= 65,
       });
 
-      if (porcentaje === 0) {
+      if (porcentaje >= 65) {
         await sendEmailWithTemplate(userEmail, userName, artist)
       }
 

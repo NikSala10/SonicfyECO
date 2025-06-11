@@ -35,31 +35,31 @@ export default async function renderScreenQuestion1M({selectedArtist}) {
       </div>
     `;
     const timerEl = document.getElementById("timer");
-    // startCountdown(
-    //   6,
-    //   (timeLeft) => (timerEl.textContent = timeLeft),
-    //   () => {
-    //     if (!hasAnswered) {
-    //       hasAnswered = true;
-    //       navigateToMupi("/noSelectedM");
-    //     }
-    //   }
-    // );
+    startCountdown(
+      6,
+      (timeLeft) => (timerEl.textContent = timeLeft),
+      () => {
+        if (!hasAnswered) {
+          hasAnswered = true;
+          navigateToMupi("/noSelectedM");
+        }
+      }
+    );
 
 } catch (error) {
     console.error("Error fetching questions:", error);
   }
 
-// socket.on("notify-answer1", (data) => {
-//   if (hasAnswered) return;
-//   hasAnswered = true;
-//   const isCorrect = data.correct;
-//   if (isCorrect) {
-//     navigateToMupi("/screenLevelsM", { selectedArtist, questionNumber: 0 });
-//   } else {
-//     navigateToMupi("/screenWasWrongM", { selectedArtist, questionNumber: 0 });
-//   }
-// });
+socket.on("notify-answer1", (data) => {
+  if (hasAnswered) return;
+  hasAnswered = true;
+  const isCorrect = data.correct;
+  if (isCorrect) {
+    navigateToMupi("/screenLevelsM", { selectedArtist, questionNumber: 0 });
+  } else {
+    navigateToMupi("/screenWasWrongM", { selectedArtist, questionNumber: 0 });
+  }
+});
 
 socket.on("artist-Selected", (artist) => { 
   renderScreenQuestion1M({artist } ); 

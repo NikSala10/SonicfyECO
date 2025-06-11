@@ -159,6 +159,17 @@ footer strong {
   min-height: 100vh;
   box-sizing: border-box;
 }
+#audifonos4 {
+  width:200px;
+  position: absolute;
+  top: 15px;
+  left: 1px;
+}
+
+#mancha4
+{
+  margin-top: 250px;
+}
 #level-1{
   background-color: #1ED760;
   color: white;

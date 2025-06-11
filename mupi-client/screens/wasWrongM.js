@@ -37,6 +37,7 @@ export default function renderScreenWasWrongM(data) {
     }
   app.innerHTML = `
         <div id="screenWasWrongT">
+        <img id="audifonos4" src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Group%20220.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvR3JvdXAgMjIwLnBuZyIsImlhdCI6MTc0OTI0NTI0MywiZXhwIjoxNzgwNzgxMjQzfQ.aW9c6qrYKn2BH5R_GpzgPIaUkmSpiWvsypUo0TAzyUU" alt="">
             <h1>Game levels</h1>
             <h1>Game levels</h1>
             <img src="https://cbnylposiazbgqyzeifz.supabase.co/storage/v1/object/sign/img/Time's%20up!.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzZmMzU0ZTcyLTRmYWQtNGU1NS04ZDYyLWVmZDYwYThhMzUzMyJ9.eyJ1cmwiOiJpbWcvVGltZSdzIHVwIS5wbmciLCJpYXQiOjE3NDY0MDUxNTYsImV4cCI6MjA5MzMwMTE1Nn0.vMzJLAOWvh47VC_ZrWtDsWpYKkvln1acw0JR8p7pz7g" alt="">
@@ -46,6 +47,7 @@ export default function renderScreenWasWrongM(data) {
             <p>Sorry, you have not achieved the maximum percentage for this challenge that</p>
             <h4>was ${porcentaje}%</h4>
             <div id="stars">${starsHTML}</div>
+            <img id="mancha4" src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Vector.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvVmVjdG9yLnBuZyIsImlhdCI6MTc0OTI0NjQ4NCwiZXhwIjoxNzgwNzgyNDg0fQ.MJp16l-wJR8y8IXYBGEAJZfFvNDr5yg0hFsmq1acSGE" alt="">
         </div>
         `;
         

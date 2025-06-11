@@ -61,7 +61,9 @@ export default function renderScreenLevelsQuestionsT(data) {
 
   app.innerHTML = `
         <div id="screenLevelsT">
+        <div id="audi">
         <img id="audifonos2" src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Group%20220.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvR3JvdXAgMjIwLnBuZyIsImlhdCI6MTc0OTI0NTI0MywiZXhwIjoxNzgwNzgxMjQzfQ.aW9c6qrYKn2BH5R_GpzgPIaUkmSpiWvsypUo0TAzyUU" alt="">
+        </div>
             <h1>${mainTitle}</h1>
             <p>${scoreText}</p>
             ${emojiSVG}

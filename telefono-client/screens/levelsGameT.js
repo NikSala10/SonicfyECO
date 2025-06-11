@@ -61,10 +61,12 @@ export default function renderScreenLevelsQuestionsT(data) {
 
   app.innerHTML = `
         <div id="screenLevelsT">
+        <img id="audifonos2" src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Group%20220.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvR3JvdXAgMjIwLnBuZyIsImlhdCI6MTc0OTI0NTI0MywiZXhwIjoxNzgwNzgxMjQzfQ.aW9c6qrYKn2BH5R_GpzgPIaUkmSpiWvsypUo0TAzyUU" alt="">
             <h1>${mainTitle}</h1>
             <p>${scoreText}</p>
             ${emojiSVG}
             <p>${detailText}</p>
+            <img id="mancha2" src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Vector.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvVmVjdG9yLnBuZyIsImlhdCI6MTc0OTI0NjQ4NCwiZXhwIjoxNzgwNzgyNDg0fQ.MJp16l-wJR8y8IXYBGEAJZfFvNDr5yg0hFsmq1acSGE" alt="">
         </div>
         `;
         switch (questionNumber) {

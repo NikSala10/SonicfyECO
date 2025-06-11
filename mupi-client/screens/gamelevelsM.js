@@ -33,13 +33,17 @@ export default function renderScreenGameLevelsM(data) {
             }"/>
             </svg>
             <h6>Test ${i + 1}</h6>
+
         </div>
         `;
     }
 
     app.innerHTML = `
         <div id="level-1">
+        <img id="audifonos3" src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Group%20220.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvR3JvdXAgMjIwLnBuZyIsImlhdCI6MTc0OTI0NTI0MywiZXhwIjoxNzgwNzgxMjQzfQ.aW9c6qrYKn2BH5R_GpzgPIaUkmSpiWvsypUo0TAzyUU" alt="">
+
             <h1>Game levels</h1>
+            <img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Game%20levels%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvR2FtZSBsZXZlbHMgKDEpLnBuZyIsImlhdCI6MTc0OTUwOTExMSwiZXhwIjoxNzgxMDQ1MTExfQ.t38RImqbY7xpjySjjWCdnmmXvZ_xplbSQS49sQWqIsE" alt="">
             <p><p>Challenge ${question + 1}</p></p>
             <h4>Your percentage on this test is:</h4>
             <h4>${porcentaje}%</h4>
@@ -47,6 +51,8 @@ export default function renderScreenGameLevelsM(data) {
             <h4>was ${porcentaje}%!</h4>
             ${question === 2 ? `<p>With this result you have reached 100%, congratulations.</p>` : ""}
             <div id="stars">${starsHTML}</div>
+            <img id="mancha3" src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Vector.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvVmVjdG9yLnBuZyIsImlhdCI6MTc0OTI0NjQ4NCwiZXhwIjoxNzgwNzgyNDg0fQ.MJp16l-wJR8y8IXYBGEAJZfFvNDr5yg0hFsmq1acSGE" alt="">
+
         </div>
         `;
         switch (question) {

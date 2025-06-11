@@ -363,15 +363,31 @@ max-width:300px ;
 }
 
 #question1M {
-  max-width: 500px;
-  background: #DB148B;
+  width: 100%;
+  background-color: #DB148B;
   color: #f6f6f6;
   font-family: 'Poppins', sans-serif;
   position: relative;
   text-align: center;
   min-height: 100vh;
-  padding: 20px;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#txt-qq1{
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#ola-q1{
+  width: 30%;
+}
+#fnd-qq1{
+  position: absolute;
+  width: 50%;
+  margin-top: -42rem;
 }
 
 #timer {
@@ -383,6 +399,15 @@ max-width:300px ;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.2);
   padding: 10px;
+}
+#question1M #txt-ques{
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+#question1M #question p {
+  margin: 0.4rem;
+  text-align: center;
 }
 #select-artista2{
   background-color: #66C0FF;
@@ -495,8 +520,7 @@ max-width:300px ;
 }
 
 #question1M h1 {
-  margin: 10px 0 20px 0;
-  font-size: 1.8rem;
+  font-size: 25px;
 }
 
 #question1M p strong {

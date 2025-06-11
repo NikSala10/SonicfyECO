@@ -18,10 +18,10 @@ export default async function renderScreenQuestion1M({selectedArtist}) {
         </svg>
         <h1>Challenge 1</h1>
         <div="container"
-        <p><strong>Your time for this 6 seconds to respond if you do not respond in the given time you will lose</strong></p>
+        <p ><strong id="txt-qq1">Your time for this 6 seconds to respond if you do not respond <br> in the given time you will lose</strong></p>
         <span id="timer">${timeLeft}</span>
         <div id="question">
-            <h5>${question.question1}</h5>
+            <h5 id="txt-ques">${question.question1}</h5>
             <p>A  ${question.option1}</p>
             <img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/azul.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvYXp1bC5wbmciLCJpYXQiOjE3NDkyMzIwMDcsImV4cCI6MTc4MDc2ODAwN30.Y0RDKDAjhg9j5da6V65T81l1KpD9OLnuWitjWV37NhE" alt="">
             <p>B  ${question.option2}</p>
@@ -30,37 +30,36 @@ export default async function renderScreenQuestion1M({selectedArtist}) {
             <img src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/morado.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvbW9yYWRvLnBuZyIsImlhdCI6MTc0OTIzMTgyMiwiZXhwIjoxNzgwNzY3ODIyfQ.xeqcS5BZsSuIVWJFbHW1gSuXbFrIj4xMBtAkbSqzT9k" alt="">
         </div>
         <p>On your cell phone screen, select the correct answer.</p>
-        <img id="microfono"src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/Group%20230.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvR3JvdXAgMjMwLnBuZyIsImlhdCI6MTc0OTU4OTY2OCwiZXhwIjoxNzgxMTI1NjY4fQ.DKCoKQj2H3OLNZMaObWaHUZ5BH8F7cp0jl069aYm8L4" alt="">
-        <img id="ola"src="https://ucqpslvexhojybodctlw.supabase.co/storage/v1/object/sign/resources/ola%20amarilla.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NmU3Y2Y1MS05MjQwLTQ2NjktOWRmMS1mZDFkMjg2MzU4YTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZXNvdXJjZXMvb2xhIGFtYXJpbGxhLnBuZyIsImlhdCI6MTc0OTIzMjQxMiwiZXhwIjoxNzgwNzY4NDEyfQ.4Yp9MUCr8SnbKnMpS1XowXY7_UaFFkxOToIZy5-SKEs" alt="">
+        <img id="fnd-qq1" src="https://firebasestorage.googleapis.com/v0/b/algoritmosdatos2024-02.appspot.com/o/imagesPosts%2FGroup%20243.png?alt=media&token=25a5223d-26d5-4269-9ea4-1dab4ace4416" alt="">
 
       </div>
     `;
     const timerEl = document.getElementById("timer");
-    startCountdown(
-      6,
-      (timeLeft) => (timerEl.textContent = timeLeft),
-      () => {
-        if (!hasAnswered) {
-          hasAnswered = true;
-          navigateToMupi("/noSelectedM");
-        }
-      }
-    );
+    // startCountdown(
+    //   6,
+    //   (timeLeft) => (timerEl.textContent = timeLeft),
+    //   () => {
+    //     if (!hasAnswered) {
+    //       hasAnswered = true;
+    //       navigateToMupi("/noSelectedM");
+    //     }
+    //   }
+    // );
 
 } catch (error) {
     console.error("Error fetching questions:", error);
   }
 
-socket.on("notify-answer1", (data) => {
-  if (hasAnswered) return;
-  hasAnswered = true;
-  const isCorrect = data.correct;
-  if (isCorrect) {
-    navigateToMupi("/screenLevelsM", { selectedArtist, questionNumber: 0 });
-  } else {
-    navigateToMupi("/screenWasWrongM", { selectedArtist, questionNumber: 0 });
-  }
-});
+// socket.on("notify-answer1", (data) => {
+//   if (hasAnswered) return;
+//   hasAnswered = true;
+//   const isCorrect = data.correct;
+//   if (isCorrect) {
+//     navigateToMupi("/screenLevelsM", { selectedArtist, questionNumber: 0 });
+//   } else {
+//     navigateToMupi("/screenWasWrongM", { selectedArtist, questionNumber: 0 });
+//   }
+// });
 
 socket.on("artist-Selected", (artist) => { 
   renderScreenQuestion1M({artist } ); 
